@@ -1,5 +1,12 @@
+import api from "../apiFacade.js";
 
 export default function OpenSearch() {
+  // console.log(
+  //   api.fetchData("movies/search-open?text=olsen", api.makeOptions("GET", true))
+  // );
+
+  fetchOpenSearch("hello");
+
   return (
     <>
       <h1>Open Search</h1>
@@ -7,17 +14,12 @@ export default function OpenSearch() {
   );
 }
 
+async function fetchOpenSearch(text) {
+  const response = await fetch(
+    "https://movie.jcoder.dk/api/movies/search-open?text=olsen"
+  );
+  const data = await response.json();
+  console.log(data);
 
-
-
-
-// async function fetchOpenSearch(text) {
-//   const response = await fetch(
-//     "https://tripapi.cphbusinessapps.dk/api/trips/" + id,
-//     api.makeOptions("GET", true)
-//   );
-//   const tripDetails = await response.json();
-//   console.log(tripDetails);
-
-//   return tripDetails;
-// }
+  return data;
+}

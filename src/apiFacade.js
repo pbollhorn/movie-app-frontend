@@ -41,13 +41,13 @@ const login = (user, password) => {
     });
 };
 
-const fetchData = () => {
+function fetchData(endpoint, options) {
   /*TODO */
-  const options = makeOptions("GET", true); //True add's the token
-  return fetch(BASE_URL + "hotels", options).then(handleHttpErrors);
-};
+  // const options = makeOptions("GET", true); //True add's the token
+  return fetch(BASE_URL + endpoint, options).then(handleHttpErrors);
+}
 
-const makeOptions = (method, addToken, body) => {
+function makeOptions(method, addToken, body) {
   var opts = {
     method: method,
     headers: {
@@ -62,7 +62,7 @@ const makeOptions = (method, addToken, body) => {
     opts.body = JSON.stringify(body);
   }
   return opts;
-};
+}
 
 const getUserRoles = () => {
   const token = getToken();
