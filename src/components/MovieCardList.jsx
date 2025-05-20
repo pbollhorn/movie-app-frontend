@@ -5,7 +5,7 @@ export default function MovieCardList({ list }) {
     <>
       <h1>Movie Card List</h1>
       {list.map((element) => (
-        <MovieCard key={element.id}/>
+        <MovieCard key={element.id} movieData={element} />
       ))}
     </>
   );
