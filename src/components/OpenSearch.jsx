@@ -1,21 +1,17 @@
-import { useRef } from "react";
+import { useState, useRef } from "react";
 import api from "../apiFacade.js";
+import MovieCardList from "./MovieCardList.jsx";
 
 export default function OpenSearch() {
+  const [list, setList] = useState([]);
   const searchTextRef = useRef(null);
-
-  // console.log(
-  //   api.fetchData("movies/search-open?text=olsen", api.makeOptions("GET", true))
-  // );
 
   async function handleOpenSearchSubmit(event) {
     event.preventDefault();
-    console.log(searchTextRef.current.value);
     const text = searchTextRef.current.value;
-
     const data = await fetchOpenSearch(text);
-
     console.log(data);
+    setList(data);
   }
 
   return (
@@ -26,6 +22,7 @@ export default function OpenSearch() {
         <input type="text" ref={searchTextRef} />
         <button type="submit">Search</button>
       </form>
+      <MovieCardList list={list} />
     </>
   );
 }
