@@ -1,21 +1,12 @@
 import "./App.css";
-import OpenSearch from "./components/OpenSearch.jsx";
+import Navbar from "./components/Navbar.jsx";
+import { Outlet } from "react-router-dom";
 
-function App() {
-  
-  
-  
-  
-  
-  
-  
-  
+export default function App() {
   return (
     <>
-      <h1>Hello World</h1>
-      <OpenSearch />
+      <Navbar />
+      <Outlet />
     </>
   );
 }
-
-export default App;
