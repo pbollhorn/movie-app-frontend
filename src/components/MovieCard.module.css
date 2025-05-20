@@ -1,0 +1,8 @@
+.movieCard {
+  display: flex;
+  border: 1px solid black;
+}
+
+.movieCard img {
+  height: 5rem;
+}
