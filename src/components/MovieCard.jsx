@@ -1,11 +1,14 @@
 import styles from "./MovieCard.module.css";
+import NoOpinion from "../assets/NoOpinion.png";
+import ThumbsUp from "../assets/ThumbsUp.png";
+import ThumbsDown from "../assets/ThumbsDown.png";
 
 export default function MovieCard({ movieData }) {
   return (
     <div className={styles.movieCard}>
-      <img
-        src={"https://image.tmdb.org/t/p/w500/" + movieData.posterPath}
-      ></img>
+      <div>
+        <img src={"https://image.tmdb.org/t/p/w500/" + movieData.posterPath} />
+      </div>
       <div>
         <h1>{movieData.title}</h1>
         <h1>{movieData.originalTitle}</h1>
@@ -16,6 +19,9 @@ export default function MovieCard({ movieData }) {
             movieData.rating +
             "/10"}
         </h1>
+      </div>
+      <div>
+        <img src={NoOpinion} />
       </div>
     </div>
   );
