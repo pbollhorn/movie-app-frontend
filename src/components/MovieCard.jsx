@@ -1,28 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styles from "./MovieCard.module.css";
 import NoOpinion from "../assets/NoOpinion.png";
 import ThumbsUp from "../assets/ThumbsUp.png";
 import ThumbsDown from "../assets/ThumbsDown.png";
+import api from "../apiFacade.js";
 
 export default function MovieCard({ movieData }) {
   const [opinion, setOpinion] = useState(movieData.likes);
-
-  // const opinionPictures = [NoOpinion, ThumbsUp, ThumbsDown];
-
-  // let opinionPic = NoOpinion;
-  // useEffect(() => {
-  //   switch (opinion) {
-  //     case null:
-  //       opinionPic = NoOpinion;
-  //       break;
-  //     case true:
-  //       opinionPic = ThumbsUp;
-  //       break;
-  //     case false:
-  //       opinionPic = ThumbsDown;
-  //       break;
-  //   }
-  // }, [opinion]); // Runs on mount and when opinion changes
 
   let opinionPic;
   switch (opinion) {
@@ -40,7 +24,14 @@ export default function MovieCard({ movieData }) {
   function clickOpinionPic() {
     switch (opinion) {
       case null:
-        setOpinion(true);
+        fetch(
+          "https://movie.jcoder.dk/api/" + "movies/" + movieData.id,
+          api.makeOptions("PUT", true, { rating: true })
+        )
+          .then(() => {
+            setOpinion(true);
+          })
+          .catch(() => alert("Error changing opinion"));
         break;
       case true:
         setOpinion(false);
