@@ -6,6 +6,9 @@ export default function Navbar() {
       <Link to="/" style={{ marginRight: "1rem" }}>
         Open Search
       </Link>
+      <Link to="/login" style={{ marginRight: "1rem" }}>
+        Login
+      </Link>
       <Link to="/opinions" style={{ marginRight: "1rem" }}>
         My Opinions
       </Link>
