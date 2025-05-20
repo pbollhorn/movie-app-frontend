@@ -12,24 +12,24 @@ function handleHttpErrors(res) {
  here (REMEMBER to uncomment in the returned 
  object when you do)*/
 
-const setToken = (token) => {
+function setToken(token) {
   localStorage.setItem("jwtToken", token);
-};
+}
 
-const getToken = () => {
+function getToken() {
   return localStorage.getItem("jwtToken");
-};
+}
 
-const loggedIn = () => {
+function loggedIn() {
   const loggedIn = getToken() != null;
   return loggedIn;
-};
+}
 
-const logout = () => {
+function logout() {
   localStorage.removeItem("jwtToken");
-};
+}
 
-const login = (user, password) => {
+function login(user, password) {
   const options = makeOptions("POST", false, {
     username: user,
     password: password,
@@ -39,7 +39,7 @@ const login = (user, password) => {
     .then((res) => {
       setToken(res.token);
     });
-};
+}
 
 function fetchData(endpoint, options) {
   /*TODO */
@@ -64,7 +64,7 @@ function makeOptions(method, addToken, body) {
   return opts;
 }
 
-const getUserRoles = () => {
+function getUserRoles() {
   const token = getToken();
   if (token != null) {
     const payloadBase64 = getToken().split(".")[1];
@@ -72,12 +72,12 @@ const getUserRoles = () => {
     const roles = decodedClaims.roles;
     return roles;
   } else return "";
-};
+}
 
-const hasUserAccess = (neededRole, loggedIn) => {
+function hasUserAccess(neededRole, loggedIn) {
   const roles = getUserRoles().split(",");
   return loggedIn && roles.includes(neededRole);
-};
+}
 
 const facade = {
   makeOptions,
