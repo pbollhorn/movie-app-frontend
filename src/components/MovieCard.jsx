@@ -22,6 +22,11 @@ export default function MovieCard({ movieData }) {
   }
 
   function clickOpinionPic() {
+    if (api.loggedIn() === false) {
+      alert("Login to like movies and get recommendations");
+      return;
+    }
+
     switch (opinion) {
       case null:
         fetch(
