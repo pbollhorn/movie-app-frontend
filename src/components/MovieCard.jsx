@@ -28,16 +28,42 @@ export default function MovieCard({ movieData }) {
           "https://movie.jcoder.dk/api/" + "movies/" + movieData.id,
           api.makeOptions("PUT", true, { rating: true })
         )
-          .then(() => {
-            setOpinion(true);
+          .then((response) => {
+            if (response.ok) {
+              setOpinion(true);
+            } else {
+              alert("Error requesting server");
+            }
           })
-          .catch(() => alert("Error changing opinion"));
+          .catch(() => alert("Error requesting server"));
         break;
       case true:
-        setOpinion(false);
+        fetch(
+          "https://movie.jcoder.dk/api/" + "movies/" + movieData.id,
+          api.makeOptions("PUT", true, { rating: false })
+        )
+          .then((response) => {
+            if (response.ok) {
+              setOpinion(false);
+            } else {
+              alert("Error requesting server");
+            }
+          })
+          .catch(() => alert("Error requesting server"));
         break;
       case false:
-        setOpinion(null);
+        fetch(
+          "https://movie.jcoder.dk/api/" + "movies/" + movieData.id,
+          api.makeOptions("DELETE", true)
+        )
+          .then((response) => {
+            if (response.ok) {
+              setOpinion(null);
+            } else {
+              alert("Error requesting server");
+            }
+          })
+          .catch(() => alert("Error requesting server"));
         break;
     }
   }
