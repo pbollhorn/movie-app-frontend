@@ -4,6 +4,12 @@ import ThumbsUp from "../assets/ThumbsUp.png";
 import ThumbsDown from "../assets/ThumbsDown.png";
 
 export default function MovieCard({ movieData }) {
+  const opinionPictures = [NoOpinion, ThumbsUp, ThumbsDown];
+
+  function handleClick() {
+    alert("hello " + movieData.id);
+  }
+
   return (
     <div className={styles.movieCard}>
       <div>
@@ -21,7 +27,7 @@ export default function MovieCard({ movieData }) {
         </h1>
       </div>
       <div>
-        <img src={NoOpinion} />
+        <img src={opinionPictures[0]} onClick={handleClick} />
       </div>
     </div>
   );
