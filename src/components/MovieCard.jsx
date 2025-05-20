@@ -1,13 +1,54 @@
+import { useState, useEffect } from "react";
 import styles from "./MovieCard.module.css";
 import NoOpinion from "../assets/NoOpinion.png";
 import ThumbsUp from "../assets/ThumbsUp.png";
 import ThumbsDown from "../assets/ThumbsDown.png";
 
 export default function MovieCard({ movieData }) {
-  const opinionPictures = [NoOpinion, ThumbsUp, ThumbsDown];
+  const [opinion, setOpinion] = useState(movieData.likes);
 
-  function handleClick() {
-    alert("hello " + movieData.id);
+  // const opinionPictures = [NoOpinion, ThumbsUp, ThumbsDown];
+
+  // let opinionPic = NoOpinion;
+  // useEffect(() => {
+  //   switch (opinion) {
+  //     case null:
+  //       opinionPic = NoOpinion;
+  //       break;
+  //     case true:
+  //       opinionPic = ThumbsUp;
+  //       break;
+  //     case false:
+  //       opinionPic = ThumbsDown;
+  //       break;
+  //   }
+  // }, [opinion]); // Runs on mount and when opinion changes
+
+  let opinionPic;
+  switch (opinion) {
+    case null:
+      opinionPic = NoOpinion;
+      break;
+    case true:
+      opinionPic = ThumbsUp;
+      break;
+    case false:
+      opinionPic = ThumbsDown;
+      break;
+  }
+
+  function clickOpinionPic() {
+    switch (opinion) {
+      case null:
+        setOpinion(true);
+        break;
+      case true:
+        setOpinion(false);
+        break;
+      case false:
+        setOpinion(null);
+        break;
+    }
   }
 
   return (
@@ -27,7 +68,7 @@ export default function MovieCard({ movieData }) {
         </h1>
       </div>
       <div>
-        <img src={opinionPictures[0]} onClick={handleClick} />
+        <img src={opinionPic} onClick={clickOpinionPic} />
       </div>
     </div>
   );
