@@ -2,14 +2,14 @@ import { useState, useRef } from "react";
 import api from "../apiFacade.js";
 import MovieCardList from "./MovieCardList.jsx";
 
-export default function OpenSearch() {
+export default function Search() {
   const [list, setList] = useState([]);
   const searchTextRef = useRef(null);
 
-  async function handleOpenSearchSubmit(event) {
+  async function handleSearchSubmit(event) {
     event.preventDefault();
     const text = searchTextRef.current.value;
-    const data = await fetchOpenSearch(text);
+    const data = await fetchSearch(text);
     console.log(data);
     setList(data);
   }
@@ -17,7 +17,7 @@ export default function OpenSearch() {
   return (
     <>
       <h1>Open Search</h1>
-      <form onSubmit={handleOpenSearchSubmit}>
+      <form onSubmit={handleSearchSubmit}>
         <label>Search in title or original title: </label>
         <input type="text" ref={searchTextRef} />
         <button type="submit">Search</button>
@@ -27,7 +27,7 @@ export default function OpenSearch() {
   );
 }
 
-async function fetchOpenSearch(text) {
+async function fetchSearch(text) {
   if (api.loggedIn()) {
     const response = await fetch(
       "https://movie.jcoder.dk/api/movies/search?text=" + text,
