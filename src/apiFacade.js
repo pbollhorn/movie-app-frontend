@@ -79,7 +79,7 @@ function hasUserAccess(neededRole, loggedIn) {
   return loggedIn && roles.includes(neededRole);
 }
 
-const facade = {
+const apiFacade = {
   makeOptions,
   setToken,
   getToken,
@@ -91,4 +91,4 @@ const facade = {
   hasUserAccess,
 };
 
-export default facade;
+export default apiFacade;
