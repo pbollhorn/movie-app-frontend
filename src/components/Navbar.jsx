@@ -10,9 +10,9 @@ export default function Navbar() {
         Login
       </Link>
       <Link to="/opinions" style={{ marginRight: "1rem" }}>
-        My Opinions
+        Opinions
       </Link>
-      <Link to="/recommendations">My Recommendations</Link>
+      <Link to="/recommendations">Recommendations</Link>
     </nav>
   );
 }

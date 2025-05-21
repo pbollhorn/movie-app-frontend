@@ -16,9 +16,8 @@ export default function Search() {
 
   return (
     <>
-      <h1>Open Search</h1>
+      <h1>Search for title</h1>
       <form onSubmit={handleSearchSubmit}>
-        <label>Search in title or original title: </label>
         <input type="text" ref={searchTextRef} />
         <button type="submit">Search</button>
       </form>

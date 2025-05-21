@@ -17,7 +17,7 @@ export default function Recommendations() {
 
   return (
     <>
-      <h1>My Recommendations</h1>
+      <h1>Recommendations for me</h1>
       <MovieCardList list={list} />
     </>
   );
