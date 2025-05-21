@@ -75,9 +75,14 @@ export default function MovieCard({ movieData }) {
 
   return (
     <div className={styles.movieCard}>
-      <img src={"https://image.tmdb.org/t/p/w500" + movieData.posterPath} className={styles.posterImage}/>
+      <img
+        src={"https://image.tmdb.org/t/p/w500" + movieData.posterPath}
+        className={styles.posterImage}
+      />
       <div>
-        <b><p>{movieData.title}</p></b>
+        <p>
+          <b>{movieData.title}</b>
+        </p>
         <p>{movieData.originalTitle}</p>
         <p>
           {"" +
@@ -85,9 +90,13 @@ export default function MovieCard({ movieData }) {
             " Rating: " +
             movieData.rating +
             "/10"}
+          <img
+            src={opinionPic}
+            onClick={clickOpinionPic}
+            className={styles.opinionImage}
+          />
         </p>
       </div>
-      <img src={opinionPic} onClick={clickOpinionPic} className={styles.opinionImage}/>
     </div>
   );
 }
