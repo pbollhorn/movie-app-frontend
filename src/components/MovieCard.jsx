@@ -75,23 +75,19 @@ export default function MovieCard({ movieData }) {
 
   return (
     <div className={styles.movieCard}>
+      <img src={"https://image.tmdb.org/t/p/w500" + movieData.posterPath} className={styles.posterImage}/>
       <div>
-        <img src={"https://image.tmdb.org/t/p/w500" + movieData.posterPath} />
-      </div>
-      <div>
-        <h1>{movieData.title}</h1>
-        <h1>{movieData.originalTitle}</h1>
-        <h1>
+        <p>{movieData.title}</p>
+        <p>{movieData.originalTitle}</p>
+        <p>
           {"" +
             movieData.releaseDate[0] +
             " Rating: " +
             movieData.rating +
             "/10"}
-        </h1>
+        </p>
       </div>
-      <div>
-        <img src={opinionPic} onClick={clickOpinionPic} />
-      </div>
+      <img src={opinionPic} onClick={clickOpinionPic} className={styles.opinionImage}/>
     </div>
   );
 }

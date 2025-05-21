@@ -6,10 +6,11 @@
   background-color: var(--card-bg);
 }
 
-.movieCard :nth-child(1) {
+.posterImage {
   height: 10rem;
+  border-radius: 1rem;
 }
 
-.movieCard :nth-child(3) {
-  /* height: 100%; */
+.opinionImage {
+  height: 10rem;
 }
