@@ -83,13 +83,12 @@ export default function MovieCard({ movieData }) {
         <p>
           <b>{movieData.title}</b>
         </p>
-        <p>{movieData.originalTitle}</p>
+        <p><em>{movieData.originalTitle}</em></p>
         <p>
           {"" +
             movieData.releaseDate[0] +
-            " Rating: " +
-            movieData.rating +
-            "/10"}
+            " " +
+            ratingAsString(movieData.rating)}
           <img
             src={opinionPic}
             onClick={clickOpinionPic}
@@ -99,4 +98,11 @@ export default function MovieCard({ movieData }) {
       </div>
     </div>
   );
+}
+
+function ratingAsString(rating) {
+  if (rating === null) {
+    return "";
+  }
+  return rating.toFixed(1) + "/10";
 }
