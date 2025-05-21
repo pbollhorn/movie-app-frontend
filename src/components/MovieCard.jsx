@@ -77,7 +77,7 @@ export default function MovieCard({ movieData }) {
     <div className={styles.movieCard}>
       <img src={"https://image.tmdb.org/t/p/w500" + movieData.posterPath} className={styles.posterImage}/>
       <div>
-        <p>{movieData.title}</p>
+        <b><p>{movieData.title}</p></b>
         <p>{movieData.originalTitle}</p>
         <p>
           {"" +

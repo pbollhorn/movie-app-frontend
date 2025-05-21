@@ -1,6 +1,7 @@
 .movieCard {
   display: flex;
-  margin: 1rem;
+  align-items: center; /* This vertically centers all children */
+  margin: 1rem 1rem;
   padding: 1rem;
   border-radius: 1rem;
   background-color: var(--card-bg);
@@ -12,5 +13,5 @@
 }
 
 .opinionImage {
-  height: 10rem;
+  height: 2rem;
 }
