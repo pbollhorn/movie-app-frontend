@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import styles from "./App.module.css";
 import Sidebar from "./components/Sidebar.jsx";
 import { Outlet } from "react-router-dom";
@@ -15,11 +15,13 @@ export default function App() {
     }
   }, []);
 
+  const [activeMovieId, setActiveMovieId] = useState(18908);
+
   return (
     <div className={styles.app}>
       <Sidebar />
       <Outlet />
-      <MovieDetails />
+      <MovieDetails movieId={activeMovieId} />
     </div>
   );
 }
