@@ -1,8 +1,8 @@
 import { useState } from "react";
 import styles from "./MovieCard.module.css";
-import NoOpinion from "../assets/NoOpinion.png";
-import ThumbsUp from "../assets/ThumbsUp.png";
-import ThumbsDown from "../assets/ThumbsDown.png";
+import NoOpinion from "../assets/NoOpinion.svg";
+import ThumbsUp from "../assets/ThumbsUp.svg";
+import ThumbsDown from "../assets/ThumbsDown.svg";
 import api from "../apiFacade.js";
 
 export default function MovieCard({ movieData, setActiveMovieId }) {
