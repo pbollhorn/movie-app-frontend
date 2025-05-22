@@ -1,10 +1,13 @@
 import { useState, useRef } from "react";
+import { useOutletContext } from "react-router-dom";
 import api from "../apiFacade.js";
 import MovieCardList from "./MovieCardList.jsx";
 
 export default function Search() {
   const [list, setList] = useState([]);
   const searchTextRef = useRef(null);
+
+  const { setActiveMovieId } = useOutletContext();
 
   async function handleSearchSubmit(event) {
     event.preventDefault();
@@ -21,7 +24,7 @@ export default function Search() {
         <input type="text" ref={searchTextRef} />
         <button type="submit">Search</button>
       </form>
-      <MovieCardList list={list} />
+      <MovieCardList list={list} setActiveMovieId={setActiveMovieId} />
     </div>
   );
 }

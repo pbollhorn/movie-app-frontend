@@ -20,8 +20,8 @@ export default function App() {
   return (
     <div className={styles.app}>
       <Sidebar />
-      <Outlet />
-      <MovieDetails movieId={activeMovieId} />
+      <Outlet context={{ setActiveMovieId }}/>
+      <MovieDetails activeMovieId={activeMovieId} />
     </div>
   );
 }

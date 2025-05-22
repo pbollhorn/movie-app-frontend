@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 
-export default function MovieDetails({ movieId }) {
+export default function MovieDetails({ activeMovieId }) {
   let movieDetails = null;
   useEffect(() => {
     const fun = async () => {
-      movieDetails = await fetchMovieDetails(movieId);
+      movieDetails = await fetchMovieDetails(activeMovieId);
     };
     fun();
-  }, [movieId]);
+  }, [activeMovieId]);
 
   if (movieDetails === null) {
     return <div></div>;
@@ -21,8 +21,8 @@ export default function MovieDetails({ movieId }) {
   );
 }
 
-async function fetchMovieDetails(movieId) {
-  const response = await fetch("https://movie.jcoder.dk/api/movies/" + movieId);
+async function fetchMovieDetails(id) {
+  const response = await fetch("https://movie.jcoder.dk/api/movies/" + id);
   const movieDetails = await response.json();
   console.log(movieDetails);
   return movieDetails;

@@ -5,7 +5,7 @@ import ThumbsUp from "../assets/ThumbsUp.png";
 import ThumbsDown from "../assets/ThumbsDown.png";
 import api from "../apiFacade.js";
 
-export default function MovieCard({ movieData }) {
+export default function MovieCard({ movieData, setActiveMovieId }) {
   const [opinion, setOpinion] = useState(movieData.likes);
 
   let opinionPic;
@@ -78,12 +78,15 @@ export default function MovieCard({ movieData }) {
       <img
         src={"https://image.tmdb.org/t/p/w500" + movieData.posterPath}
         className={styles.posterImage}
+        onClick={() => setActiveMovieId(movieData.id)}
       />
       <div>
         <p>
           <b>{movieData.title}</b>
         </p>
-        <p><em>{movieData.originalTitle}</em></p>
+        <p>
+          <em>{movieData.originalTitle}</em>
+        </p>
         <p>
           {"" +
             movieData.releaseDate[0] +
