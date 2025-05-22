@@ -15,7 +15,7 @@ export default function App() {
     }
   }, []);
 
-  const [activeMovieId, setActiveMovieId] = useState(18908);
+  const [activeMovieId, setActiveMovieId] = useState(null);
 
   return (
     <div className={styles.app}>

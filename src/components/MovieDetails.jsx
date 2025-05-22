@@ -19,8 +19,11 @@ export default function MovieDetails({ activeMovieId }) {
 
   return (
     <div>
-      <h1>Movie Details</h1>
+      <img
+        src={"https://image.tmdb.org/t/p/w780/" + movieDetails.backdropPath}
+      />
       <h1>{movieDetails.title}</h1>
+      <p>{movieDetails.overview}</p>
     </div>
   );
 }
