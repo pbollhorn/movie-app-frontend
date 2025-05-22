@@ -1,14 +1,18 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export default function MovieDetails({ activeMovieId }) {
-  let movieDetails = null;
+  const [movieDetails, setMovieDetails] = useState(null);
+
   useEffect(() => {
     const fun = async () => {
-      movieDetails = await fetchMovieDetails(activeMovieId);
+      setMovieDetails(await fetchMovieDetails(activeMovieId));
     };
-    fun();
+    if (activeMovieId) {
+      fun();
+    }
   }, [activeMovieId]);
 
+  // Return early if no movieDetails to show
   if (movieDetails === null) {
     return <div></div>;
   }
