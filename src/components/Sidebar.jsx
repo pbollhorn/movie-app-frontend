@@ -7,7 +7,7 @@ import ThumbsDown from "../assets/ThumbsDown.svg";
 export default function Sidebar() {
   return (
     <div className={styles.sidebar}>
-      <h1>MOVIEAPP</h1>
+      <h1>Movie App</h1>
       <nav>
         <Link to="/">Search</Link>
         <Link to="/login">Login</Link>
