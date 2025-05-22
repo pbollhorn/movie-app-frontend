@@ -1,0 +1,9 @@
+.sidebar{
+    background-color: var(--sidebar-bg);
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* adds space between the links */
+}

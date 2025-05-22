@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import "./App.css";
-import Navbar from "./components/Navbar.jsx";
+import styles from "./App.module.css";
+import Sidebar from "./components/Sidebar.jsx";
 import { Outlet } from "react-router-dom";
 
 export default function App() {
@@ -15,13 +15,9 @@ export default function App() {
   }, []);
 
   return (
-    <>
-      <header>
-        <Navbar />
-      </header>
-      <main>
-        <Outlet />
-      </main>
-    </>
+    <div className={styles.app}>
+      <Sidebar />
+      <Outlet />
+    </div>
   );
 }
