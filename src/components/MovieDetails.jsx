@@ -24,6 +24,23 @@ export default function MovieDetails({ activeMovieId }) {
       />
       <h1>{movieDetails.title}</h1>
       <p>{movieDetails.overview}</p>
+      <h1>{movieDetails.overview}</h1>
+      <h1>{movieDetails.overview}</h1>
+      <h1>{movieDetails.overview}</h1>
+      <h1>{movieDetails.overview}</h1>
+      <h1>{movieDetails.overview}</h1>
+      <h1>{movieDetails.overview}</h1>
+      <h1>{movieDetails.overview}</h1>
+      <h1>{movieDetails.overview}</h1>
+      <h1>{movieDetails.overview}</h1>
+      <h1>{movieDetails.overview}</h1>
+      <h1>{movieDetails.overview}</h1>
+      <h1>{movieDetails.overview}</h1>
+      <h1>{movieDetails.overview}</h1>
+      <h1>{movieDetails.overview}</h1>
+      <h1>{movieDetails.overview}</h1>
+      <h1>{movieDetails.overview}</h1>
+      
     </div>
   );
 }

@@ -1,8 +1,10 @@
 .app {
   display: flex;
+  height: 100vh; /* or any fixed height */
 }
 
-/* Give 33% of width to each child div */
 .app > div {
-  flex: 1;
+  flex: 1; /* Give 33% of width to each child div */
+  overflow: auto; /* enables independent scrolling */
+  height: 100%;         /* ensures it fills the height of .app */
 }
