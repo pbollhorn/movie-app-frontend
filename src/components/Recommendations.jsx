@@ -16,9 +16,9 @@ export default function Recommendations() {
   }, []); // Runs on mount
 
   return (
-    <>
+    <div>
       <h1>Recommendations for me</h1>
       <MovieCardList list={list} />
-    </>
+    </div>
   );
 }

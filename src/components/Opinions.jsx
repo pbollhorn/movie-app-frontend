@@ -14,9 +14,9 @@ export default function Opinions() {
   }, []); // Runs on mount
 
   return (
-    <>
+    <div>
       <h1>My Opinions</h1>
       <MovieCardList list={list} />
-    </>
+    </div>
   );
 }

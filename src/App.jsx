@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import styles from "./App.module.css";
 import Sidebar from "./components/Sidebar.jsx";
 import { Outlet } from "react-router-dom";
+import MovieDetails from "./components/MovieDetails.jsx";
 
 export default function App() {
   // useEffect for setting dark/light mode according to browser settings
@@ -18,6 +19,7 @@ export default function App() {
     <div className={styles.app}>
       <Sidebar />
       <Outlet />
+      <MovieDetails />
     </div>
   );
 }

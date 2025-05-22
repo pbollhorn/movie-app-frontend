@@ -1,3 +1,8 @@
 .app {
   display: flex;
 }
+
+/* Give 33% of width to each child div */
+.app > div {
+  flex: 1;
+}

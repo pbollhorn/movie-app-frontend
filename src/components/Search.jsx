@@ -15,14 +15,14 @@ export default function Search() {
   }
 
   return (
-    <>
+    <div>
       <h1>Search for title</h1>
       <form onSubmit={handleSearchSubmit}>
         <input type="text" ref={searchTextRef} />
         <button type="submit">Search</button>
       </form>
       <MovieCardList list={list} />
-    </>
+    </div>
   );
 }
 

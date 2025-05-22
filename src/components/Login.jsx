@@ -21,7 +21,7 @@ export default function Login() {
   }
 
   return (
-    <>
+    <div>
       <h1>Login</h1>
       <form onSubmit={handleLoginSubmit}>
         <label>Username: </label>
@@ -30,6 +30,6 @@ export default function Login() {
         <input type="password" ref={passwordRef} />{" "}
         <button type="submit">Login</button>
       </form>
-    </>
+    </div>
   );
 }
