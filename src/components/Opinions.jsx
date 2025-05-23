@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
+import { useOutletContext } from "react-router-dom";
 import MovieCardList from "./MovieCardList.jsx";
 import api from "../apiFacade.js";
 
 export default function Opinions() {
   const [list, setList] = useState([]);
+
+  const { setActiveMovieId } = useOutletContext();
 
   // useEffect
   useEffect(() => {
@@ -16,7 +19,7 @@ export default function Opinions() {
   return (
     <div>
       <h1>My Opinions</h1>
-      <MovieCardList list={list} />
+      <MovieCardList list={list} setActiveMovieId={setActiveMovieId} />
     </div>
   );
 }
