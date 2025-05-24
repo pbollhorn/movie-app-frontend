@@ -10,10 +10,6 @@
   }
 }
 
-.sidebar h1 {
-  color: #00d900;
-}
-
 .sidebar nav {
   display: flex;
   flex-direction: column;
