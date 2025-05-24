@@ -1,8 +1,8 @@
 /* Colors for light mode */
 :root {
-  --bg: #ffffff;
+  --bg: #f9f9f9;
   --fg: #000000;
-  --card-bg: #f9f9f9;
+  --card-bg: #dedede;
   --sidebar-fg: white;
   --sidebar-bg: #0000b3;
 }
