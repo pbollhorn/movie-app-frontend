@@ -3,7 +3,8 @@
   --bg: #ffffff;
   --fg: #000000;
   --card-bg: #f9f9f9;
-  --sidebar-bg: lightgray;
+  --sidebar-fg: white;
+  --sidebar-bg: #0000b3;
 }
 
 /* Colors for dark mode */
@@ -11,11 +12,12 @@ body.dark {
   --bg: #1e1e1e;
   --fg: #f5f5f5;
   --card-bg: #2a2a2a;
-  --sidebar-bg: darkgray;
+  --sidebar-fg: white;
+  --sidebar-bg: #0000b3;
 }
 
 body {
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: Verdana, sans-serif;
   margin: 0;
   background-color: var(--bg);
   color: var(--fg);
