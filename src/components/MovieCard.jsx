@@ -3,6 +3,7 @@ import styles from "./MovieCard.module.css";
 import NoOpinion from "../assets/NoOpinion.svg";
 import ThumbsUp from "../assets/ThumbsUp.svg";
 import ThumbsDown from "../assets/ThumbsDown.svg";
+import NoPoster from "../assets/NoPoster.png";
 import api from "../apiFacade.js";
 
 export default function MovieCard({ movieData, setActiveMovieId }) {
@@ -76,7 +77,11 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
   return (
     <div className={styles.movieCard}>
       <img
-        src={"https://image.tmdb.org/t/p/w500" + movieData.posterPath}
+        src={
+          movieData.posterPath
+            ? "https://image.tmdb.org/t/p/w154" + movieData.posterPath
+            : NoPoster
+        }
         className={styles.posterImage}
         onClick={() => setActiveMovieId(movieData.id)}
       />
@@ -90,8 +95,9 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
         <p>
           {"" +
             movieData.releaseDate[0] +
-            " " +
-            ratingAsString(movieData.rating)}
+            " da " +
+            ratingAsString(movieData.rating) +
+            "   "}
           <img
             src={opinionPic}
             onClick={clickOpinionPic}

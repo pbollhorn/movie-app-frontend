@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import NoBackdrop from "../assets/NoBackdrop.png";
 
 export default function MovieDetails({ activeMovieId }) {
   const [movieDetails, setMovieDetails] = useState(null);
@@ -20,9 +21,20 @@ export default function MovieDetails({ activeMovieId }) {
   return (
     <div>
       <img
-        src={"https://image.tmdb.org/t/p/w780/" + movieDetails.backdropPath}
+        src={
+          movieDetails.backdropPath
+            ? "https://image.tmdb.org/t/p/w780/" + movieDetails.backdropPath
+            : NoBackdrop
+        }
       />
       <h1>{movieDetails.title}</h1>
+      <p>Original title: {movieDetails.originalTitle}</p>
+      <p>Original language: da (Danish)</p>
+      <p>
+        Release date: {movieDetails.releaseDate[0]}-
+        {movieDetails.releaseDate[1]}-{movieDetails.releaseDate[2]}
+      </p>
+      <p>Rating: {movieDetails.rating}/10</p>
       <p>{movieDetails.overview}</p>
     </div>
   );

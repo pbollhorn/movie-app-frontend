@@ -10,7 +10,7 @@
 } */
 
 .app > div:nth-child(1) {
-  flex: 0 0 20%; /* 20% width, don't grow or shrink */
+  flex: 0 0 30%; /* 30% width, don't grow or shrink */
   overflow: auto;
   height: 100%;
 }
@@ -22,7 +22,7 @@
 }
 
 .app > div:nth-child(3) {
-  flex: 0 0 50%; /* 50% width, don't grow or shrink */
+  flex: 0 0 40%; /* 40% width, don't grow or shrink */
   overflow: auto;
   height: 100%;
 }
