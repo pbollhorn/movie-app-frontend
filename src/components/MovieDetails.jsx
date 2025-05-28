@@ -29,7 +29,7 @@ export default function MovieDetails({ activeMovieId }) {
       />
       <h1>{movieDetails.title}</h1>
       <p>Original title: {movieDetails.originalTitle}</p>
-      <p>Original language: da (Danish)</p>
+      <p>Original language: {movieDetails.originalLanguage}</p>
       <p>
         Release date: {movieDetails.releaseDate[0]}-
         {movieDetails.releaseDate[1]}-{movieDetails.releaseDate[2]}
