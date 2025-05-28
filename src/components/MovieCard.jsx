@@ -95,7 +95,9 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
         <p>
           {"" +
             movieData.releaseDate[0] +
-            " da " +
+            " " +
+            movieData.originalLanguage +
+            " " +
             ratingAsString(movieData.rating) +
             "   "}
           <img
