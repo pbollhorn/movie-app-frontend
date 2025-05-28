@@ -35,6 +35,12 @@ export default function MovieDetails({ activeMovieId }) {
         {movieDetails.releaseDate[1]}-{movieDetails.releaseDate[2]}
       </p>
       <p>Rating: {movieDetails.rating}/10</p>
+      <p>{movieDetails.genres[0] && movieDetails.genres[0]}</p>
+      <p>{movieDetails.genres[1] && movieDetails.genres[1]}</p>
+      <p>{movieDetails.genres[2] && movieDetails.genres[2]}</p>
+      <p>{movieDetails.genres[3] && movieDetails.genres[3]}</p>
+      <p>{movieDetails.genres[4] && movieDetails.genres[4]}</p>
+      <p>{movieDetails.genres[5] && movieDetails.genres[5]}</p>
       <p>{movieDetails.overview}</p>
     </div>
   );
