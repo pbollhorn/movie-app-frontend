@@ -87,10 +87,10 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
       />
       <div>
         <p>
-          <b>{movieData.title}</b>
+          <b>{movieData.title}</b> <em>{movieData.originalTitle!=movieData.title && movieData.originalTitle}</em>
         </p>
         <p>
-          <em>{movieData.originalTitle}</em>
+          {movieData.genres[0] && movieData.genres[0]}, {movieData.genres[1] && movieData.genres[1]}, {movieData.genres[2] && movieData.genres[2]}
         </p>
         <p>
           {"" +
