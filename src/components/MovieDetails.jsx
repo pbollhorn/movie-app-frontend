@@ -18,6 +18,13 @@ export default function MovieDetails({ activeMovieId }) {
     return <div></div>;
   }
 
+  const directors = movieDetails.persons.filter((p) => p.job === "Director");
+  const cast = movieDetails.persons.filter((p) => p.job === "Actor");
+  const crew = movieDetails.persons.filter((p) => p.job !== "Actor");
+  console.log(directors);
+  console.log(cast);
+  console.log(crew);
+
   return (
     <div>
       <img
@@ -42,6 +49,19 @@ export default function MovieDetails({ activeMovieId }) {
       <p>{movieDetails.genres[4] && movieDetails.genres[4]}</p>
       <p>{movieDetails.genres[5] && movieDetails.genres[5]}</p>
       <p>{movieDetails.overview}</p>
+
+      {/* <h2>Directed by</h2>
+      {directors.map((person) => (
+        <p key={person.id}>{person.name}</p>
+      ))} */}
+      <h2>Cast</h2>
+      {cast.map((person) => (
+        <p key={person.character+person.id}>{person.name}: {person.character}</p>
+      ))}
+      <h2>Crew</h2>
+      {crew.map((person) => (
+        <p key={person.job+person.id}>{person.name}: {person.job}</p>
+      ))}
     </div>
   );
 }
