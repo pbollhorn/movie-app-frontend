@@ -41,7 +41,7 @@ export default function MovieDetails({ activeMovieId }) {
         Release date: {movieDetails.releaseDate[0]}-
         {movieDetails.releaseDate[1]}-{movieDetails.releaseDate[2]}
       </p>
-      <p>Rating: {movieDetails.rating}/10</p>
+      <p>TMDB score: {movieDetails.rating}/10</p>
       <p>{movieDetails.genres[0] && movieDetails.genres[0]}</p>
       <p>{movieDetails.genres[1] && movieDetails.genres[1]}</p>
       <p>{movieDetails.genres[2] && movieDetails.genres[2]}</p>
