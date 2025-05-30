@@ -50,10 +50,10 @@ export default function MovieDetails({ activeMovieId }) {
       <p>{movieDetails.genres[5] && movieDetails.genres[5]}</p>
       <p>{movieDetails.overview}</p>
 
-      {/* <h2>Directed by</h2>
+      <h2>Directed by</h2>
       {directors.map((person) => (
         <p key={person.id}>{person.name}</p>
-      ))} */}
+      ))}
       <h2>Cast</h2>
       {cast.map((person) => (
         <p key={person.character+person.id}>{person.name}: {person.character}</p>
