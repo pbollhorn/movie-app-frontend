@@ -5,7 +5,7 @@ import "./index.css";
 import App from "./App.jsx";
 import Search from "./components/Search.jsx";
 import Login from "./components/Login.jsx";
-import Opinions from "./components/Opinions.jsx";
+import Ratings from "./components/Ratings.jsx";
 import Recommendations from "./components/Recommendations.jsx";
 
 const router = createBrowserRouter([
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Search /> },
       { path: "/login", element: <Login /> },
-      { path: "/opinions", element: <Opinions /> },
+      { path: "/ratings", element: <Ratings /> },
       { path: "/recommendations", element: <Recommendations /> },
     ],
   },

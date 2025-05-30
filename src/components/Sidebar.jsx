@@ -23,7 +23,7 @@ export default function Sidebar({ loggedIn, setLoggedIn }) {
       </h1>
       <nav>
         <Link to="/">Search</Link>
-        <Link to="/opinions">Opinions</Link>
+        <Link to="/ratings">Ratings</Link>
         <Link to="/recommendations">Recommendations</Link>
         {loggedIn ? (
           <button onClick={handleLogoutClick}>Logout</button>
