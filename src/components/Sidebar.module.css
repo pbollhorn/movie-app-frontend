@@ -16,6 +16,17 @@
   gap: 1rem; /* adds space between the links */
 }
 
+.sidebar button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+  text-align: left;
+  text-decoration: underline;
+}
+
 .opinionImage {
   height: 1.5rem;
 }
