@@ -3,6 +3,7 @@ import styles from "./Sidebar.module.css";
 import NoOpinion from "../assets/NoOpinion.svg";
 import ThumbsUp from "../assets/ThumbsUp.svg";
 import ThumbsDown from "../assets/ThumbsDown.svg";
+import api from "../apiFacade.js";
 
 export default function Sidebar({ loggedIn, setLoggedIn }) {
   return (
@@ -13,9 +14,9 @@ export default function Sidebar({ loggedIn, setLoggedIn }) {
       </h1>
       <nav>
         <Link to="/">Search</Link>
-        <Link to="/login">Login</Link>
-        <Link to="/opinions">Opinions</Link>
+        <Link to="/opinions">Opinions</Link>        
         <Link to="/recommendations">Recommendations</Link>
+        {loggedIn ? <Link onClick={handleLogoutClick}>Logout</Link> : <Link to="/login">Login</Link>}
       </nav>
       <div>
         <p>How to rate:</p>
@@ -31,4 +32,10 @@ export default function Sidebar({ loggedIn, setLoggedIn }) {
       </div>
     </div>
   );
+}
+
+
+function handleLogoutClick(){
+  api.logout();
+  setLoggedIn(false);
 }
