@@ -4,7 +4,7 @@ import NoOpinion from "../assets/NoOpinion.svg";
 import ThumbsUp from "../assets/ThumbsUp.svg";
 import ThumbsDown from "../assets/ThumbsDown.svg";
 
-export default function Sidebar() {
+export default function Sidebar({ loggedIn, setLoggedIn }) {
   return (
     <div className={styles.sidebar}>
       <h1>

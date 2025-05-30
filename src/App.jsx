@@ -3,6 +3,7 @@ import styles from "./App.module.css";
 import Sidebar from "./components/Sidebar.jsx";
 import { Outlet } from "react-router-dom";
 import MovieDetails from "./components/MovieDetails.jsx";
+import api from "./apiFacade.js";
 
 export default function App() {
   // useEffect for setting dark/light mode according to browser settings
@@ -15,12 +16,14 @@ export default function App() {
     }
   }, []);
 
+  const [loggedIn, setLoggedIn] = useState(api.loggedIn());
+
   const [activeMovieId, setActiveMovieId] = useState(null);
 
   return (
     <div className={styles.app}>
-      <Sidebar />
-      <Outlet context={{ setActiveMovieId }}/>
+      <Sidebar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+      <Outlet context={{ loggedIn, setLoggedIn, setActiveMovieId }}/>
       <MovieDetails activeMovieId={activeMovieId} />
     </div>
   );

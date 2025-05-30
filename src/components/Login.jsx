@@ -1,17 +1,21 @@
 import { useRef } from "react";
+import { useOutletContext } from "react-router-dom";
 import api from "../apiFacade.js";
 
 export default function Login() {
+  
+  const { setLoggedIn } = useOutletContext();
+  
   const usernameRef = useRef(null);
   const passwordRef = useRef(null);
+
 
   function handleLoginSubmit(event) {
     event.preventDefault();
     api
       .login(usernameRef.current.value, passwordRef.current.value)
       .then(() => {
-        localStorage.setItem("currentUsername", usernameRef.current.value);
-        // setLoggedIn(true);
+        setLoggedIn(true);
       })
       .catch(() => {
         alert("Wrong username or password");
