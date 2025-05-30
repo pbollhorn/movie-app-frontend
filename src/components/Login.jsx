@@ -1,10 +1,11 @@
 import { useRef } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, useNavigate } from "react-router-dom";
 import api from "../apiFacade.js";
 
 export default function Login() {
   
   const { setLoggedIn } = useOutletContext();
+  const navigate = useNavigate();
   
   const usernameRef = useRef(null);
   const passwordRef = useRef(null);
@@ -16,6 +17,7 @@ export default function Login() {
       .login(usernameRef.current.value, passwordRef.current.value)
       .then(() => {
         setLoggedIn(true);
+        navigate("/"); // this is the front page (i.e. the search page)
       })
       .catch(() => {
         alert("Wrong username or password");

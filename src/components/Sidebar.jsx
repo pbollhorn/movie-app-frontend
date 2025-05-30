@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Sidebar.module.css";
 import NoOpinion from "../assets/NoOpinion.svg";
 import ThumbsUp from "../assets/ThumbsUp.svg";
@@ -6,6 +6,15 @@ import ThumbsDown from "../assets/ThumbsDown.svg";
 import api from "../apiFacade.js";
 
 export default function Sidebar({ loggedIn, setLoggedIn }) {
+  
+  const navigate = useNavigate();
+  
+  function handleLogoutClick() {
+    api.logout();
+    setLoggedIn(false);
+    navigate("/login");
+  }
+
   return (
     <div className={styles.sidebar}>
       <h1>
@@ -14,9 +23,13 @@ export default function Sidebar({ loggedIn, setLoggedIn }) {
       </h1>
       <nav>
         <Link to="/">Search</Link>
-        <Link to="/opinions">Opinions</Link>        
+        <Link to="/opinions">Opinions</Link>
         <Link to="/recommendations">Recommendations</Link>
-        {loggedIn ? <Link onClick={handleLogoutClick}>Logout</Link> : <Link to="/login">Login</Link>}
+        {loggedIn ? (
+          <button onClick={handleLogoutClick}>Logout</button>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
       </nav>
       <div>
         <p>How to rate:</p>
@@ -32,10 +45,4 @@ export default function Sidebar({ loggedIn, setLoggedIn }) {
       </div>
     </div>
   );
-}
-
-
-function handleLogoutClick(){
-  api.logout();
-  setLoggedIn(false);
 }
