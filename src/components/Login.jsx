@@ -32,8 +32,10 @@ export default function Login() {
       <form onSubmit={handleLoginSubmit}>
         <label>Username: </label>
         <input type="text" ref={usernameRef} />
+        <br/>
         <label> Password: </label>
-        <input type="password" ref={passwordRef} />{" "}
+        <input type="password" ref={passwordRef} />
+        <br/>
         <button type="submit">Login</button>
       </form>
     </div>

@@ -45,6 +45,7 @@ export default function MovieDetails({ activeMovieId }) {
       <p>{movieDetails.genres[4] && movieDetails.genres[4]}</p>
       <p>{movieDetails.genres[5] && movieDetails.genres[5]}</p>
       <p>{movieDetails.overview}</p>
+
       <h2>Directed by</h2>
       {directors.map((credit) => (
         <p key={credit.id}>{credit.name}</p>
