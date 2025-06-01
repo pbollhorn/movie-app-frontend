@@ -6,9 +6,8 @@ import ThumbsDown from "../assets/ThumbsDown.svg";
 import api from "../apiFacade.js";
 
 export default function Sidebar({ loggedIn, setLoggedIn }) {
-  
   const navigate = useNavigate();
-  
+
   function handleLogoutClick() {
     api.logout();
     setLoggedIn(false);
@@ -28,7 +27,10 @@ export default function Sidebar({ loggedIn, setLoggedIn }) {
         {loggedIn ? (
           <button onClick={handleLogoutClick}>Logout</button>
         ) : (
-          <Link to="/login">Login</Link>
+          <>
+            <Link to="/login">Login</Link>
+            <Link to="/create-account">Create account</Link>
+          </>
         )}
       </nav>
       <div>
