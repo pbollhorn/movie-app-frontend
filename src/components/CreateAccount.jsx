@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function CreateAccount() {
   const [account, setAccount] = useState({
@@ -26,7 +26,6 @@ export default function CreateAccount() {
         <label htmlFor="username">Choose username:</label>
         <br/>
         <input
-          name="username"
           id="username"
           type="text"
           value={account.username}
@@ -37,7 +36,6 @@ export default function CreateAccount() {
         <label htmlFor="password">Choose password:</label>
         <br/>
         <input
-          name="password"
           id="password"
           type="password"
           value={account.password}
@@ -48,7 +46,6 @@ export default function CreateAccount() {
         <label htmlFor="repeatPassword">Repeat password:</label>
         <br/>
         <input
-          name="repeatPassword"
           id="repeatPassword"
           type="password"
           value={account.repeatPassword}
