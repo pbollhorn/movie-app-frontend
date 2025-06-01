@@ -3,13 +3,11 @@ import { useOutletContext, useNavigate } from "react-router-dom";
 import api from "../apiFacade.js";
 
 export default function Login() {
-  
   const { setLoggedIn } = useOutletContext();
   const navigate = useNavigate();
-  
+
   const usernameRef = useRef(null);
   const passwordRef = useRef(null);
-
 
   function handleLoginSubmit(event) {
     event.preventDefault();
@@ -30,12 +28,12 @@ export default function Login() {
     <div>
       <h1>Login</h1>
       <form onSubmit={handleLoginSubmit}>
-        <label>Username: </label>
-        <input type="text" ref={usernameRef} />
-        <br/>
-        <label> Password: </label>
-        <input type="password" ref={passwordRef} />
-        <br/>
+        <label htmlFor="username">Username:</label>
+        <input id="username" type="text" ref={usernameRef} />
+        <br />
+        <label htmlFor="password">Password:</label>
+        <input id="password" type="password" ref={passwordRef} />
+        <br />
         <button type="submit">Login</button>
       </form>
     </div>
