@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import NoBackdrop from "../assets/NoBackdrop.png";
+import styles from "./MovieDetails.module.css";
 
 export default function MovieDetails({ activeMovieId }) {
   const [movieDetails, setMovieDetails] = useState(null);
@@ -25,14 +25,11 @@ export default function MovieDetails({ activeMovieId }) {
   );
 
   return (
-    <div>
+    <div className={styles.movieDetails}>
+      {movieDetails.backdropPath &&
       <img
-        src={
-          movieDetails.backdropPath
-            ? "https://image.tmdb.org/t/p/w780/" + movieDetails.backdropPath
-            : NoBackdrop
-        }
-      />
+        src={"https://image.tmdb.org/t/p/w780/" + movieDetails.backdropPath}
+      />}
       <h1>{movieDetails.title}</h1>
       <p>Original title: {movieDetails.originalTitle}</p>
       <p>Original language: {movieDetails.originalLanguage}</p>
@@ -48,7 +45,6 @@ export default function MovieDetails({ activeMovieId }) {
       <p>{movieDetails.genres[4] && movieDetails.genres[4]}</p>
       <p>{movieDetails.genres[5] && movieDetails.genres[5]}</p>
       <p>{movieDetails.overview}</p>
-
       <h2>Directed by</h2>
       {directors.map((credit) => (
         <p key={credit.id}>{credit.name}</p>
