@@ -22,7 +22,8 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
       break;
   }
 
-  function clickOpinionPic() {
+  function handleOpinionPicClick(event) {
+    event.stopPropagation();
     if (api.loggedIn() === false) {
       alert("Login to like movies and get recommendations");
       return;
@@ -75,7 +76,7 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
   }
 
   return (
-    <div className={styles.movieCard}>
+    <div className={styles.movieCard} onClick={() => setActiveMovieId(movieData.id)}>
       <img
         src={
           movieData.posterPath
@@ -83,7 +84,6 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
             : NoPoster
         }
         className={styles.posterImage}
-        onClick={() => setActiveMovieId(movieData.id)}
       />
       <div>
         <p>
@@ -102,7 +102,7 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
             "   "}
           <img
             src={opinionPic}
-            onClick={clickOpinionPic}
+            onClick={handleOpinionPicClick}
             className={styles.opinionImage}
           />
         </p>
