@@ -9,6 +9,7 @@ export default function CreateAccount() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    alert(JSON.stringify(account));
   }
 
   function handleChange(event) {
