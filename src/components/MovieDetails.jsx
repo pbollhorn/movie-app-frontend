@@ -31,38 +31,40 @@ export default function MovieDetails({ activeMovieId }) {
           src={"https://image.tmdb.org/t/p/w780/" + movieDetails.backdropPath}
         />
       )}
-      <h1>{movieDetails.title}</h1>
-      <p>Original title: {movieDetails.originalTitle}</p>
-      <p>Original language: {movieDetails.originalLanguage}</p>
-      <p>
-        Release date: {movieDetails.releaseDate[0]}-
-        {movieDetails.releaseDate[1]}-{movieDetails.releaseDate[2]}
-      </p>
-      <p>TMDB score: {movieDetails.rating}/10</p>
-      <p>{movieDetails.genres[0] && movieDetails.genres[0]}</p>
-      <p>{movieDetails.genres[1] && movieDetails.genres[1]}</p>
-      <p>{movieDetails.genres[2] && movieDetails.genres[2]}</p>
-      <p>{movieDetails.genres[3] && movieDetails.genres[3]}</p>
-      <p>{movieDetails.genres[4] && movieDetails.genres[4]}</p>
-      <p>{movieDetails.genres[5] && movieDetails.genres[5]}</p>
-      <p>{movieDetails.overview}</p>
+      <div>
+        <h1>{movieDetails.title}</h1>
+        <p>Original title: {movieDetails.originalTitle}</p>
+        <p>Original language: {movieDetails.originalLanguage}</p>
+        <p>
+          Release date: {movieDetails.releaseDate[0]}-
+          {movieDetails.releaseDate[1]}-{movieDetails.releaseDate[2]}
+        </p>
+        <p>TMDB score: {movieDetails.rating}/10</p>
+        <p>{movieDetails.genres[0] && movieDetails.genres[0]}</p>
+        <p>{movieDetails.genres[1] && movieDetails.genres[1]}</p>
+        <p>{movieDetails.genres[2] && movieDetails.genres[2]}</p>
+        <p>{movieDetails.genres[3] && movieDetails.genres[3]}</p>
+        <p>{movieDetails.genres[4] && movieDetails.genres[4]}</p>
+        <p>{movieDetails.genres[5] && movieDetails.genres[5]}</p>
+        <p>{movieDetails.overview}</p>
 
-      <h2>Directed by</h2>
-      {directors.map((credit) => (
-        <p key={credit.id}>{credit.name}</p>
-      ))}
-      <h2>Cast</h2>
-      {cast.map((credit) => (
-        <p key={credit.id}>
-          {credit.name}: {credit.character}
-        </p>
-      ))}
-      <h2>Production</h2>
-      {production.map((credit) => (
-        <p key={credit.id}>
-          {credit.name}: {credit.job}
-        </p>
-      ))}
+        <h2>Directed by</h2>
+        {directors.map((credit) => (
+          <p key={credit.id}>{credit.name}</p>
+        ))}
+        <h2>Cast</h2>
+        {cast.map((credit) => (
+          <p key={credit.id}>
+            {credit.name}: {credit.character}
+          </p>
+        ))}
+        <h2>Production</h2>
+        {production.map((credit) => (
+          <p key={credit.id}>
+            {credit.name}: {credit.job}
+          </p>
+        ))}
+      </div>
     </div>
   );
 }

@@ -5,3 +5,7 @@
 .movieDetails img {
     width: 100%;
 }
+
+.movieDetails div {
+    margin: 1rem;
+}
