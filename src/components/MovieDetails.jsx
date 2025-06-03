@@ -26,10 +26,11 @@ export default function MovieDetails({ activeMovieId }) {
 
   return (
     <div className={styles.movieDetails}>
-      {movieDetails.backdropPath &&
-      <img
-        src={"https://image.tmdb.org/t/p/w780/" + movieDetails.backdropPath}
-      />}
+      {movieDetails.backdropPath && (
+        <img
+          src={"https://image.tmdb.org/t/p/w780/" + movieDetails.backdropPath}
+        />
+      )}
       <h1>{movieDetails.title}</h1>
       <p>Original title: {movieDetails.originalTitle}</p>
       <p>Original language: {movieDetails.originalLanguage}</p>
