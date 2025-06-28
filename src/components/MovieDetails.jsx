@@ -50,7 +50,14 @@ export default function MovieDetails({ activeMovieId }) {
 
         <h2>Directed by</h2>
         {directors.map((credit) => (
-          <p key={credit.id}>{credit.name}</p>
+          <a
+            key={credit.id}
+            href={"https://www.themoviedb.org/person/" + credit.personId}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {credit.name}
+          </a>
         ))}
         <h2>Cast</h2>
         {cast.map((credit) => (
