@@ -40,6 +40,15 @@ export default function MovieDetails({ activeMovieId }) {
           {movieDetails.releaseDate[1]}-{movieDetails.releaseDate[2]}
         </p>
         <p>TMDB score: {movieDetails.rating}/10</p>
+        <p>
+          <a
+            href={"https://www.themoviedb.org/movie/" + movieDetails.id}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Link to movie on TMDB
+          </a>
+        </p>
         <p>{movieDetails.genres[0] && movieDetails.genres[0]}</p>
         <p>{movieDetails.genres[1] && movieDetails.genres[1]}</p>
         <p>{movieDetails.genres[2] && movieDetails.genres[2]}</p>
