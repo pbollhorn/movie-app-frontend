@@ -18,8 +18,8 @@ export default function Sidebar({ loggedIn, setLoggedIn }) {
   return (
     <div className={styles.sidebar}>
       <h1>
-        <span style={{ color: "#00d900" }}>MOVIE</span>
-        <span style={{ color: "#056DFF" }}>APP</span>
+        <span style={{ color: "var(--green)" }}>MOVIE</span>
+        <span style={{ color: "var(--lightblue)" }}>APP</span>
       </h1>
       <nav>
         <Link to="/">Search</Link>

@@ -1,11 +1,19 @@
 .movieDetails {
-    width: 100%;
+  width: 100%;
+
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    color: var(--lightblue);
+    text-decoration: none;
+  }
 }
 
 .movieDetails img {
-    width: 100%;
+  width: 100%;
 }
 
 .movieDetails div {
-    margin: 1rem;
+  margin: 1rem;
 }
