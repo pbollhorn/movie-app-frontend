@@ -5,6 +5,7 @@ import ThumbsUp from "../assets/ThumbsUp.svg";
 import ThumbsDown from "../assets/ThumbsDown.svg";
 import TmdbLogo from "../assets/TmdbLogo.svg";
 import api from "../apiFacade.js";
+import TmdbLink from "./TmdbLink.jsx";
 
 export default function Sidebar({ loggedIn, setLoggedIn }) {
   const navigate = useNavigate();
@@ -52,13 +53,9 @@ export default function Sidebar({ loggedIn, setLoggedIn }) {
       <br />
       <br />
       <div>
-        <a
-          href="https://www.themoviedb.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <TmdbLink>
           <img src={TmdbLogo} className={styles.tmdbLogo} alt="TMDB Logo" />
-        </a>
+        </TmdbLink>
         <p>
           This website uses TMDB and the TMDB APIs but is not endorsed,
           certified, or otherwise approved by TMDB.

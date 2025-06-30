@@ -1,4 +1,4 @@
-export default function TmdbLink({ children, url }) {
+export default function TmdbLink({ children, url = "" }) {
   return (
     <a
       href={"https://www.themoviedb.org" + url}
