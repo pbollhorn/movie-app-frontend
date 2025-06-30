@@ -5,7 +5,7 @@
   a:visited,
   a:hover,
   a:active {
-    color: var(--lightblue);
+    color: var(--movieapp-lightblue);
     text-decoration: none;
   }
 }

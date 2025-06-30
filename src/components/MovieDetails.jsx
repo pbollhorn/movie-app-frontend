@@ -71,11 +71,14 @@ export default function MovieDetails({ activeMovieId }) {
           </p>
         ))}
         <h2>Cast</h2>
-        {cast.map((credit) => (
-          <p key={credit.id}>
-            {credit.name}: {credit.character}
-          </p>
-        ))}
+        <table>
+          {cast.map((credit) => (
+            <tr key={credit.id}>
+              <td>{credit.name}</td>
+              <td>{credit.character}</td>
+            </tr>
+          ))}
+        </table>
         <h2>Production</h2>
         {production.map((credit) => (
           <p key={credit.id}>
