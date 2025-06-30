@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "./MovieDetails.module.css";
+import TmdbLink from "./TmdbLink.jsx";
 
 export default function MovieDetails({ activeMovieId }) {
   const [movieDetails, setMovieDetails] = useState(null);
@@ -41,13 +42,9 @@ export default function MovieDetails({ activeMovieId }) {
         </p>
         <p>TMDB score: {movieDetails.rating}/10</p>
         <p>
-          <a
-            href={"https://www.themoviedb.org/movie/" + movieDetails.id}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <TmdbLink url={"/movie/" + movieDetails.id}>
             Link to movie on TMDB
-          </a>
+          </TmdbLink>
         </p>
         <p>{movieDetails.genres[0] && movieDetails.genres[0]}</p>
         <p>{movieDetails.genres[1] && movieDetails.genres[1]}</p>
@@ -60,21 +57,20 @@ export default function MovieDetails({ activeMovieId }) {
         <h2>Directed by</h2>
         {directors.map((credit) => (
           <p>
-            <a
-              key={credit.id}
-              href={"https://www.themoviedb.org/person/" + credit.personId}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <TmdbLink key={credit.id} url={"/person/" + credit.personId}>
               {credit.name}
-            </a>
+            </TmdbLink>
           </p>
         ))}
         <h2>Cast</h2>
         <table>
           {cast.map((credit) => (
             <tr key={credit.id}>
-              <td>{credit.name}</td>
+              <td>
+                <TmdbLink url={"/person/" + credit.personId}>
+                  {credit.name}
+                </TmdbLink>
+              </td>
               <td>{credit.character}</td>
             </tr>
           ))}
@@ -82,7 +78,10 @@ export default function MovieDetails({ activeMovieId }) {
         <h2>Production</h2>
         {production.map((credit) => (
           <p key={credit.id}>
-            {credit.name}: {credit.job}
+            <TmdbLink url={"/person/" + credit.personId}>
+              {credit.name}
+            </TmdbLink>
+            : {credit.job}
           </p>
         ))}
       </div>
