@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./MovieDetails.module.css";
 import TmdbLink from "./TmdbLink.jsx";
+import NoBackdrop from "../assets/NoBackdrop.png";
 
 export default function MovieDetails({ activeMovieId }) {
   const [movieDetails, setMovieDetails] = useState(null);
@@ -27,11 +28,13 @@ export default function MovieDetails({ activeMovieId }) {
 
   return (
     <div className={styles.movieDetails}>
-      {movieDetails.backdropPath && (
-        <img
-          src={"https://image.tmdb.org/t/p/w780/" + movieDetails.backdropPath}
-        />
-      )}
+      <img
+        src={
+          movieDetails.backdropPath
+            ? "https://image.tmdb.org/t/p/w780/" + movieDetails.backdropPath
+            : NoBackdrop
+        }
+      />
       <div>
         <h1>{movieDetails.title}</h1>
         <p>Original title: {movieDetails.originalTitle}</p>
