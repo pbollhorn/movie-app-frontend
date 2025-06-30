@@ -1,13 +1,5 @@
 .movieDetails {
   width: 100%;
-
-  a:link,
-  a:visited,
-  a:hover,
-  a:active {
-    color: var(--movieapp-lightblue);
-    text-decoration: none;
-  }
 }
 
 .movieDetails img {
