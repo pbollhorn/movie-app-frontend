@@ -1,7 +1,7 @@
-a:link,
-a:visited,
-a:hover,
-a:active {
+.tmdbLink:link,
+.tmdbLink:visited,
+.tmdbLink:hover,
+.tmdbLink:active {
   color: var(--movieapp-lightblue);
   text-decoration: none;
 }
