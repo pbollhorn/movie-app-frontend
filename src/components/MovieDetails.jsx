@@ -45,7 +45,7 @@ export default function MovieDetails({ activeMovieId }) {
         </p>
         <p>TMDB score: {movieDetails.rating}/10</p>
         <p>
-          <TmdbLink url={"/movie/" + movieDetails.id}>
+          <TmdbLink path={"/movie/" + movieDetails.id}>
             Link to movie on TMDB
           </TmdbLink>
         </p>
@@ -60,7 +60,7 @@ export default function MovieDetails({ activeMovieId }) {
         <h2>Directed by</h2>
         {directors.map((credit) => (
           <p>
-            <TmdbLink key={credit.id} url={"/person/" + credit.personId}>
+            <TmdbLink key={credit.id} path={"/person/" + credit.personId}>
               {credit.name}
             </TmdbLink>
           </p>
@@ -70,7 +70,7 @@ export default function MovieDetails({ activeMovieId }) {
           {cast.map((credit) => (
             <tr key={credit.id}>
               <td>
-                <TmdbLink url={"/person/" + credit.personId}>
+                <TmdbLink path={"/person/" + credit.personId}>
                   {credit.name}
                 </TmdbLink>
               </td>
@@ -81,7 +81,7 @@ export default function MovieDetails({ activeMovieId }) {
         <h2>Production</h2>
         {production.map((credit) => (
           <p key={credit.id}>
-            <TmdbLink url={"/person/" + credit.personId}>
+            <TmdbLink path={"/person/" + credit.personId}>
               {credit.name}
             </TmdbLink>
             : {credit.job}
