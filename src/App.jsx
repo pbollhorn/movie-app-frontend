@@ -5,6 +5,7 @@ import { Outlet } from "react-router-dom";
 import MovieDetails from "./components/MovieDetails.jsx";
 import api from "./apiFacade.js";
 import Modal from "./components/Modal/Modal.jsx";
+import useWindowWidth from "./hooks/useWindowWidth.js";
 
 export default function App() {
   // useEffect for setting dark/light mode according to browser settings
@@ -17,17 +18,7 @@ export default function App() {
     }
   }, []);
 
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleWindowResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleWindowResize);
-
-    return () => window.removeEventListener("resize", handleWindowResize);
-  }, []);
+  const windowWidth = useWindowWidth();
 
   const [loggedIn, setLoggedIn] = useState(api.loggedIn());
 
