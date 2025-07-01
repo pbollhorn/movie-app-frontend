@@ -21,16 +21,16 @@ export default function App() {
 
   const [activeMovieId, setActiveMovieId] = useState(null);
 
-  const [isModalOpen, setModalOpen] = useState(true);
-
   return (
-    <div className={styles.app}>
-      <Modal isOpen={isModalOpen}>
-        <p>Hello from modal</p>
+    <>
+      <div className={styles.app}>
+        <Sidebar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+        <Outlet context={{ loggedIn, setLoggedIn, setActiveMovieId }} />
+        <MovieDetails activeMovieId={activeMovieId} />
+      </div>
+      <Modal activeMovieId={activeMovieId} setActiveMovieId={setActiveMovieId}>
+        <MovieDetails activeMovieId={activeMovieId} />
       </Modal>
-      <Sidebar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
-      <Outlet context={{ loggedIn, setLoggedIn, setActiveMovieId }} />
-      <MovieDetails activeMovieId={activeMovieId} />
-    </div>
+    </>
   );
 }
