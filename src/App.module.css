@@ -1,29 +1,29 @@
-.app {
+.desktopView {
   display: flex;
   height: 100vh;
 }
 
-/* .app > div {
+/* .desktopView > div {
   flex: 1; Give 33% of width to each child div
   overflow: auto; enables independent scrolling
   height: 100%; ensures it fills the height of .app
 } */
 
-.app > div:nth-child(1) {
+.desktopView > div:nth-child(1) {
   flex: 0 0 20%; /* 20% width, don't grow or shrink */
   overflow: auto;
   height: 100%;
   padding-left: 1rem;
 }
 
-.app > div:nth-child(2) {
+.desktopView > div:nth-child(2) {
   flex: 0 0 30%; /* 30% width, don't grow or shrink */
   overflow: auto;
   height: 100%;
   padding: 0 1rem;
 }
 
-.app > div:nth-child(3) {
+.desktopView > div:nth-child(3) {
   /* Take up the remaining vertical space */
   overflow: auto;
   height: 100%;

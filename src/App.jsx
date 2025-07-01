@@ -17,20 +17,42 @@ export default function App() {
     }
   }, []);
 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
+
   const [loggedIn, setLoggedIn] = useState(api.loggedIn());
 
   const [activeMovieId, setActiveMovieId] = useState(null);
 
-  return (
-    <>
-      <div className={styles.app}>
+  if (windowWidth < 768) {
+    return (
+      <div>
         <Sidebar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
         <Outlet context={{ loggedIn, setLoggedIn, setActiveMovieId }} />
-        <MovieDetails activeMovieId={activeMovieId} />
+        <Modal
+          activeMovieId={activeMovieId}
+          setActiveMovieId={setActiveMovieId}
+        >
+          <MovieDetails activeMovieId={activeMovieId} />
+        </Modal>
       </div>
-      <Modal activeMovieId={activeMovieId} setActiveMovieId={setActiveMovieId}>
-        <MovieDetails activeMovieId={activeMovieId} />
-      </Modal>
-    </>
+    );
+  }
+
+  return (
+    <div className={styles.desktopView}>
+      <Sidebar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+      <Outlet context={{ loggedIn, setLoggedIn, setActiveMovieId }} />
+      <MovieDetails activeMovieId={activeMovieId} />
+    </div>
   );
 }
