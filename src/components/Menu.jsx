@@ -1,10 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
-import styles from "./Sidebar.module.css";
+import styles from "./Menu.module.css";
 import TmdbLogo from "../assets/TmdbLogo.svg";
 import api from "../apiFacade.js";
 import TmdbLink from "./TmdbLink.jsx";
+import Logo from "./Logo.jsx";
 
-export default function Sidebar({ loggedIn, setLoggedIn }) {
+export default function Menu({ loggedIn, setLoggedIn }) {
   const navigate = useNavigate();
 
   function handleLogoutClick() {
@@ -14,11 +15,8 @@ export default function Sidebar({ loggedIn, setLoggedIn }) {
   }
 
   return (
-    <div className={styles.sidebar}>
-      <h1>
-        <span style={{ color: "var(--movieapp-green)" }}>MOVIE</span>
-        <span style={{ color: "var(--movieapp-lightblue)" }}>APP</span>
-      </h1>
+    <div className={styles.menu}>
+              <Logo/>
       <nav>
         <Link to="/">Search</Link>
         <Link to="/ratings">Ratings</Link>

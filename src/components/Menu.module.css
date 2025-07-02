@@ -1,4 +1,4 @@
-.sidebar {
+.menu {
   background-color: var(--sidebar-bg);
   color: var(--sidebar-fg);
   a:link,
@@ -10,13 +10,13 @@
   }
 }
 
-.sidebar nav {
+.menu nav {
   display: flex;
   flex-direction: column;
   gap: 1rem; /* adds space between the links */
 }
 
-.sidebar button {
+.menu button {
   background: none;
   border: none;
   color: white;

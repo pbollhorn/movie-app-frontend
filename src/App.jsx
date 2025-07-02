@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "./App.module.css";
-import Sidebar from "./components/Sidebar.jsx";
+import Menu from "./components/Menu.jsx";
 import { Outlet } from "react-router-dom";
 import MovieDetails from "./components/MovieDetails.jsx";
 import api from "./apiFacade.js";
@@ -28,7 +28,7 @@ export default function App() {
   if (windowWidth < 768) {
     return (
       <div>
-        <Sidebar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+        <Menu loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
         <Outlet context={{ loggedIn, setLoggedIn, setActiveMovieId }} />
         <Modal
           activeMovieId={activeMovieId}
@@ -45,7 +45,7 @@ export default function App() {
   // Desktop view
   return (
     <div className={styles.desktopView}>
-      <Sidebar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+      <Menu loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
       <Outlet context={{ loggedIn, setLoggedIn, setActiveMovieId }} />
       <MovieDetails activeMovieId={activeMovieId} />
     </div>
