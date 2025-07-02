@@ -1,6 +1,5 @@
 .menu {
-  background-color: var(--sidebar-bg);
-  color: var(--sidebar-fg);
+  color: var(--menu-fg);
   a:link,
   a:visited,
   a:hover,

@@ -5,6 +5,7 @@ import { Outlet } from "react-router-dom";
 import MovieDetails from "./components/MovieDetails.jsx";
 import api from "./apiFacade.js";
 import Modal from "./components/Modal/Modal.jsx";
+import Logo from "./components/Logo.jsx";
 import useWindowWidth from "./hooks/useWindowWidth.js";
 
 export default function App() {
@@ -45,7 +46,10 @@ export default function App() {
   // Desktop view
   return (
     <div className={styles.desktopView}>
-      <Menu loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+      <div>
+        <Logo/>
+        <Menu loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+      </div>
       <Outlet context={{ loggedIn, setLoggedIn, setActiveMovieId }} />
       <MovieDetails activeMovieId={activeMovieId} />
     </div>

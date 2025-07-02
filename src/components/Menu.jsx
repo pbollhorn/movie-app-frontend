@@ -3,7 +3,6 @@ import styles from "./Menu.module.css";
 import TmdbLogo from "../assets/TmdbLogo.svg";
 import api from "../apiFacade.js";
 import TmdbLink from "./TmdbLink.jsx";
-import Logo from "./Logo.jsx";
 
 export default function Menu({ loggedIn, setLoggedIn }) {
   const navigate = useNavigate();
@@ -16,7 +15,6 @@ export default function Menu({ loggedIn, setLoggedIn }) {
 
   return (
     <div className={styles.menu}>
-              <Logo/>
       <nav>
         <Link to="/">Search</Link>
         <Link to="/ratings">Ratings</Link>
