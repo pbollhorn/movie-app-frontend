@@ -1,8 +1,8 @@
 import { useState } from "react";
 import styles from "./MovieCard.module.css";
-import NoOpinion from "../assets/NoOpinion.svg";
-import ThumbsUp from "../assets/ThumbsUp.svg";
-import ThumbsDown from "../assets/ThumbsDown.svg";
+import NotRated from "../assets/NotRated.svg";
+import GoodRating from "../assets/GoodRating.svg";
+import OkRating from "../assets/OkRating.svg";
 import NoPoster from "../assets/NoPoster.png";
 import api from "../apiFacade.js";
 
@@ -12,13 +12,13 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
   let opinionPic;
   switch (opinion) {
     case null:
-      opinionPic = NoOpinion;
+      opinionPic = NotRated;
       break;
     case true:
-      opinionPic = ThumbsUp;
+      opinionPic = GoodRating;
       break;
     case false:
-      opinionPic = ThumbsDown;
+      opinionPic = OkRating;
       break;
   }
 

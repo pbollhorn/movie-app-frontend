@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
 import MovieCardList from "./MovieCardList.jsx";
 import api from "../apiFacade.js";
-import NoOpinion from "../assets/NoOpinion.svg";
-import ThumbsUp from "../assets/ThumbsUp.svg";
-import ThumbsDown from "../assets/ThumbsDown.svg";
+import NotRated from "../assets/NotRated.svg";
+import GoodRating from "../assets/GoodRating.svg";
+import OkRating from "../assets/OkRating.svg";
 
 export default function Ratings() {
   const [list, setList] = useState([]);
@@ -23,14 +23,15 @@ export default function Ratings() {
     <div>
       <h1>Your Ratings</h1>
       <div>
+        <p>How to rate movies:</p>
         <p>
-          <img src={ThumbsUp} style={{ height: "1.5rem" }} />: Like
+          <img src={GoodRating} style={{ height: "1.5rem" }} />= Good
         </p>
         <p>
-          <img src={ThumbsDown} style={{ height: "1.5rem" }} />: OK / dislike
+          <img src={OkRating} style={{ height: "1.5rem" }} />= OK / bad
         </p>
         <p>
-          <img src={NoOpinion} style={{ height: "1.5rem" }} />: Not rated
+          <img src={NotRated} style={{ height: "1.5rem" }} />= Not rated
         </p>
       </div>
       <MovieCardList list={list} setActiveMovieId={setActiveMovieId} />
