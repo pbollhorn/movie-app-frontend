@@ -1,35 +1,35 @@
 import { useState } from "react";
 import styles from "./MovieCard.module.css";
-import NotRated from "../assets/NotRated.svg";
+import NoRating from "../assets/NoRating.svg";
 import GoodRating from "../assets/GoodRating.svg";
 import OkRating from "../assets/OkRating.svg";
 import NoPoster from "../assets/NoPoster.png";
 import api from "../apiFacade.js";
 
 export default function MovieCard({ movieData, setActiveMovieId }) {
-  const [opinion, setOpinion] = useState(movieData.likes);
+  const [rating, setRating] = useState(movieData.likes);
 
-  let opinionPic;
-  switch (opinion) {
+  let ratingPic;
+  switch (rating) {
     case null:
-      opinionPic = NotRated;
+      ratingPic = NoRating;
       break;
     case true:
-      opinionPic = GoodRating;
+      ratingPic = GoodRating;
       break;
     case false:
-      opinionPic = OkRating;
+      ratingPic = OkRating;
       break;
   }
 
-  function handleOpinionPicClick(event) {
+  function handleRatingPicClick(event) {
     event.stopPropagation();
     if (api.loggedIn() === false) {
       alert("Login to like movies and get recommendations");
       return;
     }
 
-    switch (opinion) {
+    switch (rating) {
       case null:
         fetch(
           "https://movie.jcoder.dk/api/" + "movies/" + movieData.id,
@@ -37,7 +37,7 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
         )
           .then((response) => {
             if (response.ok) {
-              setOpinion(true);
+              setRating(true);
             } else {
               alert("Error requesting server");
             }
@@ -51,7 +51,7 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
         )
           .then((response) => {
             if (response.ok) {
-              setOpinion(false);
+              setRating(false);
             } else {
               alert("Error requesting server");
             }
@@ -65,7 +65,7 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
         )
           .then((response) => {
             if (response.ok) {
-              setOpinion(null);
+              setRating(null);
             } else {
               alert("Error requesting server");
             }
@@ -101,9 +101,9 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
             ratingAsString(movieData.rating) +
             "   "}
           <img
-            src={opinionPic}
-            onClick={handleOpinionPicClick}
-            className={styles.opinionImage}
+            src={ratingPic}
+            onClick={handleRatingPicClick}
+            className={styles.ratingImage}
           />
         </p>
       </div>

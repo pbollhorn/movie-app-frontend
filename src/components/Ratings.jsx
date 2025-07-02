@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
 import MovieCardList from "./MovieCardList.jsx";
 import api from "../apiFacade.js";
-import NotRated from "../assets/NotRated.svg";
+import NoRating from "../assets/NoRating.svg";
 import GoodRating from "../assets/GoodRating.svg";
 import OkRating from "../assets/OkRating.svg";
 
@@ -31,7 +31,7 @@ export default function Ratings() {
           <img src={OkRating} style={{ height: "1.5rem" }} />= OK / bad
         </p>
         <p>
-          <img src={NotRated} style={{ height: "1.5rem" }} />= Not rated
+          <img src={NoRating} style={{ height: "1.5rem" }} />= Not rated
         </p>
       </div>
       <MovieCardList list={list} setActiveMovieId={setActiveMovieId} />
