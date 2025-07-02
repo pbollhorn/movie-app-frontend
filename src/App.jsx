@@ -24,6 +24,7 @@ export default function App() {
 
   const [activeMovieId, setActiveMovieId] = useState(null);
 
+  // Mobile view
   if (windowWidth < 768) {
     return (
       <div>
@@ -39,6 +40,9 @@ export default function App() {
     );
   }
 
+  // Tablet view
+
+  // Desktop view
   return (
     <div className={styles.desktopView}>
       <Sidebar loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
