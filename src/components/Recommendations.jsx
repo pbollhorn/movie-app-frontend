@@ -20,7 +20,8 @@ export default function Recommendations() {
 
   return (
     <div>
-      <h1>Recommendations for me</h1>
+      <h1>Recommendations for you</h1>
+      <p>Based on your ratings</p>
       <MovieCardList list={list} setActiveMovieId={setActiveMovieId} />
     </div>
   );
