@@ -25,14 +25,16 @@ export default function App() {
 
   const [activeMovieId, setActiveMovieId] = useState(null);
 
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+
   // Mobile view
   if (windowWidth < 768) {
     return (
       <div className={styles.mobileView}>
         <div>
           <img src={Logo} style={{ height: "1.75rem" }} />
-          <button>☰</button>
-          <Menu loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+          <button onClick={() => setMenuIsOpen(!menuIsOpen)}>☰</button>
+          {menuIsOpen && <Menu loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
         </div>
         <Outlet context={{ loggedIn, setLoggedIn, setActiveMovieId }} />
         <Modal
