@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 import MovieDetails from "./components/MovieDetails.jsx";
 import api from "./apiFacade.js";
 import Modal from "./components/Modal/Modal.jsx";
-import Logo from "./components/Logo.jsx";
+import Logo from "./assets/Logo.png";
 import useWindowWidth from "./hooks/useWindowWidth.js";
 
 export default function App() {
@@ -28,8 +28,12 @@ export default function App() {
   // Mobile view
   if (windowWidth < 768) {
     return (
-      <div>
-        <Menu loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+      <div className={styles.mobileView}>
+        <div>
+          <img src={Logo} style={{ height: "1.75rem" }} />
+          <button>☰</button>
+          <Menu loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+        </div>
         <Outlet context={{ loggedIn, setLoggedIn, setActiveMovieId }} />
         <Modal
           activeMovieId={activeMovieId}
@@ -47,7 +51,7 @@ export default function App() {
   return (
     <div className={styles.desktopView}>
       <div>
-        <Logo/>
+        <img src={Logo} style={{ height: "1.75rem" }} />
         <Menu loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
       </div>
       <Outlet context={{ loggedIn, setLoggedIn, setActiveMovieId }} />

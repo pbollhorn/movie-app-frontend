@@ -1,13 +1,17 @@
+/* ----------------------
+        Mobile view
+   ---------------------- */
+.mobileView > div:nth-child(1) {
+  background-color: var(--menu-bg);
+}
+
+/* ----------------------
+        Desktop view
+   ---------------------- */
 .desktopView {
   display: flex;
   height: 100vh;
 }
-
-/* .desktopView > div {
-  flex: 1; Give 33% of width to each child div
-  overflow: auto; enables independent scrolling
-  height: 100%; ensures it fills the height of .app
-} */
 
 .desktopView > div:nth-child(1) {
   flex: 0 0 20%; /* 20% width, don't grow or shrink */
