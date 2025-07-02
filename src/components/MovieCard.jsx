@@ -7,7 +7,7 @@ import NoPoster from "../assets/NoPoster.png";
 import api from "../apiFacade.js";
 
 export default function MovieCard({ movieData, setActiveMovieId }) {
-  const [rating, setRating] = useState(movieData.likes);
+  const [rating, setRating] = useState(movieData.rating);
 
   let ratingPic;
   switch (rating) {
@@ -25,7 +25,7 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
   function handleRatingPicClick(event) {
     event.stopPropagation();
     if (api.loggedIn() === false) {
-      alert("Login to like movies and get recommendations");
+      alert("Login to rate movies and get recommendations");
       return;
     }
 
