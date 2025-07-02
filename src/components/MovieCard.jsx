@@ -98,7 +98,7 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
             " " +
             movieData.originalLanguage +
             " " +
-            ratingAsString(movieData.rating) +
+            scoreAsString(movieData.score) +
             "   "}
           <img
             src={ratingPic}
@@ -111,9 +111,9 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
   );
 }
 
-function ratingAsString(rating) {
-  if (rating === null) {
+function scoreAsString(score) {
+  if (score === null) {
     return "";
   }
-  return rating.toFixed(1) + "/10";
+  return score.toFixed(1) + "/10";
 }
