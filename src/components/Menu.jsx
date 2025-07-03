@@ -42,8 +42,6 @@ export default function Menu({ loggedIn, setLoggedIn, setMenuIsOpen }) {
       <br />
       <br />
       <br />
-      <br />
-      <br />
       <div>
         <TmdbLink>
           <img src={TmdbLogo} className={styles.tmdbLogo} alt="TMDB Logo" />
