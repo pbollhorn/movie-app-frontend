@@ -4,27 +4,38 @@ import TmdbLogo from "../assets/TmdbLogo.svg";
 import api from "../apiFacade.js";
 import TmdbLink from "./TmdbLink.jsx";
 
-export default function Menu({ loggedIn, setLoggedIn }) {
+export default function Menu({ loggedIn, setLoggedIn, setMenuIsOpen }) {
   const navigate = useNavigate();
 
   function handleLogoutClick() {
     api.logout();
     setLoggedIn(false);
     navigate("/login");
+    setMenuIsOpen(false);
   }
 
   return (
     <div className={styles.menu}>
       <nav>
-        <Link to="/">Search</Link>
-        <Link to="/ratings">Ratings</Link>
-        <Link to="/recommendations">Recommendations</Link>
+        <Link to="/" onClick={() => setMenuIsOpen(false)}>
+          Search
+        </Link>
+        <Link to="/ratings" onClick={() => setMenuIsOpen(false)}>
+          Ratings
+        </Link>
+        <Link to="/recommendations" onClick={() => setMenuIsOpen(false)}>
+          Recommendations
+        </Link>
         {loggedIn ? (
           <button onClick={handleLogoutClick}>Logout</button>
         ) : (
           <>
-            <Link to="/login">Login</Link>
-            <Link to="/create-account">Create account</Link>
+            <Link to="/login" onClick={() => setMenuIsOpen(false)}>
+              Login
+            </Link>
+            <Link to="/create-account" onClick={() => setMenuIsOpen(false)}>
+              Create account
+            </Link>
           </>
         )}
       </nav>

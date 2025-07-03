@@ -34,7 +34,13 @@ export default function App() {
         <div>
           <img src={Logo} style={{ height: "1.75rem" }} />
           <button onClick={() => setMenuIsOpen(!menuIsOpen)}>☰</button>
-          {menuIsOpen && <Menu loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
+          {menuIsOpen && (
+            <Menu
+              loggedIn={loggedIn}
+              setLoggedIn={setLoggedIn}
+              setMenuIsOpen={setMenuIsOpen}
+            />
+          )}
         </div>
         <Outlet context={{ loggedIn, setLoggedIn, setActiveMovieId }} />
         <Modal
@@ -54,7 +60,11 @@ export default function App() {
     <div className={styles.desktopView}>
       <div>
         <img src={Logo} style={{ height: "1.75rem" }} />
-        <Menu loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+        <Menu
+          loggedIn={loggedIn}
+          setLoggedIn={setLoggedIn}
+          setMenuIsOpen={setMenuIsOpen}
+        />
       </div>
       <Outlet context={{ loggedIn, setLoggedIn, setActiveMovieId }} />
       <MovieDetails activeMovieId={activeMovieId} />
