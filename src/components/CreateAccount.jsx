@@ -20,40 +20,54 @@ export default function CreateAccount() {
 
   return (
     <div>
+      {"screen.width: " + screen.width}
+      <br />
+      {"screen.height: " + screen.height}
+      <br />
+      {"window.devicePixelRatio: " + window.devicePixelRatio}
+      <br />
+      {"window.innerWidth: " + window.innerWidth}
+      <br />
+      {"window.outerWidth: " + window.outerWidth}
+      <br />
+      {"window.innerHeight: " + window.innerHeight}
+      <br />
+      {"window.outerHeight: " + window.outerHeight}
+      <br />
       {JSON.stringify(account)}
       <h1>Create account</h1>
 
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">Choose username:</label>
-        <br/>
+        <br />
         <input
           id="username"
           type="text"
           value={account.username}
           onChange={handleChange}
         />
-        <br/>
-        <br/>
+        <br />
+        <br />
         <label htmlFor="password">Choose password:</label>
-        <br/>
+        <br />
         <input
           id="password"
           type="password"
           value={account.password}
           onChange={handleChange}
         />
-        <br/>
-        <br/>
+        <br />
+        <br />
         <label htmlFor="repeatPassword">Repeat password:</label>
-        <br/>
+        <br />
         <input
           id="repeatPassword"
           type="password"
           value={account.repeatPassword}
           onChange={handleChange}
         />
-        <br/>
-        <br/>
+        <br />
+        <br />
         <button type="submit">Create</button>
       </form>
     </div>
