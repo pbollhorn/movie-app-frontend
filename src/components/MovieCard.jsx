@@ -76,7 +76,10 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
   }
 
   return (
-    <div className={styles.movieCard} onClick={() => setActiveMovieId(movieData.id)}>
+    <div
+      className={styles.movieCard}
+      onClick={() => setActiveMovieId(movieData.id)}
+    >
       <img
         src={
           movieData.posterPath
@@ -87,10 +90,18 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
       />
       <div>
         <p>
-          <b>{movieData.title}</b> <em>{movieData.originalTitle!=movieData.title && movieData.originalTitle}</em>
+          <b>{movieData.title}</b>
         </p>
         <p>
-          {movieData.genres[0] && movieData.genres[0]}, {movieData.genres[1] && movieData.genres[1]}, {movieData.genres[2] && movieData.genres[2]}
+          <em>
+            {movieData.originalTitle != movieData.title &&
+              movieData.originalTitle}
+          </em>
+        </p>
+        <p>
+          {movieData.genres[0] && movieData.genres[0]},{" "}
+          {movieData.genres[1] && movieData.genres[1]},{" "}
+          {movieData.genres[2] && movieData.genres[2]}
         </p>
         <p>
           {"" +
