@@ -5,7 +5,7 @@ import GoodRating from "../assets/GoodRating.svg";
 import OkRating from "../assets/OkRating.svg";
 import NoPoster from "../assets/NoPoster.png";
 import api from "../apiFacade.js";
-import { scoreAsString, genresAsString } from "../helperFunctions.js";
+import formatAsString from "../formatAsString.js";
 
 export default function MovieCard({ movieData, setActiveMovieId }) {
   const [rating, setRating] = useState(movieData.rating);
@@ -99,14 +99,14 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
               movieData.originalTitle}
           </em>
         </p>
-        <p>{genresAsString(movieData.genres)}</p>
+        <p>{formatAsString.genresAsString(movieData.genres)}</p>
         <p>
           {"" +
             movieData.releaseDate[0] +
             " " +
             movieData.originalLanguage +
             " " +
-            scoreAsString(movieData.score) +
+            formatAsString.scoreAsString(movieData.score) +
             "   "}
           <img
             src={ratingPic}

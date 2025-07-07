@@ -1,6 +1,6 @@
 import languages from "./assets/Languages.json";
 
-export function languageAsString(code) {
+function languageAsString(code) {
   const languageName = languages.find(
     (lang) => lang.iso_639_1 == code
   ).english_name;
@@ -8,18 +8,18 @@ export function languageAsString(code) {
   return code + " (" + languageName + ")";
 }
 
-export function scoreAsString(score) {
+function scoreAsString(score) {
   if (score === null) {
     return "";
   }
   return score.toFixed(1) + "/10";
 }
 
-export function genresAsString(genres) {
+function genresAsString(genres) {
   return genres.join(", ");
 }
 
-export function dateAsString(date) {
+function dateAsString(date) {
   const [year, month, day] = date;
 
   // Pad month and day with leading zeros if needed
@@ -28,3 +28,10 @@ export function dateAsString(date) {
 
   return `${year}-${mm}-${dd}`;
 }
+
+export default {
+  languageAsString,
+  scoreAsString,
+  genresAsString,
+  dateAsString,
+};

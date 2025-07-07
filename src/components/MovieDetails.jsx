@@ -2,11 +2,7 @@ import { useState, useEffect } from "react";
 import styles from "./MovieDetails.module.css";
 import TmdbLink from "./TmdbLink.jsx";
 import NoBackdrop from "../assets/NoBackdrop.png";
-import {
-  languageAsString,
-  scoreAsString,
-  dateAsString,
-} from "../helperFunctions.js";
+import formatAsString from "../formatAsString.js";
 
 export default function MovieDetails({ activeMovieId }) {
   const [movieDetails, setMovieDetails] = useState(null);
@@ -44,10 +40,13 @@ export default function MovieDetails({ activeMovieId }) {
         <h1>{movieDetails.title}</h1>
         <p>Original title: {movieDetails.originalTitle}</p>
         <p>
-          Original language: {languageAsString(movieDetails.originalLanguage)}
+          Original language:{" "}
+          {formatAsString.languageAsString(movieDetails.originalLanguage)}
         </p>
-        <p>Release date: {dateAsString(movieDetails.releaseDate)}</p>
-        <p>TMDB score: {scoreAsString(movieDetails.score)}</p>
+        <p>
+          Release date: {formatAsString.dateAsString(movieDetails.releaseDate)}
+        </p>
+        <p>TMDB score: {formatAsString.scoreAsString(movieDetails.score)}</p>
         <p>
           <TmdbLink path={"/movie/" + movieDetails.id}>
             Link to movie on TMDB
