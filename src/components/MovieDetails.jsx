@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import styles from "./MovieDetails.module.css";
 import TmdbLink from "./TmdbLink.jsx";
 import NoBackdrop from "../assets/NoBackdrop.png";
+import {getLanguageNameFromCode} from "../helperFunctions.js"
 
 export default function MovieDetails({ activeMovieId }) {
   const [movieDetails, setMovieDetails] = useState(null);
@@ -38,7 +39,7 @@ export default function MovieDetails({ activeMovieId }) {
       <div>
         <h1>{movieDetails.title}</h1>
         <p>Original title: {movieDetails.originalTitle}</p>
-        <p>Original language: {movieDetails.originalLanguage}</p>
+        <p>Original language: {movieDetails.originalLanguage} ({getLanguageNameFromCode(movieDetails.originalLanguage)})</p>
         <p>
           Release date: {movieDetails.releaseDate[0]}-
           {movieDetails.releaseDate[1]}-{movieDetails.releaseDate[2]}
