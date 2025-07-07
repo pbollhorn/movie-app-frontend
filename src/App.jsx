@@ -6,7 +6,7 @@ import MovieDetails from "./components/MovieDetails.jsx";
 import api from "./apiFacade.js";
 import Modal from "./components/Modal/Modal.jsx";
 import Logo from "./assets/Logo.png";
-import useWindowWidth from "./hooks/useWindowWidth.js";
+import useWindowInnerWidthInRem from "./hooks/useWindowInnerWidthInRem.js";
 
 export default function App() {
   // useEffect for setting dark/light mode according to browser settings
@@ -19,7 +19,7 @@ export default function App() {
     }
   }, []);
 
-  const windowWidth = useWindowWidth();
+  const widthInRem = useWindowInnerWidthInRem();
 
   const [loggedIn, setLoggedIn] = useState(api.loggedIn());
 
@@ -28,7 +28,7 @@ export default function App() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   // Mobile view
-  if (windowWidth < 768) {
+  if (widthInRem < 48) {
     return (
       <div className={styles.mobileView}>
         <div>
