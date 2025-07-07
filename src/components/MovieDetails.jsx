@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import styles from "./MovieDetails.module.css";
 import TmdbLink from "./TmdbLink.jsx";
 import NoBackdrop from "../assets/NoBackdrop.png";
-import {getLanguageNameFromCode} from "../helperFunctions.js"
+import {getLanguageNameFromCode, scoreAsString} from "../helperFunctions.js"
 
 export default function MovieDetails({ activeMovieId }) {
   const [movieDetails, setMovieDetails] = useState(null);
@@ -44,7 +44,7 @@ export default function MovieDetails({ activeMovieId }) {
           Release date: {movieDetails.releaseDate[0]}-
           {movieDetails.releaseDate[1]}-{movieDetails.releaseDate[2]}
         </p>
-        <p>TMDB score: {movieDetails.score}/10</p>
+        <p>TMDB score: {scoreAsString(movieDetails.score)}</p>
         <p>
           <TmdbLink path={"/movie/" + movieDetails.id}>
             Link to movie on TMDB
