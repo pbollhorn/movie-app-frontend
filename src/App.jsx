@@ -54,6 +54,27 @@ export default function App() {
   }
 
   // Tablet view
+  if (widthInRem < 58) {
+    return (
+      <div className={styles.tabletView}>
+        <div>
+          <img src={Logo} style={{ height: "1.75rem" }} />
+          <Menu
+            loggedIn={loggedIn}
+            setLoggedIn={setLoggedIn}
+            setMenuIsOpen={setMenuIsOpen}
+          />
+        </div>
+        <Outlet context={{ loggedIn, setLoggedIn, setActiveMovieId }} />
+        <Modal
+          activeMovieId={activeMovieId}
+          setActiveMovieId={setActiveMovieId}
+        >
+          <MovieDetails activeMovieId={activeMovieId} />
+        </Modal>
+      </div>
+    );
+  }
 
   // Desktop view
   return (
