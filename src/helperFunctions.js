@@ -1,7 +1,11 @@
 import languages from "./assets/Languages.json";
 
-export function getLanguageNameFromCode(code) {
-  return languages.find((lang) => lang.iso_639_1 == code).english_name;
+export function languageAsString(code) {
+  const languageName = languages.find(
+    (lang) => lang.iso_639_1 == code
+  ).english_name;
+
+  return code + " (" + languageName + ")";
 }
 
 export function scoreAsString(score) {
@@ -13,4 +17,14 @@ export function scoreAsString(score) {
 
 export function genresAsString(genres) {
   return genres.join(", ");
+}
+
+export function dateAsString(date) {
+  const [year, month, day] = date;
+
+  // Pad month and day with leading zeros if needed
+  const mm = String(month).padStart(2, "0");
+  const dd = String(day).padStart(2, "0");
+
+  return `${year}-${mm}-${dd}`;
 }
