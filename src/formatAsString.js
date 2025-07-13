@@ -29,9 +29,23 @@ function dateAsString(date) {
   return `${year}-${mm}-${dd}`;
 }
 
+function runtimeAsString(runtime) {
+  const hours = Math.floor(runtime / 60);
+  const minutes = runtime % 60;
+
+  let result = "";
+  if (hours > 0) {
+    result += `${hours}h `;
+  }
+  result += `${minutes}m`;
+
+  return result;
+}
+
 export default {
   languageAsString,
   scoreAsString,
   genresAsString,
   dateAsString,
+  runtimeAsString,
 };

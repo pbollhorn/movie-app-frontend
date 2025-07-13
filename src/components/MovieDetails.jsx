@@ -43,6 +43,7 @@ export default function MovieDetails({ activeMovieId }) {
           Original language:{" "}
           {formatAsString.languageAsString(movieDetails.originalLanguage)}
         </p>
+        <p>Runtime: {formatAsString.runtimeAsString(movieDetails.runtime)}</p>
         <p>
           Release date: {formatAsString.dateAsString(movieDetails.releaseDate)}
         </p>
