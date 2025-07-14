@@ -94,10 +94,7 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
           <b>{movieData.title}</b>
         </p>
         <p>
-          <em>
-            {movieData.originalTitle != movieData.title &&
-              movieData.originalTitle}
-          </em>
+            {movieData.originalTitle != movieData.title ? movieData.originalTitle : formatAsString.directorsAsString(movieData.directors)}
         </p>
         <p>{formatAsString.genresAsString(movieData.genres)}</p>
         <p>

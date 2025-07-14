@@ -15,6 +15,10 @@ function scoreAsString(score) {
   return score.toFixed(1) + "/10";
 }
 
+function directorsAsString(directors) {
+  return directors.join(", ");
+}
+
 function genresAsString(genres) {
   return genres.join(", ");
 }
@@ -45,6 +49,7 @@ function runtimeAsString(runtime) {
 export default {
   languageAsString,
   scoreAsString,
+  directorsAsString,
   genresAsString,
   dateAsString,
   runtimeAsString,
