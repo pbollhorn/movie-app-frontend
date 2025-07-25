@@ -22,9 +22,9 @@ export default function MovieDetails({ activeMovieId }) {
   }
 
   const directors = movieDetails.credits.filter((c) => c.job === "Director");
-  const cast = movieDetails.credits.filter((c) => c.department === "Cast");
+  const cast = movieDetails.credits.filter((c) => c.job === "Cast Member");
   const production = movieDetails.credits.filter(
-    (c) => c.department !== "Cast" && c.job !== "Director"
+    (c) => c.job !== "Cast Member" && c.job !== "Director"
   );
 
   return (
