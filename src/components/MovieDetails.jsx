@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import styles from "./MovieDetails.module.css";
 import TmdbLink from "./TmdbLink.jsx";
 import NoBackdrop from "../assets/NoBackdrop.png";
@@ -64,9 +65,9 @@ export default function MovieDetails({ activeMovieId }) {
         <h2>Directed by</h2>
         {directors.map((credit) => (
           <p>
-            <TmdbLink key={credit.id} path={"/person/" + credit.personId}>
+            <Link key={credit.id} to={"/person/" + credit.personId}>
               {credit.name}
-            </TmdbLink>
+            </Link>
           </p>
         ))}
         <h2>Cast</h2>
@@ -74,9 +75,7 @@ export default function MovieDetails({ activeMovieId }) {
           {cast.map((credit) => (
             <tr key={credit.id}>
               <td>
-                <TmdbLink path={"/person/" + credit.personId}>
-                  {credit.name}
-                </TmdbLink>
+                <Link to={"/person/" + credit.personId}>{credit.name}</Link>
               </td>
               <td>{credit.character}</td>
             </tr>
@@ -85,10 +84,8 @@ export default function MovieDetails({ activeMovieId }) {
         <h2>Production</h2>
         {production.map((credit) => (
           <p key={credit.id}>
-            <TmdbLink path={"/person/" + credit.personId}>
-              {credit.name}
-            </TmdbLink>
-            : {credit.job}
+            <Link to={"/person/" + credit.personId}>{credit.name}</Link>:{" "}
+            {credit.job}
           </p>
         ))}
       </div>
