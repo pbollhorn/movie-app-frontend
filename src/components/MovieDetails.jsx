@@ -62,6 +62,15 @@ export default function MovieDetails({ activeMovieId }) {
         <p>{movieDetails.genres[5] && movieDetails.genres[5]}</p>
         <p>{movieDetails.overview}</p>
 
+        {movieDetails.collection && (
+          <p>
+            Part of the{" "}
+            <Link to={"/collection/" + movieDetails.collection.id}>
+              {movieDetails.collection.name}
+            </Link>
+          </p>
+        )}
+
         <h2>Directed by</h2>
         {directors.map((credit) => (
           <p>

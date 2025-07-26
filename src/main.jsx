@@ -9,6 +9,7 @@ import Ratings from "./components/Ratings.jsx";
 import Recommendations from "./components/Recommendations.jsx";
 import CreateAccount from "./components/CreateAccount.jsx";
 import Person from "./components/Person.jsx";
+import Collection from "./components/Collection.jsx";
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,8 @@ const router = createBrowserRouter([
       { path: "/recommendations", element: <Recommendations /> },
       { path: "/login", element: <Login /> },
       { path: "/create-account", element: <CreateAccount /> },
-      { path: "/person/:id", element: <Person /> }
+      { path: "/person/:id", element: <Person /> },
+      { path: "/collection/:id", element: <Collection /> }
     ],
   },
 ]);
