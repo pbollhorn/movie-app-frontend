@@ -23,9 +23,26 @@ export default function MovieDetails({ activeMovieId }) {
   }
 
   const directors = movieDetails.credits.filter((c) => c.job === "Director");
-  const cast = movieDetails.credits.filter((c) => c.job === "Cast Member");
-  const production = movieDetails.credits.filter(
-    (c) => c.job !== "Cast Member" && c.job !== "Director"
+
+  const cast = movieDetails.credits.filter((c) => c.department === "Cast");
+
+  // List of all departments, excluding "Cast"
+  const departments = [
+    "Writing",
+    "Production",
+    "Directing",
+    "Sound",
+    "Art",
+    "Costume & Make-Up",
+    "Editing",
+    "Lighting",
+    "Camera",
+    "Visual Effects",
+    "Crew",
+  ];
+
+  const usedDepartments = departments.filter((department) =>
+    movieDetails.credits.some((credit) => credit.department === department)
   );
 
   return (
@@ -61,7 +78,6 @@ export default function MovieDetails({ activeMovieId }) {
         <p>{movieDetails.genres[4] && movieDetails.genres[4]}</p>
         <p>{movieDetails.genres[5] && movieDetails.genres[5]}</p>
         <p>{movieDetails.overview}</p>
-
         {movieDetails.collection && (
           <p>
             Part of the{" "}
@@ -70,7 +86,6 @@ export default function MovieDetails({ activeMovieId }) {
             </Link>
           </p>
         )}
-
         <h2>Directed by</h2>
         {directors.map((credit) => (
           <p>
@@ -80,22 +95,25 @@ export default function MovieDetails({ activeMovieId }) {
           </p>
         ))}
         <h2>Cast</h2>
-        <table>
-          {cast.map((credit) => (
-            <tr key={credit.id}>
-              <td>
-                <Link to={"/person/" + credit.personId}>{credit.name}</Link>
-              </td>
-              <td>{credit.character}</td>
-            </tr>
-          ))}
-        </table>
-        <h2>Production</h2>
-        {production.map((credit) => (
+        {cast.map((credit) => (
           <p key={credit.id}>
-            <Link to={"/person/" + credit.personId}>{credit.name}</Link>:{" "}
-            {credit.job}
+            <Link to={"/person/" + credit.personId}>{credit.name}</Link>
+            {": " + credit.character}
           </p>
+        ))}
+        {usedDepartments.map((department) => (
+          <>
+            <h2 key={department}>{department}</h2>
+
+            {movieDetails.credits
+              .filter((credit) => credit.department === department)
+              .map((credit) => (
+                <p key={credit.id}>
+                  <Link to={"/person/" + credit.personId}>{credit.name}</Link>
+                  {": " + credit.job}
+                </p>
+              ))}
+          </>
         ))}
       </div>
     </div>
