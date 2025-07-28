@@ -39,7 +39,7 @@ async function fetchSearch(text) {
     return data;
   } else {
     const response = await fetch(
-      "https://movie.jcoder.dk/api/movies/search-open?text=" + text
+      "https://movie.jcoder.dk/api/movies/search?text=" + text
     );
     const data = await response.json();
     return data;
