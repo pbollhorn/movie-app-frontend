@@ -5,7 +5,10 @@ import api from "../apiFacade.js";
 import TmdbLink from "./TmdbLink.jsx";
 
 export default function Collection() {
-  const [list, setList] = useState([]);
+  const [collectionData, setCollectionData] = useState({
+    name: "",
+    movies: [],
+  });
 
   const { setActiveMovieId } = useOutletContext();
 
@@ -17,15 +20,18 @@ export default function Collection() {
       .fetchData("movies/collection/" + id, api.makeOptions("GET", true))
       .then((data) => {
         console.log(data);
-        setList(data);
+        setCollectionData(data);
       });
   }, []); // Runs on mount
 
   return (
     <div>
-      <h1>Collection with id={id}</h1>
+      <h1>{collectionData.name}</h1>
       <TmdbLink path={"/collection/" + id}>Link to collection on TMDB</TmdbLink>
-      <MovieCardList list={list} setActiveMovieId={setActiveMovieId} />
+      <MovieCardList
+        list={collectionData.movies}
+        setActiveMovieId={setActiveMovieId}
+      />
     </div>
   );
 }
