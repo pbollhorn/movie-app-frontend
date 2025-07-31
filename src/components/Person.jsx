@@ -5,7 +5,7 @@ import api from "../apiFacade.js";
 import TmdbLink from "./TmdbLink.jsx";
 
 export default function Person() {
-  const [list, setList] = useState([]);
+  const [personData, setPersonData] = useState({ name: "", movies: [] });
 
   const { setActiveMovieId } = useOutletContext();
 
@@ -17,15 +17,19 @@ export default function Person() {
       .fetchData("movies/person/" + id, api.makeOptions("GET", true))
       .then((data) => {
         console.log(data);
-        setList(data);
+        setPersonData(data);
       });
   }, []); // Runs on mount
 
+
   return (
     <div>
-      <h1>Person with id={id}</h1>
+      <h1>{personData.name}</h1>
       <TmdbLink path={"/person/" + id}>Link to profile on TMDB</TmdbLink>
-      <MovieCardList list={list} setActiveMovieId={setActiveMovieId} />
+      <MovieCardList
+        list={personData.movies}
+        setActiveMovieId={setActiveMovieId}
+      />
     </div>
   );
 }
