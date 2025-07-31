@@ -8,11 +8,8 @@ function languageAsString(code) {
   return code + " (" + languageName + ")";
 }
 
-function scoreAsString(score) {
-  if (score === null) {
-    return "";
-  }
-  return score.toFixed(1) + "/10";
+function scoreAsString(voteAverage) {
+  return voteAverage.toFixed(1) + "/10";
 }
 
 function directorsAsString(directors) {

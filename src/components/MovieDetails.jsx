@@ -65,7 +65,13 @@ export default function MovieDetails({ activeMovieId }) {
         <p>
           Release date: {formatAsString.dateAsString(movieDetails.releaseDate)}
         </p>
-        <p>TMDB score: {formatAsString.scoreAsString(movieDetails.score)}</p>
+        <p>
+          {"TMDB score: " +
+            formatAsString.scoreAsString(movieDetails.voteAverage) +
+            " (" +
+            movieDetails.voteCount +
+            " votes)"}
+        </p>
         <p>
           <TmdbLink path={"/movie/" + movieDetails.id}>
             Link to movie on TMDB
@@ -86,21 +92,29 @@ export default function MovieDetails({ activeMovieId }) {
             </Link>
           </p>
         )}
-        <h2>Directed by</h2>
-        {directors.map((credit) => (
-          <p>
-            <Link key={credit.id} to={"/person/" + credit.personId}>
-              {credit.name}
-            </Link>
-          </p>
-        ))}
-        <h2>Cast</h2>
-        {cast.map((credit) => (
-          <p key={credit.id}>
-            <Link to={"/person/" + credit.personId}>{credit.name}</Link>
-            {": " + credit.character}
-          </p>
-        ))}
+        {directors.length > 0 && (
+          <>
+            <h2>Directed by</h2>
+            {directors.map((credit) => (
+              <p>
+                <Link key={credit.id} to={"/person/" + credit.personId}>
+                  {credit.name}
+                </Link>
+              </p>
+            ))}
+          </>
+        )}
+        {cast.length > 0 && (
+          <>
+            <h2>Cast</h2>
+            {cast.map((credit) => (
+              <p key={credit.id}>
+                <Link to={"/person/" + credit.personId}>{credit.name}</Link>
+                {": " + credit.character}
+              </p>
+            ))}
+          </>
+        )}
         {usedDepartments.map((department) => (
           <>
             <h2 key={department}>{department}</h2>

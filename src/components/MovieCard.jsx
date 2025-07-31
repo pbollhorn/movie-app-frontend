@@ -103,7 +103,7 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
             " " +
             movieData.originalLanguage +
             " " +
-            formatAsString.scoreAsString(movieData.score) +
+            formatAsString.scoreAsString(movieData.voteAverage) +
             "   "}
           <img
             src={ratingPic}
