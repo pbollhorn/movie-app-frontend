@@ -5,13 +5,13 @@ import MovieCardList from "./MovieCardList.jsx";
 
 export default function Search() {
   const [list, setList] = useState([]);
-  const searchTextRef = useRef(null);
+  const searchTitleRef = useRef(null);
 
   const { setActiveMovieId } = useOutletContext();
 
   async function handleSearchSubmit(event) {
     event.preventDefault();
-    const text = searchTextRef.current.value;
+    const text = searchTitleRef.current.value;
     const data = await fetchSearch(text);
     console.log(data);
     setList(data);
@@ -21,7 +21,7 @@ export default function Search() {
     <div>
       <h1>Search movies</h1>
       <form onSubmit={handleSearchSubmit}>
-        <input type="text" ref={searchTextRef} placeholder="Title or original title"/>
+        <input type="text" ref={searchTitleRef} placeholder="Search by title" />
         <button type="submit">Search</button>
       </form>
       <MovieCardList list={list} setActiveMovieId={setActiveMovieId} />
@@ -29,17 +29,17 @@ export default function Search() {
   );
 }
 
-async function fetchSearch(text) {
+async function fetchSearch(title) {
   if (api.loggedIn()) {
     const response = await fetch(
-      "https://movie.jcoder.dk/api/movies/search?text=" + text,
+      "https://movie.jcoder.dk/api/movies/search?title=" + title,
       api.makeOptions("GET", true)
     );
     const data = await response.json();
     return data;
   } else {
     const response = await fetch(
-      "https://movie.jcoder.dk/api/movies/search?text=" + text
+      "https://movie.jcoder.dk/api/movies/search?title=" + title
     );
     const data = await response.json();
     return data;
