@@ -21,11 +21,7 @@ export default function Search() {
     <div>
       <h1>Search movies</h1>
       <form onSubmit={handleSearchSubmit}>
-<<<<<<< HEAD
         <input type="text" ref={searchTitleRef} placeholder="Search by title" />
-=======
-        <input type="text" ref={searchTextRef} placeholder="Search by title"/>
->>>>>>> 3a9b4a4a9597f6400188681cecc79e1f23804169
         <button type="submit">Search</button>
       </form>
       <MovieCardList list={list} setActiveMovieId={setActiveMovieId} />
