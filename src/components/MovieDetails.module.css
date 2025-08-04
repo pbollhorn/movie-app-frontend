@@ -4,6 +4,7 @@
 
 .movieDetails img {
   width: 100%;
+  aspect-ratio: 16 / 9;
 }
 
 .movieDetails div {
