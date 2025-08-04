@@ -5,10 +5,7 @@ import api from "../apiFacade.js";
 import TmdbLink from "./TmdbLink.jsx";
 
 export default function Collection() {
-  const [collectionData, setCollectionData] = useState({
-    name: "",
-    movies: [],
-  });
+  const [collectionData, setCollectionData] = useState(null);
 
   const { setActiveMovieId } = useOutletContext();
 
@@ -23,6 +20,12 @@ export default function Collection() {
         setCollectionData(data);
       });
   }, []); // Runs on mount
+
+  // Return early if no collectionData to show
+  if (collectionData === null) {
+    return <div></div>;
+  }
+
 
   return (
     <div>

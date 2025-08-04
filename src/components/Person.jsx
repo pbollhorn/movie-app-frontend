@@ -5,7 +5,7 @@ import api from "../apiFacade.js";
 import TmdbLink from "./TmdbLink.jsx";
 
 export default function Person() {
-  const [personData, setPersonData] = useState({ name: "", movies: [] });
+  const [personData, setPersonData] = useState(null);
 
   const { setActiveMovieId } = useOutletContext();
 
@@ -21,6 +21,10 @@ export default function Person() {
       });
   }, []); // Runs on mount
 
+  // Return early if no personData to show
+  if (personData === null) {
+    return <div></div>;
+  }
 
   return (
     <div>
