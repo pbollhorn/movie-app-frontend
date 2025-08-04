@@ -27,7 +27,9 @@ export default function App() {
 
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
-  // location.pathname is used as key for Outlet, to make Outlet remount when location is changed
+  // location.key is used as key for Outlet,
+  // to make Outlet remount whenever a link is clicked,
+  // also when already at that location
   const location = useLocation();
 
   // Mobile view
@@ -45,7 +47,10 @@ export default function App() {
             />
           )}
         </div>
-        <Outlet key={location.pathname} context={{ loggedIn, setLoggedIn, setActiveMovieId }} />
+        <Outlet
+          key={location.key}
+          context={{ loggedIn, setLoggedIn, setActiveMovieId }}
+        />
         <Modal
           activeMovieId={activeMovieId}
           setActiveMovieId={setActiveMovieId}
@@ -68,7 +73,10 @@ export default function App() {
             setMenuIsOpen={setMenuIsOpen}
           />
         </div>
-        <Outlet key={location.pathname} context={{ loggedIn, setLoggedIn, setActiveMovieId }} />
+        <Outlet
+          key={location.key}
+          context={{ loggedIn, setLoggedIn, setActiveMovieId }}
+        />
         <Modal
           activeMovieId={activeMovieId}
           setActiveMovieId={setActiveMovieId}
@@ -90,7 +98,10 @@ export default function App() {
           setMenuIsOpen={setMenuIsOpen}
         />
       </div>
-      <Outlet key={location.pathname} context={{ loggedIn, setLoggedIn, setActiveMovieId }} />
+      <Outlet
+        key={location.key}
+        context={{ loggedIn, setLoggedIn, setActiveMovieId }}
+      />
       <MovieDetails key={activeMovieId} activeMovieId={activeMovieId} />
     </div>
   );
