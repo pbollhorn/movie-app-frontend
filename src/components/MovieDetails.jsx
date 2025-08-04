@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import { Link } from "react-router-dom";
 import styles from "./MovieDetails.module.css";
 import TmdbLink from "./TmdbLink.jsx";
@@ -96,10 +96,8 @@ export default function MovieDetails({ activeMovieId }) {
           <>
             <h2>Directed by</h2>
             {directors.map((credit) => (
-              <p>
-                <Link key={credit.id} to={"/person/" + credit.personId}>
-                  {credit.name}
-                </Link>
+              <p key={credit.id}>
+                <Link to={"/person/" + credit.personId}>{credit.name}</Link>
               </p>
             ))}
           </>
@@ -116,9 +114,8 @@ export default function MovieDetails({ activeMovieId }) {
           </>
         )}
         {usedDepartments.map((department) => (
-          <>
-            <h2 key={department}>{department}</h2>
-
+          <Fragment key={department}>
+            <h2>{department}</h2>
             {movieDetails.credits
               .filter((credit) => credit.department === department)
               .map((credit) => (
@@ -127,7 +124,7 @@ export default function MovieDetails({ activeMovieId }) {
                   {": " + credit.job}
                 </p>
               ))}
-          </>
+          </Fragment>
         ))}
       </div>
     </div>

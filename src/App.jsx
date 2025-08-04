@@ -47,7 +47,7 @@ export default function App() {
           activeMovieId={activeMovieId}
           setActiveMovieId={setActiveMovieId}
         >
-          <MovieDetails activeMovieId={activeMovieId} />
+          <MovieDetails key={activeMovieId} activeMovieId={activeMovieId} />
         </Modal>
       </div>
     );
@@ -70,7 +70,7 @@ export default function App() {
           activeMovieId={activeMovieId}
           setActiveMovieId={setActiveMovieId}
         >
-          <MovieDetails activeMovieId={activeMovieId} />
+          <MovieDetails key={activeMovieId} activeMovieId={activeMovieId} />
         </Modal>
       </div>
     );
@@ -88,7 +88,7 @@ export default function App() {
         />
       </div>
       <Outlet context={{ loggedIn, setLoggedIn, setActiveMovieId }} />
-      <MovieDetails activeMovieId={activeMovieId} />
+      <MovieDetails key={activeMovieId} activeMovieId={activeMovieId} />
     </div>
   );
 }
