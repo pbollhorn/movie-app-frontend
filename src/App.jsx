@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./App.module.css";
 import Menu from "./components/Menu.jsx";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import MovieDetails from "./components/MovieDetails.jsx";
 import api from "./apiFacade.js";
 import Modal from "./components/Modal/Modal.jsx";
@@ -27,6 +27,9 @@ export default function App() {
 
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
+  // location.pathname is used as key for Outlet, to make Outlet remount when location is changed
+  const location = useLocation();
+
   // Mobile view
   if (widthInRem < 48) {
     return (
@@ -42,7 +45,7 @@ export default function App() {
             />
           )}
         </div>
-        <Outlet context={{ loggedIn, setLoggedIn, setActiveMovieId }} />
+        <Outlet key={location.pathname} context={{ loggedIn, setLoggedIn, setActiveMovieId }} />
         <Modal
           activeMovieId={activeMovieId}
           setActiveMovieId={setActiveMovieId}
@@ -65,7 +68,7 @@ export default function App() {
             setMenuIsOpen={setMenuIsOpen}
           />
         </div>
-        <Outlet context={{ loggedIn, setLoggedIn, setActiveMovieId }} />
+        <Outlet key={location.pathname} context={{ loggedIn, setLoggedIn, setActiveMovieId }} />
         <Modal
           activeMovieId={activeMovieId}
           setActiveMovieId={setActiveMovieId}
@@ -87,7 +90,7 @@ export default function App() {
           setMenuIsOpen={setMenuIsOpen}
         />
       </div>
-      <Outlet context={{ loggedIn, setLoggedIn, setActiveMovieId }} />
+      <Outlet key={location.pathname} context={{ loggedIn, setLoggedIn, setActiveMovieId }} />
       <MovieDetails key={activeMovieId} activeMovieId={activeMovieId} />
     </div>
   );
