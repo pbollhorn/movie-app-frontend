@@ -6,7 +6,7 @@ import api from "../apiFacade.js";
 export default function Recommendations() {
   const [list, setList] = useState([]);
 
-  const { setActiveMovieId } = useOutletContext();
+  const { setActiveMovieId, setModalIsOpen } = useOutletContext();
 
   // useEffect
   useEffect(() => {
@@ -22,7 +22,11 @@ export default function Recommendations() {
     <div>
       <h1>Recommendations</h1>
       <p>Based on your ratings</p>
-      <MovieCardList list={list} setActiveMovieId={setActiveMovieId} />
+      <MovieCardList
+        list={list}
+        setActiveMovieId={setActiveMovieId}
+        setModalIsOpen={setModalIsOpen}
+      />
     </div>
   );
 }

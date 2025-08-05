@@ -9,7 +9,7 @@ import OkRating from "../assets/OkRating.svg";
 export default function Ratings() {
   const [list, setList] = useState([]);
 
-  const { setActiveMovieId } = useOutletContext();
+  const { setActiveMovieId, setModalIsOpen } = useOutletContext();
 
   // useEffect
   useEffect(() => {
@@ -34,7 +34,7 @@ export default function Ratings() {
           <img src={NoRating} style={{ height: "1.5rem" }} />= Not rated
         </p>
       </div>
-      <MovieCardList list={list} setActiveMovieId={setActiveMovieId} />
+      <MovieCardList list={list} setActiveMovieId={setActiveMovieId} setModalIsOpen={setModalIsOpen}/>
     </div>
   );
 }

@@ -7,7 +7,11 @@ import NoPoster from "../assets/NoPoster.png";
 import api from "../apiFacade.js";
 import formatAsString from "../formatAsString.js";
 
-export default function MovieCard({ movieData, setActiveMovieId }) {
+export default function MovieCard({
+  movieData,
+  setActiveMovieId,
+  setModalIsOpen,
+}) {
   const [rating, setRating] = useState(movieData.rating);
 
   let ratingPic;
@@ -79,7 +83,9 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
   return (
     <div
       className={styles.movieCard}
-      onClick={() => setActiveMovieId(movieData.id)}
+      onClick={() => {
+        setActiveMovieId(movieData.id); setModalIsOpen(true);
+      }}
     >
       <img
         src={
@@ -93,9 +99,7 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
         <p>
           <b>{movieData.title}</b>
         </p>
-        <p>
-          {formatAsString.directorsAsString(movieData.directors)}
-        </p>
+        <p>{formatAsString.directorsAsString(movieData.directors)}</p>
         <p>{formatAsString.genresAsString(movieData.genres)}</p>
         <p>
           {"" +

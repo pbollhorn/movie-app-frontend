@@ -1,23 +1,23 @@
 import { useRef, useEffect } from "react";
 
-export default function Modal({ children, activeMovieId, setActiveMovieId }) {
+export default function Modal({ children, modalIsOpen, setModalIsOpen }) {
   const dialogRef = useRef(null);
 
   useEffect(() => {
     const dialogElement = dialogRef.current;
     if (!dialogElement) return;
 
-    // Open dialog as modal when 'activeMovieId' becomes not null
-    if (activeMovieId) {
+    // Open dialog as modal when modalIsOpen is true
+    if (modalIsOpen) {
       dialogElement.showModal();
     } else {
       dialogElement.close();
     }
-  }, [activeMovieId]);
+  }, [modalIsOpen]);
 
   return (
     <dialog ref={dialogRef}>
-      <button onClick={() => setActiveMovieId(null)} aria-label="Close modal">
+      <button onClick={() => setModalIsOpen(false)} aria-label="Close modal">
         X
       </button>
       {children}

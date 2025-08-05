@@ -7,7 +7,7 @@ import TmdbLink from "./TmdbLink.jsx";
 export default function Person() {
   const [personData, setPersonData] = useState(null);
 
-  const { setActiveMovieId } = useOutletContext();
+  const { setActiveMovieId, setModalIsOpen } = useOutletContext();
 
   const { id } = useParams();
 
@@ -33,6 +33,7 @@ export default function Person() {
       <MovieCardList
         list={personData.movies}
         setActiveMovieId={setActiveMovieId}
+        setModalIsOpen={setModalIsOpen}
       />
     </div>
   );

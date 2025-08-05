@@ -23,9 +23,11 @@ export default function App() {
 
   const [loggedIn, setLoggedIn] = useState(api.loggedIn());
 
-  const [activeMovieId, setActiveMovieId] = useState(null);
-
   const [menuIsOpen, setMenuIsOpen] = useState(false);
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const [activeMovieId, setActiveMovieId] = useState(null);
 
   // location.key is used as key for Outlet,
   // to make Outlet remount whenever a link is clicked,
@@ -49,13 +51,14 @@ export default function App() {
         </div>
         <Outlet
           key={location.key}
-          context={{ loggedIn, setLoggedIn, setActiveMovieId }}
+          context={{ loggedIn, setLoggedIn, setActiveMovieId, setModalIsOpen }}
         />
-        <Modal
-          activeMovieId={activeMovieId}
-          setActiveMovieId={setActiveMovieId}
-        >
-          <MovieDetails key={activeMovieId} activeMovieId={activeMovieId} />
+        <Modal modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen}>
+          <MovieDetails
+            key={activeMovieId}
+            activeMovieId={activeMovieId}
+            setModalIsOpen={setModalIsOpen}
+          />
         </Modal>
       </div>
     );
@@ -75,13 +78,17 @@ export default function App() {
         </div>
         <Outlet
           key={location.key}
-          context={{ loggedIn, setLoggedIn, setActiveMovieId }}
+          context={{ loggedIn, setLoggedIn, setActiveMovieId, setModalIsOpen }}
         />
         <Modal
           activeMovieId={activeMovieId}
           setActiveMovieId={setActiveMovieId}
         >
-          <MovieDetails key={activeMovieId} activeMovieId={activeMovieId} />
+          <MovieDetails
+            key={activeMovieId}
+            activeMovieId={activeMovieId}
+            setModalIsOpen={setModalIsOpen}
+          />
         </Modal>
       </div>
     );
@@ -100,11 +107,12 @@ export default function App() {
       </div>
       <Outlet
         key={location.key}
-        context={{ loggedIn, setLoggedIn, setActiveMovieId }}
+        context={{ loggedIn, setLoggedIn, setActiveMovieId, setModalIsOpen }}
       />
       <MovieDetails
         key={activeMovieId}
         activeMovieId={activeMovieId}
+        setModalIsOpen={setModalIsOpen}
       />
     </div>
   );
