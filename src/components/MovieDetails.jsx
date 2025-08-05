@@ -87,7 +87,10 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
         {movieDetails.collection && (
           <p>
             Part of the{" "}
-            <Link to={"/collection/" + movieDetails.collection.id}>
+            <Link
+              to={"/collection/" + movieDetails.collection.id}
+              onClick={() => setModalIsOpen(false)}
+            >
               {movieDetails.collection.name}
             </Link>
           </p>
@@ -112,7 +115,12 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
             <h2>Cast</h2>
             {cast.map((credit) => (
               <p key={credit.id}>
-                <Link to={"/person/" + credit.personId}>{credit.name}</Link>
+                <Link
+                  to={"/person/" + credit.personId}
+                  onClick={() => setModalIsOpen(false)}
+                >
+                  {credit.name}
+                </Link>
                 {": " + credit.character}
               </p>
             ))}
@@ -125,7 +133,12 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
               .filter((credit) => credit.department === department)
               .map((credit) => (
                 <p key={credit.id}>
-                  <Link to={"/person/" + credit.personId}>{credit.name}</Link>
+                  <Link
+                    to={"/person/" + credit.personId}
+                    onClick={() => setModalIsOpen(false)}
+                  >
+                    {credit.name}
+                  </Link>
                   {": " + credit.job}
                 </p>
               ))}
