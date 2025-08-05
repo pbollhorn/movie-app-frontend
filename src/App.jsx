@@ -105,7 +105,6 @@ export default function App() {
       <MovieDetails
         key={activeMovieId}
         activeMovieId={activeMovieId}
-        setActiveMovieId={setActiveMovieId}
       />
     </div>
   );

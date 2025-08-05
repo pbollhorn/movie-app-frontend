@@ -5,7 +5,7 @@ import TmdbLink from "./TmdbLink.jsx";
 import NoBackdrop from "../assets/NoBackdrop.png";
 import formatAsString from "../formatAsString.js";
 
-export default function MovieDetails({ activeMovieId, setActiveMovieId }) {
+export default function MovieDetails({ activeMovieId }) {
   const [movieDetails, setMovieDetails] = useState(null);
 
   useEffect(() => {
@@ -97,12 +97,7 @@ export default function MovieDetails({ activeMovieId, setActiveMovieId }) {
             <h2>Directed by</h2>
             {directors.map((credit) => (
               <p key={credit.id}>
-                <Link
-                  to={"/person/" + credit.personId}
-                  onClick={() => setActiveMovieId(85)}
-                >
-                  {credit.name}
-                </Link>
+                <Link to={"/person/" + credit.personId}>{credit.name}</Link>
               </p>
             ))}
           </>
