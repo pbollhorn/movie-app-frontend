@@ -80,10 +80,7 @@ export default function App() {
           key={location.key}
           context={{ loggedIn, setLoggedIn, setActiveMovieId, setModalIsOpen }}
         />
-        <Modal
-          activeMovieId={activeMovieId}
-          setActiveMovieId={setActiveMovieId}
-        >
+        <Modal modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen}>
           <MovieDetails
             key={activeMovieId}
             activeMovieId={activeMovieId}

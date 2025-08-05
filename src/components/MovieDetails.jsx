@@ -12,10 +12,19 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
     const fun = async () => {
       setMovieDetails(await fetchMovieDetails(activeMovieId));
     };
-    if (activeMovieId) {
+    if (activeMovieId && Number.isInteger(activeMovieId)) {
       fun();
     }
   }, [activeMovieId]);
+
+  // Display poster if activeMovieId is not an integer
+  if (!Number.isInteger(activeMovieId)) {
+    return (
+      <div>
+        <img src={"https://image.tmdb.org/t/p/w154" + activeMovieId} />
+      </div>
+    );
+  }
 
   // Return early if no movieDetails to show
   if (movieDetails === null) {

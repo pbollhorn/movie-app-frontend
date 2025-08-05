@@ -27,6 +27,12 @@ export default function MovieCard({
       break;
   }
 
+  function handlePosterPicClick(event) {
+    event.stopPropagation();
+    setActiveMovieId(movieData.posterPath);
+    setModalIsOpen(true);
+  }
+
   function handleRatingPicClick(event) {
     event.stopPropagation();
     if (api.loggedIn() === false) {
@@ -84,7 +90,8 @@ export default function MovieCard({
     <div
       className={styles.movieCard}
       onClick={() => {
-        setActiveMovieId(movieData.id); setModalIsOpen(true);
+        setActiveMovieId(movieData.id);
+        setModalIsOpen(true);
       }}
     >
       <img
@@ -93,6 +100,7 @@ export default function MovieCard({
             ? "https://image.tmdb.org/t/p/w154" + movieData.posterPath
             : NoPoster
         }
+        onClick={handlePosterPicClick}
         className={styles.posterImage}
       />
       <div>
