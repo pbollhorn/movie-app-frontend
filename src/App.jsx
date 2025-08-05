@@ -4,7 +4,7 @@ import Menu from "./components/Menu.jsx";
 import { Outlet, useLocation } from "react-router-dom";
 import MovieDetails from "./components/MovieDetails.jsx";
 import api from "./apiFacade.js";
-import Modal from "./components/Modal/Modal.jsx";
+import Modal from "./components/Modal.jsx";
 import Logo from "./assets/Logo.png";
 import useWindowInnerWidthInRem from "./hooks/useWindowInnerWidthInRem.js";
 
@@ -102,7 +102,11 @@ export default function App() {
         key={location.key}
         context={{ loggedIn, setLoggedIn, setActiveMovieId }}
       />
-      <MovieDetails key={activeMovieId} activeMovieId={activeMovieId} />
+      <MovieDetails
+        key={activeMovieId}
+        activeMovieId={activeMovieId}
+        setActiveMovieId={setActiveMovieId}
+      />
     </div>
   );
 }
