@@ -18,7 +18,7 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
   }, [activeMovieId]);
 
   // Display poster if activeMovieId is not an integer
-  if (!Number.isInteger(activeMovieId)) {
+  if (activeMovieId && !Number.isInteger(activeMovieId)) {
     return (
       <div>
         <img src={"https://image.tmdb.org/t/p/w154" + activeMovieId} />
