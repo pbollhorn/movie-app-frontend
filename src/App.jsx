@@ -59,6 +59,7 @@ export default function App() {
         />
         <Modal modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen}>
           <MovieDetails
+            key={activeMovieId}
             activeMovieId={activeMovieId}
             setModalIsOpen={setModalIsOpen}
           />
@@ -89,6 +90,7 @@ export default function App() {
         />
         <Modal modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen}>
           <MovieDetails
+            key={activeMovieId}
             activeMovieId={activeMovieId}
             setModalIsOpen={setModalIsOpen}
           />
@@ -117,6 +119,7 @@ export default function App() {
         }}
       />
       <MovieDetails
+        key={activeMovieId}
         activeMovieId={activeMovieId}
         setModalIsOpen={setModalIsOpen}
       />

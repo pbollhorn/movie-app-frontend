@@ -24,14 +24,16 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
   }
 
   function handleMovieCardClick() {
-    setActiveMovieId(movieData.id);
-    //setModalIsOpen(true);
+    setActiveMovieId(movieData.id + "+" + Date.now());
   }
 
   function handlePosterPicClick(event) {
     event.stopPropagation();
-    setActiveMovieId(movieData.posterPath);
-    //setModalIsOpen(true);
+    if (movieData.posterPath == null) {
+      setActiveMovieId(null);
+    } else {
+      setActiveMovieId(movieData.posterPath + "+" + Date.now());
+    }
   }
 
   function handleRatingPicClick(event) {

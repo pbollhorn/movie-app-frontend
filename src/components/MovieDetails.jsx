@@ -5,30 +5,43 @@ import TmdbLink from "./TmdbLink.jsx";
 import NoBackdrop from "../assets/NoBackdrop.png";
 import formatAsString from "../formatAsString.js";
 
+// activeMovieId can be:
+// - null
+// - movieId+timeStamp, e.g. "85+1754489917403"
+// - posterPath+timeStamp, e.g. "/ceG9VzoRAVGwivFU403Wc3AHRys.jpg+1754489917403"
 export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
   const [movieDetails, setMovieDetails] = useState(null);
 
   useEffect(() => {
-    const fun = async () => {
-      setMovieDetails(await fetchMovieDetails(activeMovieId));
+    // Start by checking that activeMovieId is not null
+    if (activeMovieId == null) return;
+
+    const doTheFetch = async (movieId) => {
+      console.log(movieId);
+      setMovieDetails(await fetchMovieDetails(movieId));
     };
-    if (activeMovieId && Number.isInteger(activeMovieId)) {
-      fun();
+
+    // If activeMovieId does not contain '.' it means it is a movieId, and we fetch the movieDetails
+    if (!activeMovieId.includes(".")) {
+      const movieId = activeMovieId.split("+")[0];
+      doTheFetch(movieId);
     }
+
     setModalIsOpen(true);
   }, [activeMovieId]);
 
-  // Display poster if activeMovieId is not an integer
-  if (activeMovieId && !Number.isInteger(activeMovieId)) {
+  // If activeMovieId contains '.' it means it is a posterPath, and we return early just showing the poster
+  if (activeMovieId != null && activeMovieId.includes(".")) {
+    const posterPath = activeMovieId.split("+")[0];
     return (
       <div>
-        <img src={"https://image.tmdb.org/t/p/w154" + activeMovieId} />
+        <img src={"https://image.tmdb.org/t/p/w154" + posterPath} />
       </div>
     );
   }
 
   // Return early if no movieDetails to show
-  if (movieDetails === null) {
+  if (movieDetails == null) {
     return <div></div>;
   }
 
