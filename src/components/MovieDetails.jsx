@@ -17,7 +17,6 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
     if (activeMovieId == null) return;
 
     const doTheFetch = async (movieId) => {
-      console.log(movieId);
       setMovieDetails(await fetchMovieDetails(movieId));
     };
 
