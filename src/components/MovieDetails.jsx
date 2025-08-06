@@ -33,8 +33,11 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
   if (activeMovieId != null && activeMovieId.includes(".")) {
     const posterPath = activeMovieId.split("+")[0];
     return (
-      <div>
-        <img src={"https://image.tmdb.org/t/p/w154" + posterPath} />
+      <div style={{ width: "100%" }}>
+        <img
+          src={"https://image.tmdb.org/t/p/w780" + posterPath}
+          style={{ width: "100%" }}
+        />
       </div>
     );
   }
