@@ -41,7 +41,7 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
 
   // Return early if no movieDetails to show
   if (movieDetails == null) {
-    return <div></div>;
+    return <div className={styles.movieDetails}></div>;
   }
 
   const directors = movieDetails.credits.filter((c) => c.job === "Director");
