@@ -35,7 +35,7 @@ export default function CreateAccount() {
       {"window.outerHeight: " + window.outerHeight}
       <br />
       {JSON.stringify(account)}
-      <h1>Create account</h1>
+      <h1>Create Account</h1>
 
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">Choose username:</label>

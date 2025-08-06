@@ -19,7 +19,7 @@ export default function Search() {
 
   return (
     <div>
-      <h1>Search movies</h1>
+      <h1>Search Movies</h1>
       <form onSubmit={handleSearchSubmit}>
         <input type="text" ref={searchTitleRef} placeholder="Search by title" />
         <button type="submit">Search</button>
