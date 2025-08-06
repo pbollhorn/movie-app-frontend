@@ -10,7 +10,7 @@ import formatAsString from "../formatAsString.js";
 export default function MovieCard({
   movieData,
   setActiveMovieId,
-  setModalIsOpen,
+  //setModalIsOpen,
 }) {
   const [rating, setRating] = useState(movieData.rating);
 
@@ -27,10 +27,15 @@ export default function MovieCard({
       break;
   }
 
+  function handleMovieCardClick() {
+    setActiveMovieId(movieData.id);
+    //setModalIsOpen(true);
+  }
+
   function handlePosterPicClick(event) {
     event.stopPropagation();
     setActiveMovieId(movieData.posterPath);
-    setModalIsOpen(true);
+    //setModalIsOpen(true);
   }
 
   function handleRatingPicClick(event) {
@@ -87,13 +92,7 @@ export default function MovieCard({
   }
 
   return (
-    <div
-      className={styles.movieCard}
-      onClick={() => {
-        setActiveMovieId(movieData.id);
-        setModalIsOpen(true);
-      }}
-    >
+    <div className={styles.movieCard} onClick={handleMovieCardClick}>
       <img
         src={
           movieData.posterPath

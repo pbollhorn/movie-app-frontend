@@ -15,6 +15,7 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
     if (activeMovieId && Number.isInteger(activeMovieId)) {
       fun();
     }
+    setModalIsOpen(true);
   }, [activeMovieId]);
 
   // Display poster if activeMovieId is not an integer
