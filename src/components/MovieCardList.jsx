@@ -1,10 +1,6 @@
 import MovieCard from "./MovieCard.jsx";
 
-export default function MovieCardList({
-  list,
-  setActiveMovieId,
-  setModalIsOpen,
-}) {
+export default function MovieCardList({ list, setActiveMovieId }) {
   return (
     <>
       {list.map((element) => (
@@ -12,7 +8,6 @@ export default function MovieCardList({
           key={element.id}
           movieData={element}
           setActiveMovieId={setActiveMovieId}
-          setModalIsOpen={setModalIsOpen}
         />
       ))}
     </>

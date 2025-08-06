@@ -7,11 +7,7 @@ import NoPoster from "../assets/NoPoster.png";
 import api from "../apiFacade.js";
 import formatAsString from "../formatAsString.js";
 
-export default function MovieCard({
-  movieData,
-  setActiveMovieId,
-  //setModalIsOpen,
-}) {
+export default function MovieCard({ movieData, setActiveMovieId }) {
   const [rating, setRating] = useState(movieData.rating);
 
   let ratingPic;

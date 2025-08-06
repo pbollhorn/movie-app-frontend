@@ -7,7 +7,7 @@ export default function Search() {
   const [list, setList] = useState([]);
   const searchTitleRef = useRef(null);
 
-  const { setActiveMovieId, setModalIsOpen } = useOutletContext();
+  const { setActiveMovieId } = useOutletContext();
 
   async function handleSearchSubmit(event) {
     event.preventDefault();
@@ -24,11 +24,7 @@ export default function Search() {
         <input type="text" ref={searchTitleRef} placeholder="Search by title" />
         <button type="submit">Search</button>
       </form>
-      <MovieCardList
-        list={list}
-        setActiveMovieId={setActiveMovieId}
-        setModalIsOpen={setModalIsOpen}
-      />
+      <MovieCardList list={list} setActiveMovieId={setActiveMovieId} />
     </div>
   );
 }

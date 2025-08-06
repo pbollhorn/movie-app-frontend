@@ -7,7 +7,7 @@ import TmdbLink from "./TmdbLink.jsx";
 export default function Collection() {
   const [collectionData, setCollectionData] = useState(null);
 
-  const { setActiveMovieId, setModalIsOpen } = useOutletContext();
+  const { setActiveMovieId } = useOutletContext();
 
   const { id } = useParams();
 
@@ -33,7 +33,6 @@ export default function Collection() {
       <MovieCardList
         list={collectionData.movies}
         setActiveMovieId={setActiveMovieId}
-        setModalIsOpen={setModalIsOpen}
       />
     </div>
   );
