@@ -5,6 +5,10 @@
   background-color: var(--menu-bg);
 }
 
+.mobileView img:nth-child(2) {
+  height: 1.5rem;
+}
+
 /* ----------------------
         Tablet view
    ---------------------- */

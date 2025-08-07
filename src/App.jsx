@@ -6,6 +6,7 @@ import MovieDetails from "./components/MovieDetails.jsx";
 import api from "./apiFacade.js";
 import Modal from "./components/Modal.jsx";
 import Logo from "./assets/Logo.png";
+import BurgerButton from "./assets/BurgerButton.svg";
 import useWindowInnerWidthInRem from "./hooks/useWindowInnerWidthInRem.js";
 
 export default function App() {
@@ -40,7 +41,7 @@ export default function App() {
       <div className={styles.mobileView}>
         <div>
           <img src={Logo} style={{ height: "1.75rem" }} />
-          <button onClick={() => setMenuIsOpen(!menuIsOpen)}>☰</button>
+          <img src={BurgerButton} onClick={() => setMenuIsOpen(!menuIsOpen)} />
           {menuIsOpen && (
             <Menu
               loggedIn={loggedIn}
