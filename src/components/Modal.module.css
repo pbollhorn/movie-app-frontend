@@ -4,6 +4,7 @@
 
 .closeButton {
   position: absolute;
+  height: 1.5rem;
   top: 1rem;
   right: 1rem;
 }

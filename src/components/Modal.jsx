@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
 import styles from "./Modal.module.css";
+import CloseButton from "../assets/CloseButton.svg";
 
 export default function Modal({ children, modalIsOpen, setModalIsOpen }) {
   const dialogRef = useRef(null);
@@ -27,9 +28,11 @@ export default function Modal({ children, modalIsOpen, setModalIsOpen }) {
 
   return (
     <dialog ref={dialogRef} className={styles.modal}>
-      <button onClick={() => setModalIsOpen(false)} aria-label="Close modal" className={styles.closeButton}>
-        X
-      </button>
+      <img
+        src={CloseButton}
+        onClick={() => setModalIsOpen(false)}
+        className={styles.closeButton}
+      />
       {children}
     </dialog>
   );
