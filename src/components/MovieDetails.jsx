@@ -4,6 +4,7 @@ import styles from "./MovieDetails.module.css";
 import TmdbLink from "./TmdbLink.jsx";
 import NoBackdrop from "../assets/NoBackdrop.png";
 import formatAsString from "../formatAsString.js";
+import Poster from "./Poster.jsx";
 
 // activeMovieId can be:
 // - null
@@ -32,14 +33,7 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
   // If activeMovieId contains '.' it means it is a posterPath, and we return early just showing the poster
   if (activeMovieId != null && activeMovieId.includes(".")) {
     const posterPath = activeMovieId.split("+")[0];
-    return (
-      <div style={{ width: "100%" }}>
-        <img
-          src={"https://image.tmdb.org/t/p/w780" + posterPath}
-          style={{ width: "100%", display: "block" }}
-        />
-      </div>
-    );
+    return <Poster posterPath={posterPath} />;
   }
 
   // Return early if no movieDetails to show
