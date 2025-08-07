@@ -1,7 +1,15 @@
 /* ----------------------
         Mobile view
    ---------------------- */
+.mobileView {
+  padding-top: 3rem;  
+}
+
 .mobileView > div:nth-child(1) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background-color: var(--menu-bg);
 }
 
