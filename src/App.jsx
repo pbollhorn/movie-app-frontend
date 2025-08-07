@@ -7,7 +7,7 @@ import api from "./apiFacade.js";
 import Modal from "./components/Modal.jsx";
 import Logo from "./assets/Logo.png";
 import BurgerButton from "./assets/BurgerButton.svg";
-import useWindowInnerWidthInRem from "./hooks/useWindowInnerWidthInRem.js";
+import useDeviceType from "./hooks/useDeviceType.js";
 
 export default function App() {
   // useEffect for setting dark/light mode according to browser settings
@@ -20,7 +20,7 @@ export default function App() {
     }
   }, []);
 
-  const widthInRem = useWindowInnerWidthInRem();
+  const deviceType = useDeviceType();
 
   const [loggedIn, setLoggedIn] = useState(api.loggedIn());
 
@@ -36,7 +36,7 @@ export default function App() {
   const location = useLocation();
 
   // Mobile view
-  if (widthInRem < 48) {
+  if (deviceType == "mobile") {
     return (
       <div className={styles.mobileView}>
         <div>
@@ -70,7 +70,7 @@ export default function App() {
   }
 
   // Tablet view
-  if (widthInRem < 58) {
+  if (deviceType == "tablet") {
     return (
       <div className={styles.tabletView}>
         <div>
