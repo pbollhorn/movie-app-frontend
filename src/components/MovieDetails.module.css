@@ -1,5 +1,7 @@
 .movieDetails {
   width: 100%;
+  background-color: var(--bg);
+  color: var(--fg);
 }
 
 .movieDetails img {
