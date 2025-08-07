@@ -146,7 +146,7 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
                 >
                   {credit.name}
                 </Link>
-                {": " + credit.character}
+                {credit.character && ": " + credit.character}
               </p>
             ))}
           </>
