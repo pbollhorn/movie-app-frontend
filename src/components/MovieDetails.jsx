@@ -36,7 +36,7 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
       <div style={{ width: "100%" }}>
         <img
           src={"https://image.tmdb.org/t/p/w780" + posterPath}
-          style={{ width: "100%" }}
+          style={{ width: "100%", display: "block" }}
         />
       </div>
     );

@@ -1,7 +1,8 @@
 .modal {
   padding: 0;
   width: 90%;
-  border: none
+  border: none;
+  /* background: transparent; */
 }
 
 .closeButton {
