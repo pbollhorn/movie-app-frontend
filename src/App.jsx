@@ -28,7 +28,7 @@ export default function App() {
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  const [activeMovieId, setActiveMovieId] = useState(null);
+  const [activeMovieId, setActiveMovieId] = useState(null);  // TODO: Rename to reflect it can also hold a posterPath
 
   // location.key is used as key for Outlet,
   // to make Outlet remount whenever a link is clicked,

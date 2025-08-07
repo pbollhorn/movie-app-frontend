@@ -1,0 +1,23 @@
+/* -----------------------------
+        Mobile and tablet view
+   ----------------------------- */
+.posterMobileView {
+  width: 100%;
+}
+
+.posterMobileView img {
+  width: 100%;
+  display: block;
+}
+
+/* -----------------------------
+        Desktop view
+   ----------------------------- */
+.posterDesktopView {
+  width: 100%;
+}
+
+.posterDesktopView img {
+  width: 100%;
+  display: block;
+}
