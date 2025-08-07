@@ -7,6 +7,7 @@
   --menu-bg: #0000b3;
   --movieapp-green: #00d900;
   --movieapp-lightblue: #056dff;
+  scrollbar-color: blue red;
 }
 
 /* Colors for dark mode */
@@ -25,5 +26,4 @@ body {
   margin: 0;
   background-color: var(--bg);
   color: var(--fg);
-  scrollbar-color: blue red;
 }
