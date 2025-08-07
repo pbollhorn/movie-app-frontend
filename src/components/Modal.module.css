@@ -1,0 +1,9 @@
+.modal {
+  padding: 0;
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
