@@ -13,8 +13,12 @@
   background-color: var(--menu-bg);
 }
 
+/* burger button */
 .mobileView img:nth-child(2) {
-  height: 1.5rem;
+  position: absolute;
+  height: 1rem;
+  top: 0.5rem;
+  right: 0.5rem;
   cursor: pointer;
 }
 
@@ -68,7 +72,6 @@
   height: 100%;
 }
 
-
 /* ------------------------------------------------------------------
         Styling of outlet (nothing to do with mobile, tablet, desktop
    ------------------------------------------------------------------ */
@@ -79,3 +82,7 @@
 .outlet h1 {
   margin: 1rem 0;
 }
+
+/* ------------------------------------------------------------------
+        more styling
+   ------------------------------------------------------------------ */
