@@ -10,6 +10,7 @@ import Recommendations from "./components/Recommendations.jsx";
 import CreateAccount from "./components/CreateAccount.jsx";
 import Person from "./components/Person.jsx";
 import Collection from "./components/Collection.jsx";
+import DevInfo from "./components/DevInfo.jsx";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,8 @@ const router = createBrowserRouter([
       { path: "/login", element: <Login /> },
       { path: "/create-account", element: <CreateAccount /> },
       { path: "/person/:id", element: <Person /> },
-      { path: "/collection/:id", element: <Collection /> }
+      { path: "/collection/:id", element: <Collection /> },
+      { path: "/dev", element: <DevInfo /> },
     ],
   },
 ]);

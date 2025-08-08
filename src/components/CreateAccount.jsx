@@ -20,20 +20,6 @@ export default function CreateAccount() {
 
   return (
     <div>
-      {"screen.width: " + screen.width}
-      <br />
-      {"screen.height: " + screen.height}
-      <br />
-      {"window.devicePixelRatio: " + window.devicePixelRatio}
-      <br />
-      {"window.innerWidth: " + window.innerWidth}
-      <br />
-      {"window.outerWidth: " + window.outerWidth}
-      <br />
-      {"window.innerHeight: " + window.innerHeight}
-      <br />
-      {"window.outerHeight: " + window.outerHeight}
-      <br />
       {JSON.stringify(account)}
       <h1>Create Account</h1>
 
