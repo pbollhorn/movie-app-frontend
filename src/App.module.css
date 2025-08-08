@@ -67,3 +67,11 @@
   overflow: auto;
   height: 100%;
 }
+
+
+/* ------------------------------------------------------------------
+        Styling of outlet (nothing to do with mobile, tablet, desktop
+   ------------------------------------------------------------------ */
+.outlet {
+  padding: 0.3rem;
+}

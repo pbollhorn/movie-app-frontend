@@ -50,14 +50,16 @@ export default function App() {
             />
           )}
         </div>
-        <Outlet
-          key={location.key}
-          context={{
-            loggedIn,
-            setLoggedIn,
-            setActiveMovieId,
-          }}
-        />
+        <div className={styles.outlet}>
+          <Outlet
+            key={location.key}
+            context={{
+              loggedIn,
+              setLoggedIn,
+              setActiveMovieId,
+            }}
+          />
+        </div>
         <Modal modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen}>
           <MovieDetails
             key={activeMovieId}
@@ -81,14 +83,16 @@ export default function App() {
             setMenuIsOpen={setMenuIsOpen}
           />
         </div>
-        <Outlet
-          key={location.key}
-          context={{
-            loggedIn,
-            setLoggedIn,
-            setActiveMovieId,
-          }}
-        />
+        <div className={styles.outlet}>
+          <Outlet
+            key={location.key}
+            context={{
+              loggedIn,
+              setLoggedIn,
+              setActiveMovieId,
+            }}
+          />
+        </div>
         <Modal modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen}>
           <MovieDetails
             key={activeMovieId}
@@ -111,14 +115,16 @@ export default function App() {
           setMenuIsOpen={setMenuIsOpen}
         />
       </div>
-      <Outlet
-        key={location.key}
-        context={{
-          loggedIn,
-          setLoggedIn,
-          setActiveMovieId,
-        }}
-      />
+      <div className={styles.outlet}>
+        <Outlet
+          key={location.key}
+          context={{
+            loggedIn,
+            setLoggedIn,
+            setActiveMovieId,
+          }}
+        />
+      </div>
       <MovieDetails
         key={activeMovieId}
         activeMovieId={activeMovieId}
