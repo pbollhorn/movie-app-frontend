@@ -11,7 +11,9 @@
 
 .movieDetails div {
   /* margin: 1rem; */
-  padding-bottom: 0.1rem; /* TODO: this removes gap at the bottom of modal, but also makes line flash at opening of modal*/
+  padding-bottom: 0.1rem; /* TODO: this removes gap at the bottom of modal*/
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 /* used for genre tags */
