@@ -7,6 +7,7 @@
 .movieDetails img {
   width: 100%;
   aspect-ratio: 16 / 9;
+  display: block;
 }
 
 .movieDetails div {
@@ -14,6 +15,10 @@
   padding-bottom: 0.1rem; /* TODO: this removes gap at the bottom of modal*/
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+.movieDetails h1 {
+  margin: 0.5rem 0;
 }
 
 /* used for genre tags */
