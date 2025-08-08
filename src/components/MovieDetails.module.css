@@ -34,3 +34,11 @@
   border-radius: 0.3rem;
   padding: 0.2rem 0.3rem;
 }
+
+.movieDetails a:link,
+.movieDetails a:visited,
+.movieDetails a:hover,
+.movieDetails a:active {
+  color: blue;
+  text-decoration: none;
+}
