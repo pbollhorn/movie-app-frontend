@@ -8,10 +8,25 @@
 }
 
 .posterImage {
-  height: 6rem;
+  height: 100%;
   aspect-ratio: 2 / 3;
 }
 
 .ratingImage {
   height: 1.5rem;
+}
+
+.lastLine {
+  display: flex;
+  align-items: center; /* This vertically centers all children */
+}
+
+
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%; /* Or specify a fixed width if needed */
+  display: inline-block; /* Or block, depending on your layout */
 }

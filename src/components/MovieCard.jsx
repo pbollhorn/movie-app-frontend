@@ -101,25 +101,21 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
         className={styles.posterImage}
       />
       <div>
-        <p>
-          <b>{movieData.title}</b>
-        </p>
-        <p>{formatAsString.directorsAsString(movieData.directors)}</p>
-        <p>{formatAsString.genresAsString(movieData.genres)}</p>
-        <p>
-          {"" +
-            movieData.releaseDate[0] +
-            " " +
-            movieData.originalLanguage +
-            " " +
-            formatAsString.scoreAsString(movieData.voteAverage) +
-            "   "}
+        <div>
+          <b className={styles.ellipsis}>{movieData.title}</b>
+        </div>
+        <div>{formatAsString.directorsAsString(movieData.directors)}</div>
+        <div>{formatAsString.genresAsString(movieData.genres)}</div>
+        <div className={styles.lastLine}>
+          <div>{movieData.releaseDate[0]}</div>
+          <div>{movieData.originalLanguage}</div>
+          <div>{formatAsString.scoreAsString(movieData.voteAverage)}</div>
           <img
             src={ratingPic}
             onClick={handleRatingPicClick}
             className={styles.ratingImage}
           />
-        </p>
+        </div>
       </div>
     </div>
   );
