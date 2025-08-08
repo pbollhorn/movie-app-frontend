@@ -19,13 +19,13 @@ export default function Recommendations() {
   }, []); // Runs on mount
 
   return (
-    <div>
+    <>
       <h1>Recommendations</h1>
       <p>Based on your ratings</p>
       <MovieCardList
         list={list}
         setActiveMovieId={setActiveMovieId}
       />
-    </div>
+    </>
   );
 }

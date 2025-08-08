@@ -19,7 +19,7 @@ export default function CreateAccount() {
   }
 
   return (
-    <div>
+    <>
       {JSON.stringify(account)}
       <h1>Create Account</h1>
 
@@ -56,6 +56,6 @@ export default function CreateAccount() {
         <br />
         <button type="submit">Create</button>
       </form>
-    </div>
+    </>
   );
 }

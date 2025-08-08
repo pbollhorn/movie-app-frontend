@@ -10,7 +10,7 @@ export default function DevInfo() {
   const windowInnerWidthInRem = window.innerWidth / remInPx;
 
   return (
-    <div>
+    <>
       <h1>Dev Info</h1>
       <h2>Display</h2>
       (Remember to reload after resizing)
@@ -38,6 +38,6 @@ export default function DevInfo() {
       <br />
       {"Device type: " + deviceType}
       <br />
-    </div>
+    </>
   );
 }

@@ -20,7 +20,7 @@ export default function Ratings() {
   }, []); // Runs on mount
 
   return (
-    <div>
+    <>
       <h1>Your Ratings</h1>
       <div>
         <p>How to rate movies:</p>
@@ -35,6 +35,6 @@ export default function Ratings() {
         </p>
       </div>
       <MovieCardList list={list} setActiveMovieId={setActiveMovieId}/>
-    </div>
+    </>
   );
 }
