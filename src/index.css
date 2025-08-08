@@ -27,3 +27,11 @@ body {
   background-color: var(--bg);
   color: var(--fg);
 }
+
+h1 {
+  margin: 1rem 0;
+}
+
+p{
+  margin: 0.5rem 0;
+}
