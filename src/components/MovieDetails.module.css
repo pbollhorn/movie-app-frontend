@@ -2,6 +2,7 @@
   width: 100%;
   background-color: var(--bg);
   color: var(--fg);
+  padding-bottom: 0.1rem;
 }
 
 .movieDetails img {
@@ -11,7 +12,6 @@
 
 .movieDetails div {
   /* margin: 1rem; */
-  padding-bottom: 1rem;
 }
 
 /* used for genre tags */
