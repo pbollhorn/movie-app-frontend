@@ -1,5 +1,5 @@
 .modal {
-  width: 95%;
+  width: 90%;
   padding: 0;
   border: none;
   border-radius: 0.5rem;
@@ -11,4 +11,5 @@
   height: 1.5rem;
   top: 1rem;
   right: 1rem;
+  cursor: pointer;
 }

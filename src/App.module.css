@@ -2,7 +2,7 @@
         Mobile view
    ---------------------- */
 .mobileView {
-  padding-top: 3rem;  
+  padding-top: 3rem;
 }
 
 .mobileView > div:nth-child(1) {
@@ -15,6 +15,7 @@
 
 .mobileView img:nth-child(2) {
   height: 1.5rem;
+  cursor: pointer;
 }
 
 /* ----------------------
