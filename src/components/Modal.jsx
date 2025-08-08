@@ -12,12 +12,12 @@ export default function Modal({ children, modalIsOpen, setModalIsOpen }) {
     // Open dialog as modal when modalIsOpen is true
     if (modalIsOpen) {
       dialogElement.showModal();
-      // Prevent scrolling on the body when modal is open
-      document.body.style.overflow = "hidden";
+
+      document.body.style.overflow = "hidden"; // Prevent scrolling on the body when modal is open
     } else {
       dialogElement.close();
-      // Re-enable scrolling when modal is closed
-      document.body.style.overflow = "";
+
+      document.body.style.overflow = ""; // Re-enable scrolling when modal is closed
     }
 
     // Cleanup in case component unmounts while modal is open

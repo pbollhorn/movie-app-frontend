@@ -2,16 +2,13 @@
   display: flex;
   align-items: center; /* This vertically centers all children */
   margin: 1rem 0;
-  /* padding: 1rem; */
-  /* border-radius: 1rem; */
+  border-radius: 0.5rem;
   background-color: var(--card-bg);
 }
 
 .posterImage {
   height: 6rem;
   aspect-ratio: 2 / 3;
- 
-  /* border-radius: 1rem; */
 }
 
 .ratingImage {
