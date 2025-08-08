@@ -2,7 +2,6 @@
   width: 100%;
   background-color: var(--bg);
   color: var(--fg);
-  padding-bottom: 0.1rem;
 }
 
 .movieDetails img {
@@ -12,6 +11,7 @@
 
 .movieDetails div {
   /* margin: 1rem; */
+  padding-bottom: 0.1rem; /* TODO: this removes gap at the bottom of modal, but also makes line flash at opening of modal*/
 }
 
 /* used for genre tags */
