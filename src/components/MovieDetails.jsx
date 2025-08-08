@@ -75,6 +75,11 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
       />
       <div>
         <h1>{movieDetails.title}</h1>
+
+        {movieDetails.genres.map((genre) => (
+          <span key={genre}>{genre}</span>
+        ))}
+
         <p>Original title: {movieDetails.originalTitle}</p>
         <p>
           Original language:{" "}
@@ -96,12 +101,7 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
             Link to movie on TMDB
           </TmdbLink>
         </p>
-        <span>{movieDetails.genres[0] && movieDetails.genres[0]}</span>
-        <span>{movieDetails.genres[1] && movieDetails.genres[1]}</span>
-        <span>{movieDetails.genres[2] && movieDetails.genres[2]}</span>
-        <span>{movieDetails.genres[3] && movieDetails.genres[3]}</span>
-        <span>{movieDetails.genres[4] && movieDetails.genres[4]}</span>
-        <span>{movieDetails.genres[5] && movieDetails.genres[5]}</span>
+
         <p>{movieDetails.overview}</p>
         {movieDetails.collection && (
           <p>
