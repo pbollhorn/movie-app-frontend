@@ -1,4 +1,8 @@
+import useDeviceType from "../hooks/useDeviceType.js";
+
 export default function DevInfo() {
+  const deviceType = useDeviceType();
+
   const remInPx = parseFloat(
     getComputedStyle(document.documentElement).fontSize
   );
@@ -25,6 +29,8 @@ export default function DevInfo() {
       {"window.outerHeight: " + window.outerHeight + " px"}
       <br />
       {"1 rem: " + remInPx + " px"}
+      <br />
+      {"Device type: " + deviceType}
       <br />
     </div>
   );
