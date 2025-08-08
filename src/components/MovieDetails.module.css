@@ -13,8 +13,8 @@
 .movieDetails div {
   /* margin: 1rem; */
   padding-bottom: 0.1rem; /* TODO: this removes gap at the bottom of modal*/
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .movieDetails h1 {
