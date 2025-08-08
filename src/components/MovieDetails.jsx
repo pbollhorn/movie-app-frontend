@@ -96,12 +96,12 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
             Link to movie on TMDB
           </TmdbLink>
         </p>
-        <p>{movieDetails.genres[0] && movieDetails.genres[0]}</p>
-        <p>{movieDetails.genres[1] && movieDetails.genres[1]}</p>
-        <p>{movieDetails.genres[2] && movieDetails.genres[2]}</p>
-        <p>{movieDetails.genres[3] && movieDetails.genres[3]}</p>
-        <p>{movieDetails.genres[4] && movieDetails.genres[4]}</p>
-        <p>{movieDetails.genres[5] && movieDetails.genres[5]}</p>
+        <span>{movieDetails.genres[0] && movieDetails.genres[0]}</span>
+        <span>{movieDetails.genres[1] && movieDetails.genres[1]}</span>
+        <span>{movieDetails.genres[2] && movieDetails.genres[2]}</span>
+        <span>{movieDetails.genres[3] && movieDetails.genres[3]}</span>
+        <span>{movieDetails.genres[4] && movieDetails.genres[4]}</span>
+        <span>{movieDetails.genres[5] && movieDetails.genres[5]}</span>
         <p>{movieDetails.overview}</p>
         {movieDetails.collection && (
           <p>

@@ -12,3 +12,8 @@
 .movieDetails div {
   margin: 1rem;
 }
+
+.movieDetails span {
+  background-color: green;
+  color: white;
+}
