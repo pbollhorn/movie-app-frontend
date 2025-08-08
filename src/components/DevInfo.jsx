@@ -7,6 +7,8 @@ export default function DevInfo() {
     getComputedStyle(document.documentElement).fontSize
   );
 
+  const windowInnerWidthInRem = window.innerWidth / remInPx;
+
   return (
     <div>
       <h1>Dev Info</h1>
@@ -18,6 +20,7 @@ export default function DevInfo() {
       <br />
       {"screen.height: " + screen.height + " px"}
       <br />
+      <br />
       {"window.devicePixelRatio: " + window.devicePixelRatio}
       <br />
       {"window.innerWidth: " + window.innerWidth + " px"}
@@ -28,7 +31,10 @@ export default function DevInfo() {
       <br />
       {"window.outerHeight: " + window.outerHeight + " px"}
       <br />
+      <br />
       {"1 rem: " + remInPx + " px"}
+      <br />
+      {"window.innerWidth in rem: " + windowInnerWidthInRem}
       <br />
       {"Device type: " + deviceType}
       <br />
