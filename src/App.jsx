@@ -60,9 +60,12 @@ export default function App() {
             }}
           />
         </div>
-        <Modal modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen}>
+        <Modal
+          key={activeMovieId}
+          modalIsOpen={modalIsOpen}
+          setModalIsOpen={setModalIsOpen}
+        >
           <MovieDetails
-            key={activeMovieId}
             activeMovieId={activeMovieId}
             setModalIsOpen={setModalIsOpen}
           />
@@ -93,9 +96,12 @@ export default function App() {
             }}
           />
         </div>
-        <Modal modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen}>
+        <Modal
+          key={activeMovieId}
+          modalIsOpen={modalIsOpen}
+          setModalIsOpen={setModalIsOpen}
+        >
           <MovieDetails
-            key={activeMovieId}
             activeMovieId={activeMovieId}
             setModalIsOpen={setModalIsOpen}
           />
