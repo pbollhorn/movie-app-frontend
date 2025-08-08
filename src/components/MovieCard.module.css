@@ -1,7 +1,7 @@
 .movieCard {
   display: flex;
   align-items: center; /* This vertically centers all children */
-  margin: 1rem 0;
+  margin: 1rem 1rem;
   border-radius: 0.5rem;
   background-color: var(--card-bg);
   cursor: pointer;

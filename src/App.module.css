@@ -60,7 +60,6 @@
   flex: 0 0 30%; /* 30% width, don't grow or shrink */
   overflow: auto;
   height: 100%;
-  padding: 0 1rem;
 }
 
 .desktopView > div:nth-child(3) {
