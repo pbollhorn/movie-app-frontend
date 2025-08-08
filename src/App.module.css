@@ -75,3 +75,7 @@
 .outlet {
   padding: 0 0.5rem;
 }
+
+.outlet h1 {
+  margin: 1rem 0;
+}
