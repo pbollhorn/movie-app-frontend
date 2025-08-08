@@ -27,3 +27,9 @@ body {
   background-color: var(--bg);
   color: var(--fg);
 }
+
+/* TODO: This is here because sometimes the modal is rendered with border,
+even though Modal.module.css specifies  border: none;*/
+dialog {
+  border: none;
+}
