@@ -13,16 +13,16 @@
 .movieDetails div {
   /* margin: 1rem; */
   padding-bottom: 0.1rem; /* TODO: this removes gap at the bottom of modal*/
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 .movieDetails h1,h2 {
-  margin: 0.5rem 0;
+  margin: 0.75rem 0;
 }
 
 .movieDetails p {
-  margin: 0.5rem 0;
+  margin: 0.75rem 0;
 }
 
 /* used for genre tags */
