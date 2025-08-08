@@ -17,8 +17,14 @@
   padding-right: 0.75rem;
 }
 
-.movieDetails h1,h2 {
+.movieDetails h1 {
+  font-size: 1.8rem;
   margin: 0.75rem 0;
+}
+
+.movieDetails h2 {
+  font-size: 1.4rem;
+  margin: 1rem 0 0.75rem;
 }
 
 .movieDetails p {
@@ -39,6 +45,6 @@
 .movieDetails a:visited,
 .movieDetails a:hover,
 .movieDetails a:active {
-  color: blue;
+  color: var(--movieapp-lightblue);
   text-decoration: none;
 }
