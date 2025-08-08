@@ -5,7 +5,9 @@
   a:hover,
   a:active {
     color: white;
-    /* text-decoration: none; Optional: removes underline */
+    font-size: 1.1rem;
+    /* font-weight: bold; */
+    text-decoration: none; /* removes underline */
   }
 }
 
