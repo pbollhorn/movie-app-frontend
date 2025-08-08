@@ -10,7 +10,8 @@
 }
 
 .movieDetails div {
-  margin: 1rem;
+  /* margin: 1rem; */
+  padding-bottom: 1rem;
 }
 
 /* used for genre tags */
