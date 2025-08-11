@@ -37,6 +37,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-weight: bold;
 }
 
 
@@ -48,9 +49,9 @@
   align-items: center;
   grid-column: 2;
 
-    white-space: nowrap;
+    /* white-space: nowrap; */
   overflow: hidden;
-  text-overflow: ellipsis;
+  /* text-overflow: ellipsis; */
 }
 
 /* .line1 {
