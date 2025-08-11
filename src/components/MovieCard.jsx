@@ -91,7 +91,7 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
 
   return (
     <>
-      <hr></hr>
+      <hr className={styles.horizontalRule}></hr>
       <div className={styles.movieCard} onClick={handleMovieCardClick}>
         <img
           className={styles.posterImage}

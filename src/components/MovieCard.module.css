@@ -72,3 +72,9 @@
 .ratingImage {
   height: 1.3rem;
 }
+
+.horizontalRule {
+  height: 1px;
+  background-color: gray;
+  border: none;
+}
