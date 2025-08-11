@@ -83,6 +83,13 @@
   margin: 1rem 0;
 }
 
-/* ------------------------------------------------------------------
-        more styling
-   ------------------------------------------------------------------ */
+.outlet input[type="text"],
+input[type="password"] {
+  color: var(--fg);
+  background-color: var(--bg);
+  border: 0.1rem solid white;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-family: Verdana;
+}
