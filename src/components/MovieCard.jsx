@@ -101,7 +101,7 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
         onClick={handlePosterPicClick}
       />
       <div className={styles.line1}>
-        <b>{movieData.title}</b>
+        <div className={styles.myClass}>{movieData.title}</div>
       </div>
       <div className={styles.line2}>
         {formatAsString.directorsAsString(movieData.directors)}
@@ -112,12 +112,12 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
       <div className={styles.line4}>
         <div>{movieData.releaseDate[0]}</div>
         <div>{movieData.originalLanguage}</div>
-          <div>{formatAsString.scoreAsString(movieData.voteAverage)}</div>
-          <img
-            src={ratingPic}
-            onClick={handleRatingPicClick}
-            className={styles.ratingImage}
-          />
+        <div>{formatAsString.scoreAsString(movieData.voteAverage)}</div>
+        <img
+          src={ratingPic}
+          onClick={handleRatingPicClick}
+          className={styles.ratingImage}
+        />
       </div>
     </div>
   );
