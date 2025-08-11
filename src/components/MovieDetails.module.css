@@ -41,10 +41,7 @@
   padding: 0.2rem 0.3rem;
 }
 
-.movieDetails a:link,
-.movieDetails a:visited,
-.movieDetails a:hover,
-.movieDetails a:active {
+.internalLink {
   color: blue;
   text-decoration: none;
 }
