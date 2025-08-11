@@ -92,30 +92,32 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
   return (
     <div className={styles.movieCard} onClick={handleMovieCardClick}>
       <img
+        className={styles.posterImage}
         src={
           movieData.posterPath
             ? "https://image.tmdb.org/t/p/w154" + movieData.posterPath
             : NoPoster
         }
         onClick={handlePosterPicClick}
-        className={styles.posterImage}
       />
-      <div>
-        <div>
-          <b className={styles.ellipsis}>{movieData.title}</b>
-        </div>
-        <div>{formatAsString.directorsAsString(movieData.directors)}</div>
-        <div>{formatAsString.genresAsString(movieData.genres)}</div>
-        <div className={styles.lastLine}>
-          <div>{movieData.releaseDate[0]}</div>
-          <div>{movieData.originalLanguage}</div>
+      <div className={styles.line1}>
+        <b>{movieData.title}</b>
+      </div>
+      <div className={styles.line2}>
+        {formatAsString.directorsAsString(movieData.directors)}
+      </div>
+      <div className={styles.line3}>
+        {formatAsString.genresAsString(movieData.genres)}
+      </div>
+      <div className={styles.line4}>
+        <div>{movieData.releaseDate[0]}</div>
+        <div>{movieData.originalLanguage}</div>
           <div>{formatAsString.scoreAsString(movieData.voteAverage)}</div>
           <img
             src={ratingPic}
             onClick={handleRatingPicClick}
             className={styles.ratingImage}
           />
-        </div>
       </div>
     </div>
   );
