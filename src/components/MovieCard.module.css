@@ -8,12 +8,12 @@
 } */
 
 .movieCard {
-  background-color: var(--card-bg);
+  /* background-color: var(--card-bg); */
   margin: 0.5rem 0;
   border-radius: 0.5rem;
-  /* padding: 0.2rem 0; */
+  padding: 0.2rem 0;
   display: grid;
-  grid-template-rows: 1.8rem 1.8rem 1.8rem 1.8rem;
+  grid-template-rows: 1.7rem 1.7rem 1.7rem 1.7rem;
   grid-template-columns: 4.8rem 1fr;
 }
 
@@ -79,5 +79,5 @@
 } */
 
 .ratingImage {
-  height: 1.5rem;
+  height: 1.3rem;
 }

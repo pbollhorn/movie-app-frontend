@@ -90,35 +90,38 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
   }
 
   return (
-    <div className={styles.movieCard} onClick={handleMovieCardClick}>
-      <img
-        className={styles.posterImage}
-        src={
-          movieData.posterPath
-            ? "https://image.tmdb.org/t/p/w154" + movieData.posterPath
-            : NoPoster
-        }
-        onClick={handlePosterPicClick}
-      />
-      <div className={styles.line1}>
-        <div className={styles.myClass}>{movieData.title}</div>
-      </div>
-      <div className={styles.line2}>
-        {formatAsString.directorsAsString(movieData.directors)}
-      </div>
-      <div className={styles.line3}>
-        {formatAsString.genresAsString(movieData.genres)}
-      </div>
-      <div className={styles.line4}>
-        <div>{movieData.releaseDate[0]}</div>
-        <div>{movieData.originalLanguage}</div>
-        <div>{formatAsString.scoreAsString(movieData.voteAverage)}</div>
+    <>
+      <hr></hr>
+      <div className={styles.movieCard} onClick={handleMovieCardClick}>
         <img
-          src={ratingPic}
-          onClick={handleRatingPicClick}
-          className={styles.ratingImage}
+          className={styles.posterImage}
+          src={
+            movieData.posterPath
+              ? "https://image.tmdb.org/t/p/w154" + movieData.posterPath
+              : NoPoster
+          }
+          onClick={handlePosterPicClick}
         />
+        <div className={styles.line1}>
+          <div className={styles.myClass}>{movieData.title}</div>
+        </div>
+        <div className={styles.line2}>
+          {formatAsString.directorsAsString(movieData.directors)}
+        </div>
+        <div className={styles.line3}>
+          {formatAsString.genresAsString(movieData.genres)}
+        </div>
+        <div className={styles.line4}>
+          <div>{movieData.releaseDate[0]}</div>
+          <div>{movieData.originalLanguage}</div>
+          <div>{formatAsString.scoreAsString(movieData.voteAverage)}</div>
+          <img
+            src={ratingPic}
+            onClick={handleRatingPicClick}
+            className={styles.ratingImage}
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
