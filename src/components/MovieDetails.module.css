@@ -45,6 +45,6 @@
 .movieDetails a:visited,
 .movieDetails a:hover,
 .movieDetails a:active {
-  color: var(--movieapp-lightblue);
+  color: blue;
   text-decoration: none;
 }

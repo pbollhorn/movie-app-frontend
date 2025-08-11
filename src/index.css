@@ -4,7 +4,7 @@
   --fg: #000000;
   --card-bg: #dedede;
   --menu-fg: white;
-  --menu-bg: #0000b3;
+  --menu-bg: darkblue;
   --movieapp-green: #00d900;
   --movieapp-lightblue: #056dff;
   /* scrollbar-color: blue red; */
@@ -16,7 +16,7 @@ body.dark {
   --fg: #f5f5f5;
   --card-bg: #2a2a2a;
   --menu-fg: white;
-  --menu-bg: #0000b3;
+  --menu-bg: darkblue;
   --movieapp-green: #00d900;
   --movieapp-lightblue: #056dff;
 }

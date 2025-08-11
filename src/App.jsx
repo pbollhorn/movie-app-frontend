@@ -5,7 +5,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import MovieDetails from "./components/MovieDetails.jsx";
 import api from "./apiFacade.js";
 import Modal from "./components/Modal.jsx";
-import Logo from "./assets/Logo.png";
+import MovieAppLogo from "./assets/MovieAppLogo.svg";
 import BurgerButton from "./assets/BurgerButton.svg";
 import useDeviceType from "./hooks/useDeviceType.js";
 
@@ -40,7 +40,7 @@ export default function App() {
     return (
       <div className={styles.mobileView}>
         <div>
-          <img src={Logo} style={{ height: "1.75rem" }} />
+          <img src={MovieAppLogo} style={{ height: "1.75rem" }} />
           <img src={BurgerButton} onClick={() => setMenuIsOpen(!menuIsOpen)} />
           {menuIsOpen && (
             <Menu
@@ -79,7 +79,7 @@ export default function App() {
     return (
       <div className={styles.tabletView}>
         <div>
-          <img src={Logo} style={{ height: "1.75rem" }} />
+          <img src={MovieAppLogo} style={{ height: "1.75rem" }} />
           <Menu
             loggedIn={loggedIn}
             setLoggedIn={setLoggedIn}
@@ -114,7 +114,7 @@ export default function App() {
   return (
     <div className={styles.desktopView}>
       <div>
-        <img src={Logo} style={{ height: "1.75rem" }} />
+        <img src={MovieAppLogo} style={{ height: "1.75rem" }} />
         <Menu
           loggedIn={loggedIn}
           setLoggedIn={setLoggedIn}
