@@ -87,7 +87,7 @@
 input[type="password"] {
   color: var(--fg);
   background-color: var(--bg);
-  border: 0.1rem solid white;
+  border: 2px solid gray;
   border-radius: 0.5rem;
   padding: 0.5rem;
   font-size: 1rem;
