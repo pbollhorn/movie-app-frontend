@@ -106,10 +106,14 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
           <div className={styles.ellipsis}>{movieData.title}</div>
         </div>
         <div className={styles.line2}>
-          <div className={styles.ellipsis}>{formatAsString.directorsAsString(movieData.directors)}</div>
+          <div className={styles.ellipsis}>
+            {formatAsString.directorsAsString(movieData.directors)}
+          </div>
         </div>
         <div className={styles.line3}>
-          <div className={styles.ellipsis}>{formatAsString.genresAsString(movieData.genres)}</div>
+          <div className={styles.ellipsis}>
+            {formatAsString.genresAsString(movieData.genres)}
+          </div>
         </div>
         <div className={styles.line4}>
           <div>{movieData.releaseDate[0]}</div>
