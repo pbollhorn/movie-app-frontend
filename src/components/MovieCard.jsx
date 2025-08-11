@@ -103,13 +103,13 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
           onClick={handlePosterPicClick}
         />
         <div className={styles.line1}>
-          <div className={styles.myClass}>{movieData.title}</div>
+          <div className={styles.ellipsis}>{movieData.title}</div>
         </div>
         <div className={styles.line2}>
-          {formatAsString.directorsAsString(movieData.directors)}
+          <div className={styles.ellipsis}>{formatAsString.directorsAsString(movieData.directors)}</div>
         </div>
         <div className={styles.line3}>
-          {formatAsString.genresAsString(movieData.genres)}
+          <div className={styles.ellipsis}>{formatAsString.genresAsString(movieData.genres)}</div>
         </div>
         <div className={styles.line4}>
           <div>{movieData.releaseDate[0]}</div>
