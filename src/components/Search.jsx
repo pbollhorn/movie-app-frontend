@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { useOutletContext } from "react-router-dom";
 import api from "../apiFacade.js";
 import MovieCardList from "./MovieCardList.jsx";
+import BurgerButton from "../assets/BurgerButton.svg";
 
 export default function Search() {
   const [list, setList] = useState([]);
@@ -23,6 +24,7 @@ export default function Search() {
       <form onSubmit={handleSearchSubmit}>
         <input type="text" ref={searchTitleRef} placeholder="Search by title" />
         <button type="submit">Search</button>
+        {/* <button type="submit">🔍</button> */}
       </form>
       <MovieCardList list={list} setActiveMovieId={setActiveMovieId} />
     </>
