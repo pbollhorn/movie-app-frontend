@@ -114,7 +114,7 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
         <div className={styles.line4}>
           <div>{movieData.releaseDate[0]}</div>
           <div>{movieData.originalLanguage}</div>
-          <div>{formatAsString.scoreAsString(movieData.voteAverage)}</div>
+          <div>{movieData.voteAverage.toFixed(1)}</div>
           <img
             src={ratingPic}
             onClick={handleRatingPicClick}
