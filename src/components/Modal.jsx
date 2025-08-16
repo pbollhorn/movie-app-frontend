@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 import styles from "./Modal.module.css";
-import CloseButton from "../assets/CloseButton.svg";
+import CloseIcon from "../assets/CloseIcon.svg";
 
 export default function Modal({ children, modalIsOpen, setModalIsOpen }) {
   const dialogRef = useRef(null);
@@ -29,7 +29,7 @@ export default function Modal({ children, modalIsOpen, setModalIsOpen }) {
   return (
     <dialog ref={dialogRef} className={styles.modal}>
       <img
-        src={CloseButton}
+        src={CloseIcon}
         onClick={() => setModalIsOpen(false)}
         className={styles.closeButton}
       />

@@ -6,7 +6,7 @@ import MovieDetails from "./components/MovieDetails.jsx";
 import api from "./apiFacade.js";
 import Modal from "./components/Modal.jsx";
 import MovieAppLogo from "./assets/MovieAppLogo.svg";
-import BurgerButton from "./assets/BurgerButton.svg";
+import BurgerIcon from "./assets/BurgerIcon.svg";
 import useDeviceType from "./hooks/useDeviceType.js";
 
 export default function App() {
@@ -41,7 +41,7 @@ export default function App() {
       <div className={styles.mobileView}>
         <div>
           <img src={MovieAppLogo} className={styles.movieAppLogo} />
-          <img src={BurgerButton} onClick={() => setMenuIsOpen(!menuIsOpen)} />
+          <img src={BurgerIcon} onClick={() => setMenuIsOpen(!menuIsOpen)} />
           {menuIsOpen && (
             <Menu
               loggedIn={loggedIn}
