@@ -18,7 +18,7 @@
 .mobileView img:nth-child(2) {
   position: absolute;
   height: 1rem;
-  top: 0.5rem;
+  top: 0.875rem;
   right: 0.5rem;
   cursor: pointer;
 }
