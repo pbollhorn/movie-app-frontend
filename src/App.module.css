@@ -10,6 +10,7 @@
   top: 0;
   left: 0;
   width: 100%;
+  padding-left: 0.5rem;
   background-color: var(--menu-bg);
 }
 
@@ -70,6 +71,15 @@
   /* Take up the remaining vertical space */
   overflow: auto;
   height: 100%;
+}
+
+/* ------------------------------------------------------------------
+        Styling of MovieAppLogo (nothing to do with mobile, tablet, desktop
+   ------------------------------------------------------------------ */
+.movieAppLogo {
+  height: 1.75rem;
+  margin: 0.5rem 0;
+  display: block;
 }
 
 /* ------------------------------------------------------------------

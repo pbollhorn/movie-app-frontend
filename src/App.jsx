@@ -40,7 +40,7 @@ export default function App() {
     return (
       <div className={styles.mobileView}>
         <div>
-          <img src={MovieAppLogo} style={{ height: "1.75rem" }} />
+          <img src={MovieAppLogo} className={styles.movieAppLogo} />
           <img src={BurgerButton} onClick={() => setMenuIsOpen(!menuIsOpen)} />
           {menuIsOpen && (
             <Menu
@@ -79,7 +79,7 @@ export default function App() {
     return (
       <div className={styles.tabletView}>
         <div>
-          <img src={MovieAppLogo} style={{ height: "1.75rem" }} />
+          <img src={MovieAppLogo} className={styles.movieAppLogo} />
           <Menu
             loggedIn={loggedIn}
             setLoggedIn={setLoggedIn}
@@ -114,7 +114,7 @@ export default function App() {
   return (
     <div className={styles.desktopView}>
       <div>
-        <img src={MovieAppLogo} style={{ height: "1.75rem" }} />
+        <img src={MovieAppLogo} className={styles.movieAppLogo} />
         <Menu
           loggedIn={loggedIn}
           setLoggedIn={setLoggedIn}
