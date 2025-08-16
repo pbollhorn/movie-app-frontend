@@ -11,7 +11,6 @@
   top: 0;
   left: 0;
   width: 100%;
-  /* padding: 0.5rem; */
   background-color: var(--menu-bg);
 }
 
@@ -46,7 +45,6 @@
   flex: 0 0 40%; /* 40% width, don't grow or shrink */
   overflow: auto;
   height: 100%;
-  /* padding-left: 1rem; */
   background-color: var(--menu-bg);
 }
 
@@ -68,7 +66,6 @@
   flex: 0 0 20%; /* 20% width, don't grow or shrink */
   overflow: auto;
   height: 100%;
-  /* padding-left: 1rem; */
   background-color: var(--menu-bg);
 }
 

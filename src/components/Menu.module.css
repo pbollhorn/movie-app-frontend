@@ -1,12 +1,12 @@
 .menu {
   color: var(--menu-fg);
+  padding: 0.5rem;
   a:link,
   a:visited,
   a:hover,
   a:active {
     color: white;
     font-size: 1.1rem;
-    /* font-weight: bold; */
     text-decoration: none; /* removes underline */
   }
 }
