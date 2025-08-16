@@ -59,6 +59,7 @@ export default function App() {
               setActiveMovieId,
             }}
           />
+          <div className={styles.bottomSpacing}></div>
         </div>
         <Modal
           key={activeMovieId}
