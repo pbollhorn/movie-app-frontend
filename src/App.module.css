@@ -26,11 +26,11 @@
 .mobileView .outlet {
   height: 100%;
   overflow-y: auto;
-  margin-top: 2.75rem;
+  margin-top: 3.25rem;
 }
 
 .mobileView .outlet .bottomSpacing {
-  height: 2.75rem;
+  height: 3.25rem;
 }
 
 /* ----------------------

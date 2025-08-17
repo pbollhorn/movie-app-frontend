@@ -10,6 +10,8 @@
    inkscape:export-filename="bitmap.svg"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
+   sodipodi:docname="MovieAppLogo-InkscapeMasterFile.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +25,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="true"
      inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="mm">
+     inkscape:document-units="mm"
+     inkscape:zoom="5.5032257"
+     inkscape:cx="161.45076"
+     inkscape:cy="19.170575"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
     <inkscape:page
        x="0"
        y="0"
@@ -40,7 +51,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <path
-       style="font-weight:900;font-size:53.3333px;font-family:Orbitron;-inkscape-font-specification:'Orbitron Heavy';white-space:pre;fill:#00ff00;stroke-width:0.264583"
+       style="font-weight:900;font-size:53.3333px;font-family:Orbitron;-inkscape-font-specification:'Orbitron Heavy';white-space:pre;fill:#00d900;stroke-width:0.264583;fill-opacity:1"
        d="M 0,10.159995 V 0 H 2.2577763 L 5.7008855,4.1063333 9.1298836,0 H 11.401771 V 10.159995 H 9.20044 V 3.3443333 L 5.7008855,7.5212177 2.187221,3.3584435 v 6.8015515 z m 15.155316,0 c -0.376295,0 -0.724368,-0.09407 -1.04422,-0.2822209 -0.319852,-0.1881478 -0.573852,-0.4421478 -0.762,-0.762 C 13.160948,8.795922 13.066873,8.4478467 13.066873,8.071551 V 2.0884435 c 0,-0.3857016 0.09408,-0.7337769 0.282223,-1.0442204 0.188148,-0.31985215 0.442148,-0.57385215 0.762,-0.762 C 14.430948,0.09407525 14.779021,0 15.155316,0 h 5.983108 c 0.376298,0 0.719667,0.09407525 1.03011,0.2822231 0.319852,0.18814785 0.573852,0.44214785 0.762,0.762 0.197557,0.3104435 0.296334,0.6585188 0.296334,1.0442204 V 8.071551 c 0,0.3762957 -0.09878,0.724371 -0.296334,1.0442231 -0.188148,0.3198522 -0.442148,0.5738522 -0.762,0.762 -0.310443,0.1881479 -0.653812,0.2822209 -1.03011,0.2822209 z m 0.09878,-2.2013311 h 5.757328 v 0 0 -5.7573306 0 0 h -5.757328 v 0 0 z m 14.619092,2.2013311 v 0 L 23.988857,0 h 2.539997 L 30.790408,7.3801075 35.051962,0 h 2.525887 l -5.884331,10.159995 z m 8.212663,0 V 0 h 2.159 v 10.159995 z m 3.400791,0 V 0 h 9.383881 v 2.2013333 h -7.168438 v 1.778 h 5.771441 v 2.2013306 h -5.771441 v 1.778 h 7.168438 v 2.2013311 z"
        id="text1"
        aria-label="MOVIE"
@@ -48,7 +59,7 @@
     <path
        d="M 52.295745,10.159995 V 2.0884465 q 0,-0.578555 0.282222,-1.044221 0.282222,-0.47977804 0.762,-0.76200004 Q 53.819744,3.4604864e-6 54.384188,3.4604864e-6 h 5.968995 q 0.578556,0 1.044222,0.2822219995136 0.479777,0.282222 0.761999,0.76200004 0.296333,0.465666 0.296333,1.044221 V 10.159995 H 60.240295 V 6.8862205 h -5.757329 v 3.2737745 z m 2.187221,-5.4751055 h 5.757329 v -2.483554 q 0,0 0,0 0,0 0,0 h -5.757329 q 0,0 0,0 0,0 0,0 z M 64.06441,10.159995 V 0.01411446 h 8.057438 q 0.578555,0 1.044221,0.282222 0.479778,0.282222 0.762,0.76200004 0.296333,0.479777 0.296333,1.044221 v 2.624665 q 0,0.564444 -0.296333,1.044221 -0.282222,0.479778 -0.762,0.762 -0.465666,0.282222 -1.044221,0.282222 l -5.870218,0.01411 v 3.3302185 z m 2.18722,-5.5456615 h 5.757329 q 0,0 0,0 0,0 0,0 v -2.412998 q 0,0 0,0 0,0 0,0 H 66.25163 q 0,0 0,0 0,0 0,0 z m 8.974664,5.5456615 V 0.01411446 h 8.057434 q 0.57856,0 1.04423,0.282222 0.47977,0.282222 0.76199,0.76200004 0.29634,0.479777 0.29634,1.044221 v 2.624665 q 0,0.564444 -0.29634,1.044221 -0.28222,0.479778 -0.76199,0.762 -0.46567,0.282222 -1.04423,0.282222 l -5.870214,0.01411 v 3.3302185 z m 2.18722,-5.5456615 h 5.757334 q 0,0 0,0 0,0 0,0 v -2.412998 q 0,0 0,0 0,0 0,0 h -5.757334 q 0,0 0,0 0,0 0,0 z"
        id="text2"
-       style="font-weight:900;font-size:14.1111px;font-family:Orbitron;-inkscape-font-specification:'Orbitron Heavy';fill:#00ffff;stroke-width:0.264583"
+       style="font-weight:900;font-size:14.1111px;font-family:Orbitron;-inkscape-font-specification:'Orbitron Heavy';fill:#01b4e4;stroke-width:0.264583;fill-opacity:1"
        aria-label="APP" />
   </g>
 </svg>
