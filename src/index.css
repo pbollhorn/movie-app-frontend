@@ -2,7 +2,6 @@
 :root {
   --bg: #f9f9f9;
   --fg: #000000;
-  --card-bg: #dedede;
   --menu-fg: white;
   --menu-bg: #0000b3;
   --movieapp-green: #00d900;
@@ -14,7 +13,6 @@
 body.dark {
   --bg: #1e1e1e;
   --fg: #f5f5f5;
-  --card-bg: #2a2a2a;
   --menu-fg: white;
   --menu-bg: #0000b3;
   --movieapp-green: #00d900;
@@ -26,10 +24,4 @@ body {
   margin: 0;
   background-color: var(--bg);
   color: var(--fg);
-}
-
-/* TODO: This is here because sometimes the modal is rendered with border,
-even though Modal.module.css specifies  border: none;*/
-dialog {
-  border: none;
 }
