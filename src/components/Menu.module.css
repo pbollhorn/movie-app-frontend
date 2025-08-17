@@ -1,6 +1,6 @@
 .menu {
   color: var(--menu-fg);
-  padding: 0.5rem;
+  padding: 0.25rem 0.75rem;
   a:link,
   a:visited,
   a:hover,
