@@ -25,7 +25,7 @@ function determineDeviceType() {
 
   const windowInnerWidthInRem = windowInnerWidthInPx / remInPx;
 
-  if (windowInnerWidthInRem < 48) return "mobile";
+  if (windowInnerWidthInRem < 40) return "mobile";
 
   if (windowInnerWidthInRem < 62) return "tablet";
 
