@@ -27,7 +27,7 @@ function determineDeviceType() {
 
   if (windowInnerWidthInRem < 48) return "mobile";
 
-  if (windowInnerWidthInRem < 58) return "tablet";
+  if (windowInnerWidthInRem < 62) return "tablet";
 
   return "desktop";
 }
