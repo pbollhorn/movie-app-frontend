@@ -115,16 +115,14 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
             {formatAsString.genresAsString(movieData.genres)}
           </div>
         </div>
-        <div className={styles.stats}>
-          <div>{movieData.releaseDate[0]}</div>
-          <div>{movieData.originalLanguage}</div>
-          <div>{movieData.voteAverage.toFixed(1)}</div>
-          <img
-            src={ratingImage}
-            onClick={handleRatingImageClick}
-            className={styles.ratingImage}
-          />
-        </div>
+        <div className={styles.year}>{movieData.releaseDate[0]}</div>
+        <div className={styles.language}>{movieData.originalLanguage}</div>
+        <div className={styles.score}>{movieData.voteAverage.toFixed(1)}</div>
+        <img
+          src={ratingImage}
+          onClick={handleRatingImageClick}
+          className={styles.ratingImage}
+        />
       </div>
     </>
   );

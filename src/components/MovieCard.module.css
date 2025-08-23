@@ -3,7 +3,8 @@
   margin: 0.5rem 0;
   display: grid;
   grid-template-rows: 1.7rem 1.7rem 1.7rem 1.7rem;
-  grid-template-columns: 4.8rem 1fr; /*TODO: Adjust image widht */
+  grid-template-columns: 4.8rem 3rem 2rem 2rem 1fr; /*TODO: Adjust image widht */
+  align-items: center; /*Vertically center items in grid cells*/
 }
 
 .posterImage {
@@ -15,18 +16,22 @@
 }
 
 .title {
+  grid-row: 1;
+  grid-column: 2 / 6;
   font-weight: bold;
+  overflow: hidden;
 }
 
-.title,
-.directors,
-.genres,
-.stats {
-  display: flex;
-  align-items: center;
-  grid-column: 2;
+.directors {
+  grid-row: 2;
+  grid-column: 2 / 6;
   overflow: hidden;
-  padding-left: 0.25rem;
+}
+
+.genres {
+  grid-row: 3;
+  grid-column: 2 / 6;
+  overflow: hidden;
 }
 
 .ellipsis {
@@ -35,7 +40,24 @@
   text-overflow: ellipsis;
 }
 
+.year {
+  grid-row: 4;
+  grid-column: 2;
+}
+
+.language {
+  grid-row: 4;
+  grid-column: 3;
+}
+
+.score {
+  grid-row: 4;
+  grid-column: 4;
+}
+
 .ratingImage {
+  grid-row: 4;
+  grid-column: 5;
   height: 1.3rem;
 }
 
@@ -44,23 +66,3 @@
   background-color: gray;
   border: none;
 }
-
-/* .line1 {
-  grid-row: 1;
-  grid-column: 2;
-}
-
-.line2 {
-  grid-row: 2;
-  grid-column: 2;
-}
-
-.line3 {
-  grid-row: 3;
-  grid-column: 2;
-}
-
-.line4 {
-  grid-row: 4;
-  grid-column: 2;
-} */
