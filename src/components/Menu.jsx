@@ -39,12 +39,9 @@ export default function Menu({ loggedIn, setLoggedIn, setMenuIsOpen }) {
           </>
         )}
       </nav>
-      <br />
-      <br />
-      <br />
-      <div>
+      <div className={styles.tmdbAttribution}>
         <TmdbLink>
-          <img src={TmdbLogo} className={styles.tmdbLogo} alt="TMDB Logo" />
+          <img src={TmdbLogo} alt="TMDB Logo" />
         </TmdbLink>
         <p>
           This website uses TMDB and the TMDB APIs but is not endorsed,
