@@ -9,25 +9,9 @@
 .posterImage {
   grid-row: 1 / 5;
   grid-column: 1;
-
   height: 6.8rem;
   aspect-ratio: 2/3;
-
   border-radius: 0.5rem;
-}
-
-/* .line1,
-.line2,
-.line3 {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-} */
-
-.ellipsis {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .line1 {
@@ -41,12 +25,24 @@
   display: flex;
   align-items: center;
   grid-column: 2;
-
-  /* white-space: nowrap; */
   overflow: hidden;
-  /* text-overflow: ellipsis; */
-
   padding-left: 0.25rem;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ratingImage {
+  height: 1.3rem;
+}
+
+.horizontalRule {
+  height: 1px;
+  background-color: gray;
+  border: none;
 }
 
 /* .line1 {
@@ -68,13 +64,3 @@
   grid-row: 4;
   grid-column: 2;
 } */
-
-.ratingImage {
-  height: 1.3rem;
-}
-
-.horizontalRule {
-  height: 1px;
-  background-color: gray;
-  border: none;
-}
