@@ -10,16 +10,16 @@ import formatAsString from "../formatAsString.js";
 export default function MovieCard({ movieData, setActiveMovieId }) {
   const [rating, setRating] = useState(movieData.rating);
 
-  let ratingPic;
+  let ratingImage;
   switch (rating) {
     case null:
-      ratingPic = NoRating;
+      ratingImage = NoRating;
       break;
     case true:
-      ratingPic = GoodRating;
+      ratingImage = GoodRating;
       break;
     case false:
-      ratingPic = OkRating;
+      ratingImage = OkRating;
       break;
   }
 
@@ -27,7 +27,7 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
     setActiveMovieId(movieData.id + "+" + Date.now());
   }
 
-  function handlePosterPicClick(event) {
+  function handlePosterImageClick(event) {
     event.stopPropagation();
     if (movieData.posterPath == null) {
       setActiveMovieId(null);
@@ -36,7 +36,7 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
     }
   }
 
-  function handleRatingPicClick(event) {
+  function handleRatingImageClick(event) {
     event.stopPropagation();
     if (api.loggedIn() === false) {
       alert("Login to rate movies and get recommendations");
@@ -100,28 +100,28 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
               ? "https://image.tmdb.org/t/p/w154" + movieData.posterPath
               : NoPoster
           }
-          onClick={handlePosterPicClick}
+          onClick={handlePosterImageClick}
         />
-        <div className={styles.line1}>
+        <div className={styles.title}>
           <div className={styles.ellipsis}>{movieData.title}</div>
         </div>
-        <div className={styles.line2}>
+        <div className={styles.directors}>
           <div className={styles.ellipsis}>
             {formatAsString.directorsAsString(movieData.directors)}
           </div>
         </div>
-        <div className={styles.line3}>
+        <div className={styles.genres}>
           <div className={styles.ellipsis}>
             {formatAsString.genresAsString(movieData.genres)}
           </div>
         </div>
-        <div className={styles.line4}>
+        <div className={styles.stats}>
           <div>{movieData.releaseDate[0]}</div>
           <div>{movieData.originalLanguage}</div>
           <div>{movieData.voteAverage.toFixed(1)}</div>
           <img
-            src={ratingPic}
-            onClick={handleRatingPicClick}
+            src={ratingImage}
+            onClick={handleRatingImageClick}
             className={styles.ratingImage}
           />
         </div>
