@@ -11,8 +11,7 @@
 }
 
 .movieDetails div {
-  /* margin: 1rem; */
-  padding-bottom: 0.1rem; /* TODO: this removes gap at the bottom of modal*/
+  padding-bottom: 0.1rem; /* This removes gap at the bottom of modal*/
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
@@ -31,7 +30,7 @@
   margin: 0.75rem 0;
 }
 
-/* used for genre tags */
+/* Used for genre tags */
 .movieDetails span {
   background-color: green;
   color: white;
@@ -42,6 +41,6 @@
 }
 
 .internalLink {
-  color: blue;
+  color: var(--movieapp-lightblue);
   text-decoration: none;
 }
