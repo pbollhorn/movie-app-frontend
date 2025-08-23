@@ -17,17 +17,6 @@
   gap: 1rem; /* adds space between the links */
 }
 
-.menu button {
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  font: inherit;
-  padding: 0;
-  text-align: left;
-  text-decoration: underline;
-}
-
 .tmdbAttribution img {
   height: 1rem;
   margin-top: 2.5rem;

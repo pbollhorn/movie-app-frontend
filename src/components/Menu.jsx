@@ -27,7 +27,9 @@ export default function Menu({ loggedIn, setLoggedIn, setMenuIsOpen }) {
           Recommendations
         </Link>
         {loggedIn ? (
-          <button onClick={handleLogoutClick}>Logout</button>
+          <Link to="#" onClick={handleLogoutClick}>
+            Logout
+          </Link>
         ) : (
           <>
             <Link to="/login" onClick={() => setMenuIsOpen(false)}>
