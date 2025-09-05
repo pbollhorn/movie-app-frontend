@@ -2,6 +2,8 @@
 
 This repo is the frontend for my MovieApp full-stack web application.
 
+Link to repo for backend: 
+
 ## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
