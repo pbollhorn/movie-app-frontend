@@ -4,7 +4,7 @@ This repo contains the frontend for my MovieApp full-stack web application.
 
 Link to repo for backend: https://github.com/pbollhorn/movie-app-backend
 
-
+Link to deployed web app: https://movieapp.jcoder.dk
 
 ## React + Vite
 
