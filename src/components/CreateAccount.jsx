@@ -22,7 +22,6 @@ export default function CreateAccount() {
     <>
       {JSON.stringify(account)}
       <h1>Create Account</h1>
-      <p>test2</p>
 
       <form onSubmit={handleSubmit}>
         <label htmlFor="username">Choose username:</label>
