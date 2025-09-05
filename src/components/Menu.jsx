@@ -46,7 +46,7 @@ export default function Menu({ loggedIn, setLoggedIn, setMenuIsOpen }) {
           <img src={TmdbLogo} alt="TMDB Logo" />
         </TmdbLink>
         <p>
-          This website uses TMDB and the TMDB APIs but is not endorsed,
+          This web app uses TMDB and the TMDB APIs but is not endorsed,
           certified, or otherwise approved by TMDB.
         </p>
       </div>

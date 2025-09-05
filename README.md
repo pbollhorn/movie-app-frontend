@@ -16,5 +16,7 @@ Link to deployed web app: https://movieapp.jcoder.dk
 - Get recommendations based on your ratings
 - Mobile and Desktop friendly
 
-## TMDB Attribution
+## TMDB
 This web app uses TMDB and the TMDB APIs but is not endorsed, certified, or otherwise approved by TMDB.
+
+Link to TMDB: https://www.themoviedb.org/
