@@ -16,6 +16,9 @@ Link to deployed web app: https://movieapp.jcoder.dk
 - Get recommendations based on your ratings
 - Mobile and Desktop friendly
 
+## Tech Stack
+- React 19
+
 ## TMDB
 This web app uses TMDB and the TMDB APIs but is not endorsed, certified, or otherwise approved by TMDB.
 
