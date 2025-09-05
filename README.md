@@ -12,6 +12,6 @@ Link to deployed web app: https://movieapp.jcoder.dk
 - See movie posters
 - See movie details including all cast and crew members
 - See movies for particular cast/crew member
-- Rate movies "Good" or "OK/bad"
+- Rate movies 😀 (Good) or 😐 (OK/Bad)
 - Get recommendations based on your ratings
 - Mobile and Desktop friendly
