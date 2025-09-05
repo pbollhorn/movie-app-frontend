@@ -1,6 +1,6 @@
 # MovieApp Frontend
 
-This repo contains the frontend for my MovieApp full-stack web application.
+This repo contains the frontend for my MovieApp full-stack web application where users can search movies, rate movies and get personalized recommendations.
 
 Link to repo for backend: https://github.com/pbollhorn/movie-app-backend
 
