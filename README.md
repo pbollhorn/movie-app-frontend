@@ -15,3 +15,6 @@ Link to deployed web app: https://movieapp.jcoder.dk
 - Rate movies 😀 (Good) or 😐 (OK/Bad)
 - Get recommendations based on your ratings
 - Mobile and Desktop friendly
+
+## TMDB Attribution
+This web app uses TMDB and the TMDB APIs but is not endorsed, certified, or otherwise approved by TMDB.
