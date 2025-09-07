@@ -38,7 +38,7 @@ export default function App() {
   // Mobile layout
   if (layoutType == "mobile") {
     return (
-      <div className={styles.mobileView}>
+      <div className={styles.mobileLayout}>
         <div>
           <img src={MovieAppLogo} className={styles.movieAppLogo} />
           <img src={BurgerIcon} onClick={() => setMenuIsOpen(!menuIsOpen)} />
@@ -78,7 +78,7 @@ export default function App() {
   // Tablet layout
   if (layoutType == "tablet") {
     return (
-      <div className={styles.tabletView}>
+      <div className={styles.tabletLayout}>
         <div>
           <img src={MovieAppLogo} className={styles.movieAppLogo} />
           <Menu
@@ -113,7 +113,7 @@ export default function App() {
 
   // Desktop layout
   return (
-    <div className={styles.desktopView}>
+    <div className={styles.desktopLayout}>
       <div>
         <img src={MovieAppLogo} className={styles.movieAppLogo} />
         <Menu

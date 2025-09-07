@@ -1,12 +1,12 @@
 /* ----------------------
-        Mobile view
+        Mobile Layout
    ---------------------- */
-.mobileView {
+.mobileLayout {
   height: 100vh;
   overflow: hidden;
 }
 
-.mobileView > div:nth-child(1) {
+.mobileLayout > div:nth-child(1) {
   position: fixed;
   top: 0;
   left: 0;
@@ -15,7 +15,7 @@
 }
 
 /* burger button */
-.mobileView img:nth-child(2) {
+.mobileLayout img:nth-child(2) {
   position: absolute;
   height: 1rem;
   top: 1.125rem;
@@ -23,66 +23,66 @@
   cursor: pointer;
 }
 
-.mobileView .outlet {
+.mobileLayout .outlet {
   height: 100%;
   overflow-y: auto;
   margin-top: 3.25rem;
 }
 
-.mobileView .outlet .bottomSpacing {
+.mobileLayout .outlet .bottomSpacing {
   height: 3.25rem;
 }
 
 /* ----------------------
-        Tablet view
+        Tablet Layout
    ---------------------- */
-.tabletView {
+.tabletLayout {
   display: flex;
   height: 100vh;
 }
 
-.tabletView > div:nth-child(1) {
+.tabletLayout > div:nth-child(1) {
   flex: 0 0 20rem; /* 20rem width, don't grow or shrink */
   overflow: auto;
   height: 100%;
   background-color: var(--menu-bg);
 }
 
-.tabletView > div:nth-child(2) {
+.tabletLayout > div:nth-child(2) {
   /* Take up the remaining vertical space */
   overflow: auto;
   height: 100%;
 }
 
 /* ----------------------
-        Desktop view
+        Desktop Layout
    ---------------------- */
-.desktopView {
+.desktopLayout {
   display: flex;
   height: 100vh;
 }
 
-.desktopView > div:nth-child(1) {
+.desktopLayout > div:nth-child(1) {
   flex: 0 0 20rem; /* 20rem width, don't grow or shrink */
   overflow: auto;
   height: 100%;
   background-color: var(--menu-bg);
 }
 
-.desktopView > div:nth-child(2) {
+.desktopLayout > div:nth-child(2) {
   flex: 0 0 30%; /* 30% width, don't grow or shrink */
   overflow: auto;
   height: 100%;
 }
 
-.desktopView > div:nth-child(3) {
+.desktopLayout > div:nth-child(3) {
   /* Take up the remaining vertical space */
   overflow: auto;
   height: 100%;
 }
 
 /* ------------------------------------------------------------------
-        Styling of MovieAppLogo (nothing to do with mobile, tablet, desktop
+        Styling of MovieAppLogo (nothing to do with mobile, tablet, desktop)
    ------------------------------------------------------------------ */
 .movieAppLogo {
   height: 1.75rem;
