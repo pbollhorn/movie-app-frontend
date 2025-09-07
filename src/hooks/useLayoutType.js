@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 
-// Custom hook for determining device type based on window size and standard font size
-export default function useDeviceType() {
-  const [deviceType, setDeviceType] = useState(determineDeviceType());
+// Custom hook for determining layout type based on window size and standard font size
+export default function useLayoutType() {
+  const [layoutType, setLayoutType] = useState(determineLayoutType());
 
   useEffect(() => {
     function handleWindowResize() {
-      setDeviceType(determineDeviceType());
+      setLayoutType(determineLayoutType());
     }
 
     window.addEventListener("resize", handleWindowResize);
@@ -14,10 +14,10 @@ export default function useDeviceType() {
     return () => window.removeEventListener("resize", handleWindowResize);
   }, []);
 
-  return deviceType;
+  return layoutType;
 }
 
-function determineDeviceType() {
+function determineLayoutType() {
   const windowInnerWidthInPx = window.innerWidth;
   const remInPx = parseFloat(
     getComputedStyle(document.documentElement).fontSize

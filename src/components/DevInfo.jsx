@@ -1,7 +1,7 @@
-import useDeviceType from "../hooks/useDeviceType.js";
+import useLayoutType from "../hooks/useLayoutType.js";
 
 export default function DevInfo() {
-  const deviceType = useDeviceType();
+  const layoutType = useLayoutType();
 
   const remInPx = parseFloat(
     getComputedStyle(document.documentElement).fontSize
@@ -36,7 +36,7 @@ export default function DevInfo() {
       <br />
       {"window.innerWidth in rem: " + windowInnerWidthInRem}
       <br />
-      {"Device type: " + deviceType}
+      {"Layout type: " + layoutType}
       <br />
     </>
   );

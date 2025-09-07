@@ -7,7 +7,7 @@ import api from "./apiFacade.js";
 import Modal from "./components/Modal.jsx";
 import MovieAppLogo from "./assets/MovieAppLogo.svg";
 import BurgerIcon from "./assets/BurgerIcon.svg";
-import useDeviceType from "./hooks/useDeviceType.js";
+import useLayoutType from "./hooks/useLayoutType.js";
 
 export default function App() {
   // useEffect for setting dark/light mode according to browser settings
@@ -20,7 +20,7 @@ export default function App() {
     }
   }, []);
 
-  const deviceType = useDeviceType();
+  const layoutType = useLayoutType();
 
   const [loggedIn, setLoggedIn] = useState(api.loggedIn());
 
@@ -35,8 +35,8 @@ export default function App() {
   // also when already at that location
   const location = useLocation();
 
-  // Mobile view
-  if (deviceType == "mobile") {
+  // Mobile layout
+  if (layoutType == "mobile") {
     return (
       <div className={styles.mobileView}>
         <div>
@@ -75,8 +75,8 @@ export default function App() {
     );
   }
 
-  // Tablet view
-  if (deviceType == "tablet") {
+  // Tablet layout
+  if (layoutType == "tablet") {
     return (
       <div className={styles.tabletView}>
         <div>
@@ -111,7 +111,7 @@ export default function App() {
     );
   }
 
-  // Desktop view
+  // Desktop layout
   return (
     <div className={styles.desktopView}>
       <div>

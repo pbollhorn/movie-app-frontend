@@ -1,11 +1,11 @@
-import useDeviceType from "../hooks/useDeviceType.js";
+import useLayoutType from "../hooks/useLayoutType.js";
 import styles from "./Poster.module.css";
 
 export default function Poster({ posterPath }) {
-  const deviceType = useDeviceType();
+  const layoutType = useLayoutType();
 
-  // Mobile and tablet view
-  if (deviceType == "mobile" || deviceType == "tablet") {
+  // Mobile and tablet layout
+  if (layoutType == "mobile" || layoutType == "tablet") {
     return (
       <div className={styles.posterMobileView}>
         <img src={"https://image.tmdb.org/t/p/w780" + posterPath} />
@@ -13,7 +13,7 @@ export default function Poster({ posterPath }) {
     );
   }
 
-  // Desktop view
+  // Desktop layout
   return (
     <div className={styles.posterDesktopView}>
       <img src={"https://image.tmdb.org/t/p/w780" + posterPath} />
