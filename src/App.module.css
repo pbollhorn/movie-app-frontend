@@ -49,7 +49,6 @@
 }
 
 .tabletLayout > div:nth-child(2) {
-  /* Take up the remaining vertical space */
   overflow: auto;
   height: 100%;
 }
@@ -70,13 +69,12 @@
 }
 
 .laptopLayout > div:nth-child(2) {
-  flex: 0 0 30%; /* 30% width, don't grow or shrink */
+  flex: 0 0 30%; /* 30% width */
   overflow: auto;
   height: 100%;
 }
 
 .laptopLayout > div:nth-child(3) {
-  /* Take up the remaining vertical space */
   overflow: auto;
   height: 100%;
 }
@@ -97,13 +95,12 @@
 }
 
 .desktopLayout > div:nth-child(2) {
-  flex: 0 0 30%; /* 30% width, don't grow or shrink */
+  flex: 0 0 30%; /* 30% width */
   overflow: auto;
   height: 100%;
 }
 
 .desktopLayout > div:nth-child(3) {
-  /* Take up the remaining vertical space */
   overflow: auto;
   height: 100%;
 }

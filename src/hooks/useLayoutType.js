@@ -25,11 +25,11 @@ function determineLayoutType() {
 
   const windowInnerWidthInRem = windowInnerWidthInPx / remInPx;
 
-  if (windowInnerWidthInRem < 40) return "mobile";
+  if (windowInnerWidthInRem <= 42) return "mobile";
 
-  if (windowInnerWidthInRem < 62) return "tablet";
+  if (windowInnerWidthInRem <= 66) return "tablet";
 
-  if (windowInnerWidthInRem < 70) return "laptop";
+  if (windowInnerWidthInRem <= 96) return "laptop";
 
   return "desktop";
 }
