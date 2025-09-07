@@ -37,9 +37,11 @@ export default function Ratings() {
         </p>
       </div>
 
-    {api.loggedIn() ? <MovieCardList list={list} setActiveMovieId={setActiveMovieId} /> : <p>{api.getLoginEncouragement()}</p>}
-
-      
+      {api.loggedIn() ? (
+        <MovieCardList list={list} setActiveMovieId={setActiveMovieId} />
+      ) : (
+        <p>{api.getLoginEncouragement()}</p>
+      )}
     </>
   );
 }

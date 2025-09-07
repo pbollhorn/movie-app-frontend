@@ -10,6 +10,8 @@ export default function Recommendations() {
 
   // useEffect
   useEffect(() => {
+    if (!api.loggedIn()) return;
+
     api
       .fetchData("movies/recommendations", api.makeOptions("GET", true))
       .then((data) => {
@@ -21,11 +23,15 @@ export default function Recommendations() {
   return (
     <>
       <h1>Recommendations</h1>
-      <p>Based on your ratings</p>
-      <MovieCardList
-        list={list}
-        setActiveMovieId={setActiveMovieId}
-      />
+
+      {api.loggedIn() ? (
+        <>
+          <p>Movie recommendations for you based on your ratings</p>
+          <MovieCardList list={list} setActiveMovieId={setActiveMovieId} />
+        </>
+      ) : (
+        <p>{api.getLoginEncouragement()}</p>
+      )}
     </>
   );
 }
