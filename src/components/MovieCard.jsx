@@ -39,7 +39,7 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
   function handleRatingImageClick(event) {
     event.stopPropagation();
     if (api.loggedIn() === false) {
-      alert("Login to rate movies and get recommendations");
+      alert(api.getLoginEncouragement());
       return;
     }
 

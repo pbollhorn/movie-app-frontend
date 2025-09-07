@@ -13,6 +13,8 @@ export default function Ratings() {
 
   // useEffect
   useEffect(() => {
+    if (!api.loggedIn()) return;
+
     api.fetchData("movies", api.makeOptions("GET", true)).then((data) => {
       console.log(data);
       setList(data);
@@ -34,7 +36,10 @@ export default function Ratings() {
           <img src={NoRating} style={{ height: "1.5rem" }} />= Not rated
         </p>
       </div>
-      <MovieCardList list={list} setActiveMovieId={setActiveMovieId}/>
+
+    {api.loggedIn() ? <MovieCardList list={list} setActiveMovieId={setActiveMovieId} /> : <p>{api.getLoginEncouragement()}</p>}
+
+      
     </>
   );
 }

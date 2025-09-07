@@ -79,6 +79,10 @@ function hasUserAccess(neededRole, loggedIn) {
   return loggedIn && roles.includes(neededRole);
 }
 
+function getLoginEncouragement() {
+  return "Login to rate movies and get recommendations";
+}
+
 const apiFacade = {
   makeOptions,
   setToken,
@@ -89,6 +93,7 @@ const apiFacade = {
   fetchData,
   getUserRoles,
   hasUserAccess,
+  getLoginEncouragement,
 };
 
 export default apiFacade;
