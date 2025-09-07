@@ -1,5 +1,5 @@
 /* ----------------------
-        Mobile Layout
+        Mobile layout
    ---------------------- */
 .mobileLayout {
   height: 100vh;
@@ -34,7 +34,7 @@
 }
 
 /* ----------------------
-        Tablet Layout
+        Tablet layout
    ---------------------- */
 .tabletLayout {
   display: flex;
@@ -55,7 +55,34 @@
 }
 
 /* ----------------------
-        Desktop Layout
+        Laptop layout
+   ---------------------- */
+.laptopLayout {
+  display: flex;
+  height: 100vh;
+}
+
+.laptopLayout > div:nth-child(1) {
+  flex: 0 0 16.5rem; /* 16.5rem width, don't grow or shrink */
+  overflow: auto;
+  height: 100%;
+  background-color: var(--menu-bg);
+}
+
+.laptopLayout > div:nth-child(2) {
+  flex: 0 0 30%; /* 30% width, don't grow or shrink */
+  overflow: auto;
+  height: 100%;
+}
+
+.laptopLayout > div:nth-child(3) {
+  /* Take up the remaining vertical space */
+  overflow: auto;
+  height: 100%;
+}
+
+/* ----------------------
+        Desktop layout
    ---------------------- */
 .desktopLayout {
   display: flex;
