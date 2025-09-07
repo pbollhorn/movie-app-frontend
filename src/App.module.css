@@ -42,7 +42,7 @@
 }
 
 .tabletLayout > div:nth-child(1) {
-  flex: 0 0 20rem; /* 20rem width, don't grow or shrink */
+  flex: 0 0 16.5rem; /* 16.5rem width, don't grow or shrink */
   overflow: auto;
   height: 100%;
   background-color: var(--menu-bg);
@@ -63,7 +63,7 @@
 }
 
 .desktopLayout > div:nth-child(1) {
-  flex: 0 0 20rem; /* 20rem width, don't grow or shrink */
+  flex: 0 0 16.5rem; /* 16.5rem width, don't grow or shrink */
   overflow: auto;
   height: 100%;
   background-color: var(--menu-bg);
