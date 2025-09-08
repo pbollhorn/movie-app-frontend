@@ -35,9 +35,9 @@ export default function Menu({ loggedIn, setLoggedIn, setMenuIsOpen }) {
             <Link to="/login" onClick={() => setMenuIsOpen(false)}>
               Login
             </Link>
-            <Link to="/create-account" onClick={() => setMenuIsOpen(false)}>
+            {/* <Link to="/create-account" onClick={() => setMenuIsOpen(false)}>
               Create Account
-            </Link>
+            </Link> */}
           </>
         )}
       </nav>
