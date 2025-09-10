@@ -6,20 +6,20 @@ export default function Login() {
   const { setLoggedIn } = useOutletContext();
   const navigate = useNavigate();
 
-  const usernameRef = useRef(null);
+  const emailRef = useRef(null);
   const passwordRef = useRef(null);
 
   function handleLoginSubmit(event) {
     event.preventDefault();
     api
-      .login(usernameRef.current.value, passwordRef.current.value)
+      .login(emailRef.current.value, passwordRef.current.value)
       .then(() => {
         setLoggedIn(true);
         navigate("/"); // this is the front page (i.e. the search page)
       })
       .catch(() => {
-        alert("Wrong username or password");
-        usernameRef.current.value = "";
+        alert("Wrong email or password");
+        emailRef.current.value = "";
         passwordRef.current.value = "";
       });
   }
@@ -28,9 +28,9 @@ export default function Login() {
     <>
       <h1>Login</h1>
       <form onSubmit={handleLoginSubmit}>
-        <label htmlFor="username">Username:</label>
+        <label htmlFor="email">Email:</label>
         <br />
-        <input id="username" type="text" ref={usernameRef} />
+        <input id="email" type="email" ref={emailRef} />
         <br />
         <br />
         <label htmlFor="password">Password:</label>
