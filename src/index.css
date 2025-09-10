@@ -4,17 +4,13 @@
   --fg: #000000;
   --menu-bg: #0000b3;
   --menu-fg: white;
-  /* --movieapp-lightblue: #056dff; */
   --link-fg: #0060e6;
 }
 
-/* Colors for dark mode */
+/* Colors for dark mode (that differ from light mode) */
 body.dark {
   --bg: #1e1e1e;
   --fg: #f5f5f5;
-  --menu-bg: #0000b3;
-  --menu-fg: white;
-  /* --movieapp-lightblue: #056dff; */
   --link-fg: #66a6ff;
 }
 
