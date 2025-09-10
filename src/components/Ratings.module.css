@@ -1,0 +1,8 @@
+.ratingsIconBox p {
+  display: flex;
+  align-items: center;
+}
+
+.ratingsIconBox img {
+  height: 1.5rem;
+}

@@ -5,6 +5,7 @@ import api from "../apiFacade.js";
 import NoRating from "../assets/NoRating.svg";
 import GoodRating from "../assets/GoodRating.svg";
 import OkRating from "../assets/OkRating.svg";
+import styles from "./Ratings.module.css";
 
 export default function Ratings() {
   const [list, setList] = useState([]);
@@ -24,16 +25,15 @@ export default function Ratings() {
   return (
     <>
       <h1>Your Ratings</h1>
-      <div>
-        <p>How to rate movies:</p>
+      <div className={styles.ratingsIconBox}>
         <p>
-          <img src={GoodRating} style={{ height: "1.5rem" }} />= Good
+          <img src={GoodRating} /> Good
         </p>
         <p>
-          <img src={OkRating} style={{ height: "1.5rem" }} />= OK / bad
+          <img src={OkRating} /> OK / Bad
         </p>
         <p>
-          <img src={NoRating} style={{ height: "1.5rem" }} />= Not rated
+          <img src={NoRating} /> Not rated
         </p>
       </div>
 
