@@ -13,11 +13,11 @@ function handleHttpErrors(res) {
  object when you do)*/
 
 function setToken(token) {
-  localStorage.setItem("jwtToken", token);
+  sessionStorage.setItem("jwtToken", token);
 }
 
 function getToken() {
-  return localStorage.getItem("jwtToken");
+  return sessionStorage.getItem("jwtToken");
 }
 
 function loggedIn() {
@@ -26,7 +26,7 @@ function loggedIn() {
 }
 
 function logout() {
-  localStorage.removeItem("jwtToken");
+  sessionStorage.removeItem("jwtToken");
 }
 
 function login(user, password) {
