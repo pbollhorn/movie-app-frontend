@@ -125,8 +125,7 @@
   margin: 0.4rem 0;
 }
 
-.outlet input[type="text"],
-input[type="password"] {
+.outlet input {
   color: var(--fg);
   background-color: var(--bg);
   border: 0.15rem solid gray;
