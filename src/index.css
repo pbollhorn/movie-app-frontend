@@ -5,7 +5,7 @@
   --menu-bg: #0000b3;
   --menu-fg: white;
   /* --movieapp-lightblue: #056dff; */
-  --link-fg: #056dff;
+  --link-fg: #0060e6;
 }
 
 /* Colors for dark mode */
@@ -15,7 +15,7 @@ body.dark {
   --menu-bg: #0000b3;
   --menu-fg: white;
   /* --movieapp-lightblue: #056dff; */
-  --link-fg: #056dff;
+  --link-fg: #66a6ff;
 }
 
 body {
