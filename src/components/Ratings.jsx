@@ -25,7 +25,7 @@ export default function Ratings() {
   return (
     <>
       <h1>Your Ratings</h1>
-      <div className={styles.ratingsIconBox}>
+      <div className={styles.ratingsExplanation}>
         <p>
           <img src={GoodRating} /> Good
         </p>

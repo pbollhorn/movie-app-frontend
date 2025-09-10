@@ -1,8 +1,9 @@
-.ratingsIconBox p {
+.ratingsExplanation p {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
 }
 
-.ratingsIconBox img {
-  height: 1.5rem;
+.ratingsExplanation img {
+  height: 1.3rem;
 }
