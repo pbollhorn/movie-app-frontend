@@ -40,6 +40,6 @@
 }
 
 .internalLink {
-  color: var(--movieapp-lightblue);
+  color: var(--link-fg);
   text-decoration: none;
 }

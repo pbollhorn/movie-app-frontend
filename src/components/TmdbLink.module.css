@@ -2,6 +2,6 @@
 .tmdbLink:visited,
 .tmdbLink:hover,
 .tmdbLink:active {
-  color: var(--movieapp-lightblue);
+  color: var(--link-fg);
   text-decoration: none;
 }

@@ -2,21 +2,20 @@
 :root {
   --bg: #f9f9f9;
   --fg: #000000;
-  --menu-fg: white;
   --menu-bg: #0000b3;
-  --movieapp-green: #00d900;
-  --movieapp-lightblue: #056dff;
-  /* scrollbar-color: blue red; */
+  --menu-fg: white;
+  /* --movieapp-lightblue: #056dff; */
+  --link-fg: #056dff;
 }
 
 /* Colors for dark mode */
 body.dark {
   --bg: #1e1e1e;
   --fg: #f5f5f5;
-  --menu-fg: white;
   --menu-bg: #0000b3;
-  --movieapp-green: #00d900;
-  --movieapp-lightblue: #056dff;
+  --menu-fg: white;
+  /* --movieapp-lightblue: #056dff; */
+  --link-fg: #056dff;
 }
 
 body {
