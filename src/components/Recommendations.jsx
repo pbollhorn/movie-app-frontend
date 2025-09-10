@@ -26,7 +26,7 @@ export default function Recommendations() {
 
       {api.loggedIn() ? (
         <>
-          <p>Movie recommendations for you based on your ratings</p>
+          <p>Movies for you based on your ratings</p>
           <MovieCardList list={list} setActiveMovieId={setActiveMovieId} />
         </>
       ) : (
