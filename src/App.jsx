@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./App.module.css";
 import Menu from "./components/Menu.jsx";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet, useLocation, Link } from "react-router-dom";
 import MovieDetails from "./components/MovieDetails.jsx";
 import api from "./apiFacade.js";
 import Modal from "./components/Modal.jsx";
@@ -40,7 +40,9 @@ export default function App() {
     return (
       <div className={styles.mobileLayout}>
         <div>
-          <img src={MovieAppLogo} className={styles.movieAppLogo} />
+          <Link to="/" onClick={() => setMenuIsOpen(false)}>
+            <img src={MovieAppLogo} className={styles.movieAppLogo} />
+          </Link>
           <img src={BurgerIcon} onClick={() => setMenuIsOpen(!menuIsOpen)} />
           {menuIsOpen && (
             <Menu
@@ -80,7 +82,9 @@ export default function App() {
     return (
       <div className={styles.tabletLayout}>
         <div>
-          <img src={MovieAppLogo} className={styles.movieAppLogo} />
+          <Link to="/" onClick={() => setMenuIsOpen(false)}>
+            <img src={MovieAppLogo} className={styles.movieAppLogo} />
+          </Link>
           <Menu
             loggedIn={loggedIn}
             setLoggedIn={setLoggedIn}
@@ -116,7 +120,9 @@ export default function App() {
     return (
       <div className={styles.laptopLayout}>
         <div>
-          <img src={MovieAppLogo} className={styles.movieAppLogo} />
+          <Link to="/" onClick={() => setMenuIsOpen(false)}>
+            <img src={MovieAppLogo} className={styles.movieAppLogo} />
+          </Link>
           <Menu
             loggedIn={loggedIn}
             setLoggedIn={setLoggedIn}
@@ -146,7 +152,9 @@ export default function App() {
   return (
     <div className={styles.desktopLayout}>
       <div>
-        <img src={MovieAppLogo} className={styles.movieAppLogo} />
+        <Link to="/" onClick={() => setMenuIsOpen(false)}>
+          <img src={MovieAppLogo} className={styles.movieAppLogo} />
+        </Link>
         <Menu
           loggedIn={loggedIn}
           setLoggedIn={setLoggedIn}
