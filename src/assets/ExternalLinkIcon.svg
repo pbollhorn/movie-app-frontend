@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 24 24"
+     width="24" height="24">
+
+  <!-- box (open on top-right corner) -->
+  <path d="M3 3 V21 H21 V13 M16 21 H3" 
+        fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- diagonal arrow outgoing to top-right -->
+  <path d="M12 12 L21 3" fill="none"
+        stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- arrow head -->
+  <path d="M21 3 L21 6 M21 3 L18 3" fill="none"
+        stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
