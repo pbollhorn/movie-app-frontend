@@ -105,7 +105,7 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
         <p>{movieDetails.overview}</p>
         {movieDetails.collection && (
           <p>
-            Part of the{" "}
+            Part of{" "}
             <Link className={styles.internalLink}
               to={"/collection/" + movieDetails.collection.id}
               onClick={() => setModalIsOpen(false)}
