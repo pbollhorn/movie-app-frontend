@@ -67,6 +67,7 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
   return (
     <div className={styles.movieDetails}>
       <img
+        className={styles.backdropImage}
         src={
           movieDetails.backdropPath
             ? "https://image.tmdb.org/t/p/w780/" + movieDetails.backdropPath
@@ -97,16 +98,18 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
             " votes)"}
         </p>
         <p>
-          <TmdbLink path={"/movie/" + movieDetails.id}>
-            Link to movie on TMDB
-          </TmdbLink>
+          <TmdbLink
+            text="Link to movie on TMDB"
+            path={"/movie/" + movieDetails.id}
+          />
         </p>
 
         <p>{movieDetails.overview}</p>
         {movieDetails.collection && (
           <p>
             Part of{" "}
-            <Link className={styles.internalLink}
+            <Link
+              className={styles.internalLink}
               to={"/collection/" + movieDetails.collection.id}
               onClick={() => setModalIsOpen(false)}
             >
@@ -119,7 +122,8 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
             <h2>Directed by</h2>
             {directors.map((credit) => (
               <p key={credit.id}>
-                <Link className={styles.internalLink}
+                <Link
+                  className={styles.internalLink}
                   to={"/person/" + credit.personId}
                   onClick={() => setModalIsOpen(false)}
                 >
@@ -134,7 +138,8 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
             <h2>Cast</h2>
             {cast.map((credit) => (
               <p key={credit.id}>
-                <Link className={styles.internalLink}
+                <Link
+                  className={styles.internalLink}
                   to={"/person/" + credit.personId}
                   onClick={() => setModalIsOpen(false)}
                 >
@@ -152,7 +157,8 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
               .filter((credit) => credit.department === department)
               .map((credit) => (
                 <p key={credit.id}>
-                  <Link className={styles.internalLink}
+                  <Link
+                    className={styles.internalLink}
                     to={"/person/" + credit.personId}
                     onClick={() => setModalIsOpen(false)}
                   >

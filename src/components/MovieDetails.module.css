@@ -4,12 +4,6 @@
   color: var(--fg);
 }
 
-.movieDetails img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  display: block;
-}
-
 .movieDetails div {
   padding-bottom: 0.1rem; /* This removes gap at the bottom of modal*/
   padding-left: 0.75rem;
@@ -37,6 +31,12 @@
   margin: 0.15rem 0.3rem 0.15rem 0;
   border-radius: 0.3rem;
   padding: 0.2rem 0.3rem;
+}
+
+.backdropImage {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: block;
 }
 
 .internalLink {

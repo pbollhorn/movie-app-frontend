@@ -7,7 +7,7 @@ import TmdbLink from "./TmdbLink.jsx";
 export default function Person() {
   const [personData, setPersonData] = useState(null);
 
-  const { setActiveMovieId} = useOutletContext();
+  const { setActiveMovieId } = useOutletContext();
 
   const { id } = useParams();
 
@@ -29,7 +29,7 @@ export default function Person() {
   return (
     <>
       <h1>{personData.name}</h1>
-      <TmdbLink path={"/person/" + id}>Link to person on TMDB</TmdbLink>
+      <TmdbLink text="Link to person on TMDB" path={"/person/" + id} />
       <MovieCardList
         list={personData.movies}
         setActiveMovieId={setActiveMovieId}

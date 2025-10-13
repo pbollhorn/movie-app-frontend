@@ -5,3 +5,7 @@
   color: var(--link-fg);
   text-decoration: none;
 }
+
+.tmdbLink img {
+  height: 1em;
+}

@@ -29,7 +29,7 @@ export default function Collection() {
   return (
     <>
       <h1>{collectionData.name}</h1>
-      <TmdbLink path={"/collection/" + id}>Link to collection on TMDB</TmdbLink>
+      <TmdbLink text="Link to collection on TMDB" path={"/collection/" + id} />
       <MovieCardList
         list={collectionData.movies}
         setActiveMovieId={setActiveMovieId}
