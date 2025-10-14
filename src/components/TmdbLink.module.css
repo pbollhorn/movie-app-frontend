@@ -1,7 +1,7 @@
-.tmdbLink:link,
-.tmdbLink:visited,
-.tmdbLink:hover,
-.tmdbLink:active {
+.tmdbLink {
+  display: inline-flex;
+  align-items: center; /* Vertically center items */
+  gap: 0.25em;
   color: var(--link-fg);
   text-decoration: none;
 }
