@@ -6,6 +6,6 @@
   text-decoration: none;
 }
 
-.tmdbLink img {
-  height: 1em;
+.tmdbLink svg {
+  height: 0.9em;
 }
