@@ -1,5 +1,5 @@
 import styles from "./TmdbLink.module.css";
-import ExternalLinkIcon from "../assets/ExternalLinkIcon.svg";
+import ExternalLinkIcon from "../assets/ExternalLinkIcon.svg?react";
 
 export default function TmdbLink({ text, path = "" }) {
   return (
@@ -9,7 +9,7 @@ export default function TmdbLink({ text, path = "" }) {
       className={styles.tmdbLink}
     >
       {text}
-      <img src={ExternalLinkIcon} />
+      <ExternalLinkIcon />
     </a>
   );
 }
