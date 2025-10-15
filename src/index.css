@@ -20,9 +20,3 @@ body {
   background-color: var(--bg);
   color: var(--fg);
 }
-
-/* Fixes font in Firefox */
-input,
-button {
-  font-family: "Noto Sans", sans-serif;
-}
