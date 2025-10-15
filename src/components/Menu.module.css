@@ -1,11 +1,8 @@
 .menu {
   color: var(--menu-fg);
   padding: 0.25rem 0.75rem 0.75rem;
-  a:link,
-  a:visited,
-  a:hover,
-  a:active {
-    color: white;
+  a {
+    color: hsl(0, 0%, 100%);
     font-size: 1.1rem;
     text-decoration: none; /* removes underline */
   }
@@ -25,4 +22,6 @@
 
 .tmdbAttribution p {
   margin: 0;
+  color: hsl(0, 0%, 90%);
+  font-size: 0.8rem;
 }
