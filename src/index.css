@@ -8,10 +8,12 @@
 }
 
 /* Colors for dark mode (only the colors that differ from light mode) */
-body.dark {
-  --bg: #1e1e1e;
-  --fg: #f5f5f5;
-  --link-fg: hsl(212, 92%, 75%);
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1e1e1e;
+    --fg: #f5f5f5;
+    --link-fg: hsl(212, 92%, 75%);
+  }
 }
 
 body {

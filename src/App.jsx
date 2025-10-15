@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styles from "./App.module.css";
 import Menu from "./components/Menu.jsx";
 import { Outlet, useLocation, Link } from "react-router-dom";
@@ -10,16 +10,6 @@ import BurgerIcon from "./assets/BurgerIcon.svg";
 import useLayoutType from "./hooks/useLayoutType.js";
 
 export default function App() {
-  // useEffect for setting dark/light mode according to browser settings
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    if (mediaQuery.matches) {
-      document.body.className = "dark";
-    } else {
-      document.body.className = "light";
-    }
-  }, []);
-
   const layoutType = useLayoutType();
 
   const [loggedIn, setLoggedIn] = useState(api.loggedIn());
