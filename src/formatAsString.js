@@ -43,6 +43,14 @@ function runtimeAsString(runtime) {
   return result;
 }
 
+function collectionIntroAsString(collectionName) {
+  if (collectionName.toLowerCase().startsWith("the ")) {
+    return "Part of ";
+  } else {
+    return "Part of the ";
+  }
+}
+
 export default {
   languageAsString,
   scoreAsString,
@@ -50,4 +58,5 @@ export default {
   genresAsString,
   dateAsString,
   runtimeAsString,
+  collectionIntroAsString,
 };

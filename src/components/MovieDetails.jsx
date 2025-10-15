@@ -107,7 +107,9 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
         <p>{movieDetails.overview}</p>
         {movieDetails.collection && (
           <p>
-            Part of{" "}
+            {formatAsString.collectionIntroAsString(
+              movieDetails.collection.name
+            )}
             <Link
               className={styles.internalLink}
               to={"/collection/" + movieDetails.collection.id}
