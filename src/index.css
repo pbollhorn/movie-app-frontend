@@ -4,14 +4,14 @@
   --fg: #000000;
   --menu-bg: #0000b3;
   --menu-fg: white;
-  --link-fg: #0060e6;
+  --link-fg: hsl(212, 92%, 40%);
 }
 
 /* Colors for dark mode (only the colors that differ from light mode) */
 body.dark {
   --bg: #1e1e1e;
   --fg: #f5f5f5;
-  --link-fg: #66a6ff;
+  --link-fg: hsl(212, 92%, 75%);
 }
 
 body {
