@@ -29,7 +29,7 @@ function determineLayoutType() {
 
   if (windowInnerWidthInRem <= 66) return "tablet";
 
-  if (windowInnerWidthInRem <= 96) return "laptop";
+  // if (windowInnerWidthInRem <= 96) return "laptop";
 
-  return "desktop";
+  return "laptop";
 }

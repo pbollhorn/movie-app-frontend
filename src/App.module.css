@@ -58,6 +58,7 @@
    ---------------------- */
 .laptopLayout {
   display: flex;
+  max-width: 160rem;
   height: 100vh;
 }
 
