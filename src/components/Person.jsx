@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useOutletContext, useParams } from "react-router-dom";
 import MovieCardList from "./MovieCardList.jsx";
-import api from "../apiFacade.js";
 import TmdbLink from "./TmdbLink.jsx";
+import api from "../apiFacade.js";
 
 export default function Person() {
   const [personData, setPersonData] = useState(null);

@@ -1,10 +1,10 @@
 import { useState, useEffect, Fragment } from "react";
 import { Link } from "react-router-dom";
-import styles from "./MovieDetails.module.css";
-import TmdbLink from "./TmdbLink.jsx";
-import NoBackdrop from "../assets/NoBackdrop.png";
-import formatAsString from "../formatAsString.js";
 import Poster from "./Poster.jsx";
+import TmdbLink from "./TmdbLink.jsx";
+import formatAsString from "../formatAsString.js";
+import styles from "./MovieDetails.module.css";
+import NoBackdrop from "../assets/NoBackdrop.png";
 
 // activeMovieId can be:
 // - null

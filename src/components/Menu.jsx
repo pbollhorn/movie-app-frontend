@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
+import api from "../apiFacade.js";
 import styles from "./Menu.module.css";
 import TmdbLogo from "../assets/TmdbLogo.svg";
-import api from "../apiFacade.js";
 
 export default function Menu({ loggedIn, setLoggedIn, setMenuIsOpen }) {
   const navigate = useNavigate();

@@ -1,11 +1,11 @@
 import { useState } from "react";
+import api from "../apiFacade.js";
+import formatAsString from "../formatAsString.js";
 import styles from "./MovieCard.module.css";
 import NoRating from "../assets/NoRating.svg";
 import GoodRating from "../assets/GoodRating.svg";
 import OkRating from "../assets/OkRating.svg";
 import NoPoster from "../assets/NoPoster.png";
-import api from "../apiFacade.js";
-import formatAsString from "../formatAsString.js";
 
 export default function MovieCard({ movieData, setActiveMovieId }) {
   const [rating, setRating] = useState(movieData.rating);
