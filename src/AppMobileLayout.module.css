@@ -20,23 +20,12 @@
   cursor: pointer;
 }
 
-.mobileLayout .outlet {
+.mobileLayout .theOutlet {
   height: 100%;
   overflow-y: auto;
   margin-top: 3.25rem;
 }
 
-.mobileLayout .outlet .bottomSpacing {
+.mobileLayout .theOutlet .bottomSpacing {
   height: 3.25rem;
-}
-
-/* ------------------------------------------------------------------
-        Styling of outlet (nothing to do with mobile, tablet, desktop
-   ------------------------------------------------------------------ */
-.outlet {
-  padding: 0 0.75rem;
-}
-
-.outlet h1 {
-  margin: 0.4rem 0;
 }

@@ -25,7 +25,7 @@ export default function AppTabletLayout({
           setMenuIsOpen={setMenuIsOpen}
         />
       </div>
-      <div className={styles.outlet}>
+      <div className="outlet">
         <Outlet
           key={location.key}
           context={{

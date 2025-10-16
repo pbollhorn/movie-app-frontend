@@ -17,7 +17,6 @@ export default function AppMobileLayout({
   setActiveMovieId,
   location,
 }) {
-
   return (
     <div className={styles.mobileLayout}>
       <div>
@@ -31,7 +30,7 @@ export default function AppMobileLayout({
           />
         )}
       </div>
-      <div className={styles.outlet}>
+      <div className={`${styles.theOutlet} outlet`}>
         <Outlet
           key={location.key}
           context={{
