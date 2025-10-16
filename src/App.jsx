@@ -9,6 +9,8 @@ import MovieAppLogo from "./assets/MovieAppLogo.svg";
 import BurgerIcon from "./assets/BurgerIcon.svg";
 import useLayoutType from "./hooks/useLayoutType.js";
 
+import Logo from "./components/Logo.jsx";
+
 export default function App() {
   const layoutType = useLayoutType();
 
@@ -30,9 +32,10 @@ export default function App() {
     return (
       <div className={styles.mobileLayout}>
         <div>
-          <Link to="/" onClick={() => setMenuIsOpen(false)}>
+          {/* <Link to="/" onClick={() => setMenuIsOpen(false)}>
             <img src={MovieAppLogo} className={styles.movieAppLogo} />
-          </Link>
+          </Link> */}
+          <Logo/>
           <img src={BurgerIcon} onClick={() => setMenuIsOpen(!menuIsOpen)} />
           {menuIsOpen && (
             <Menu
@@ -72,9 +75,10 @@ export default function App() {
     return (
       <div className={styles.tabletLayout}>
         <div>
-          <Link to="/" onClick={() => setMenuIsOpen(false)}>
+          {/* <Link to="/" onClick={() => setMenuIsOpen(false)}>
             <img src={MovieAppLogo} className={styles.movieAppLogo} />
-          </Link>
+          </Link> */}
+          <Logo />
           <Menu
             loggedIn={loggedIn}
             setLoggedIn={setLoggedIn}
@@ -109,9 +113,10 @@ export default function App() {
   return (
     <div className={styles.desktopLayout}>
       <div>
-        <Link to="/" onClick={() => setMenuIsOpen(false)}>
+        {/* <Link to="/" onClick={() => setMenuIsOpen(false)}>
           <img src={MovieAppLogo} className={styles.movieAppLogo} />
-        </Link>
+        </Link> */}
+        <Logo />
         <Menu
           loggedIn={loggedIn}
           setLoggedIn={setLoggedIn}
