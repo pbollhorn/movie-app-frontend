@@ -6,8 +6,8 @@ import MovieDetails from "./components/MovieDetails.jsx";
 import Modal from "./components/Modal.jsx";
 import Logo from "./components/Logo.jsx";
 import api from "./apiFacade.js";
-import BurgerIcon from "./assets/BurgerIcon.svg";
 import styles from "./App.module.css";
+import BurgerIcon from "./assets/BurgerIcon.svg";
 
 export default function App() {
   const layoutType = useLayoutType();
