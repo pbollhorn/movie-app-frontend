@@ -1,4 +1,4 @@
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Menu from "./components/Menu.jsx";
 import MovieDetails from "./components/MovieDetails.jsx";
 import Logo from "./components/Logo.jsx";
@@ -11,12 +11,8 @@ export default function AppDesktopLayout({
   setModalIsOpen,
   activeMovieId,
   setActiveMovieId,
+  location,
 }) {
-  // location.key is used as key for Outlet,
-  // to make Outlet remount whenever a link is clicked,
-  // also when already at that location
-  const location = useLocation();
-
   return (
     <div className={styles.desktopLayout}>
       <div>

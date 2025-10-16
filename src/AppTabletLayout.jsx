@@ -1,4 +1,4 @@
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Menu from "./components/Menu.jsx";
 import Modal from "./components/Modal.jsx";
 import MovieDetails from "./components/MovieDetails.jsx";
@@ -13,11 +13,8 @@ export default function AppTabletLayout({
   setModalIsOpen,
   activeMovieId,
   setActiveMovieId,
+  location,
 }) {
-  // location.key is used as key for Outlet,
-  // to make Outlet remount whenever a link is clicked,
-  // also when already at that location
-  const location = useLocation();
   return (
     <div className={styles.tabletLayout}>
       <div>

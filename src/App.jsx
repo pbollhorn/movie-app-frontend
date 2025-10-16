@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import api from "./apiFacade.js";
 import useLayoutType from "./hooks/useLayoutType.js";
 import AppMobileLayout from "./AppMobileLayout.jsx";
@@ -16,6 +17,11 @@ export default function App() {
 
   const [activeMovieId, setActiveMovieId] = useState(null); // TODO: Rename to reflect it can also hold a posterPath
 
+  // location.key is used as key for Outlet,
+  // to make Outlet remount whenever a link is clicked,
+  // also when already at that location
+  const location = useLocation();
+
   if (layoutType == "mobile") {
     return (
       <AppMobileLayout
@@ -27,6 +33,7 @@ export default function App() {
         setModalIsOpen={setModalIsOpen}
         activeMovieId={activeMovieId}
         setActiveMovieId={setActiveMovieId}
+        location={location}
       />
     );
   }
@@ -41,6 +48,7 @@ export default function App() {
         setModalIsOpen={setModalIsOpen}
         activeMovieId={activeMovieId}
         setActiveMovieId={setActiveMovieId}
+        location={location}
       />
     );
   }
@@ -53,6 +61,7 @@ export default function App() {
       setModalIsOpen={setModalIsOpen}
       activeMovieId={activeMovieId}
       setActiveMovieId={setActiveMovieId}
+      location={location}
     />
   );
 }
