@@ -1,0 +1,63 @@
+.mobileLayout {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.mobileLayout > div:nth-child(1) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--menu-bg);
+}
+
+/* burger button */
+.mobileLayout img:nth-child(2) {
+  position: absolute;
+  height: 1rem;
+  top: 1.125rem;
+  right: 0.75rem;
+  cursor: pointer;
+}
+
+.mobileLayout .outlet {
+  height: 100%;
+  overflow-y: auto;
+  margin-top: 3.25rem;
+}
+
+.mobileLayout .outlet .bottomSpacing {
+  height: 3.25rem;
+}
+
+/* ------------------------------------------------------------------
+        Styling of outlet (nothing to do with mobile, tablet, desktop
+   ------------------------------------------------------------------ */
+.outlet {
+  padding: 0 0.75rem;
+}
+
+.outlet h1 {
+  margin: 0.4rem 0;
+}
+
+.outlet input {
+  color: var(--fg);
+  background-color: var(--bg);
+  border: 0.15rem solid gray;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-family: Verdana;
+}
+
+.outlet button {
+  font-size: 1rem;
+  font-family: Verdana;
+  border: none;
+  padding: 0.65rem;
+  border-radius: 0.5rem;
+  color: white;
+  background-color: blue;
+  cursor: pointer;
+}

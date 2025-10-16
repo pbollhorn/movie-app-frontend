@@ -1,13 +1,9 @@
 import { useState } from "react";
-import { Outlet, useLocation } from "react-router-dom";
-import useLayoutType from "./hooks/useLayoutType.js";
-import Menu from "./components/Menu.jsx";
-import MovieDetails from "./components/MovieDetails.jsx";
-import Modal from "./components/Modal.jsx";
-import Logo from "./components/Logo.jsx";
 import api from "./apiFacade.js";
-import styles from "./App.module.css";
-import BurgerIcon from "./assets/BurgerIcon.svg";
+import useLayoutType from "./hooks/useLayoutType.js";
+import AppMobileLayout from "./AppMobileLayout.jsx";
+import AppTabletLayout from "./AppTabletLayout.jsx";
+import AppDesktopLayout from "./AppDesktopLayout.jsx";
 
 export default function App() {
   const layoutType = useLayoutType();
@@ -20,113 +16,43 @@ export default function App() {
 
   const [activeMovieId, setActiveMovieId] = useState(null); // TODO: Rename to reflect it can also hold a posterPath
 
-  // location.key is used as key for Outlet,
-  // to make Outlet remount whenever a link is clicked,
-  // also when already at that location
-  const location = useLocation();
-
-  // Mobile layout
   if (layoutType == "mobile") {
     return (
-      <div className={styles.mobileLayout}>
-        <div>
-          <Logo />
-          <img src={BurgerIcon} onClick={() => setMenuIsOpen(!menuIsOpen)} />
-          {menuIsOpen && (
-            <Menu
-              loggedIn={loggedIn}
-              setLoggedIn={setLoggedIn}
-              setMenuIsOpen={setMenuIsOpen}
-            />
-          )}
-        </div>
-        <div className={styles.outlet}>
-          <Outlet
-            key={location.key}
-            context={{
-              loggedIn,
-              setLoggedIn,
-              setActiveMovieId,
-            }}
-          />
-          <div className={styles.bottomSpacing}></div>
-        </div>
-        <Modal
-          key={activeMovieId}
-          modalIsOpen={modalIsOpen}
-          setModalIsOpen={setModalIsOpen}
-        >
-          <MovieDetails
-            activeMovieId={activeMovieId}
-            setModalIsOpen={setModalIsOpen}
-          />
-        </Modal>
-      </div>
+      <AppMobileLayout
+        loggedIn={loggedIn}
+        setLoggedIn={setLoggedIn}
+        menuIsOpen={menuIsOpen}
+        setMenuIsOpen={setMenuIsOpen}
+        modalIsOpen={modalIsOpen}
+        setModalIsOpen={setModalIsOpen}
+        activeMovieId={activeMovieId}
+        setActiveMovieId={setActiveMovieId}
+      />
     );
   }
 
-  // Tablet layout
   if (layoutType == "tablet") {
     return (
-      <div className={styles.tabletLayout}>
-        <div>
-          <Logo />
-          <Menu
-            loggedIn={loggedIn}
-            setLoggedIn={setLoggedIn}
-            setMenuIsOpen={setMenuIsOpen}
-          />
-        </div>
-        <div className={styles.outlet}>
-          <Outlet
-            key={location.key}
-            context={{
-              loggedIn,
-              setLoggedIn,
-              setActiveMovieId,
-            }}
-          />
-        </div>
-        <Modal
-          key={activeMovieId}
-          modalIsOpen={modalIsOpen}
-          setModalIsOpen={setModalIsOpen}
-        >
-          <MovieDetails
-            activeMovieId={activeMovieId}
-            setModalIsOpen={setModalIsOpen}
-          />
-        </Modal>
-      </div>
+      <AppTabletLayout
+        loggedIn={loggedIn}
+        setLoggedIn={setLoggedIn}
+        setMenuIsOpen={setMenuIsOpen}
+        modalIsOpen={modalIsOpen}
+        setModalIsOpen={setModalIsOpen}
+        activeMovieId={activeMovieId}
+        setActiveMovieId={setActiveMovieId}
+      />
     );
   }
 
-  // Desktop layout
   return (
-    <div className={styles.desktopLayout}>
-      <div>
-        <Logo />
-        <Menu
-          loggedIn={loggedIn}
-          setLoggedIn={setLoggedIn}
-          setMenuIsOpen={setMenuIsOpen}
-        />
-      </div>
-      <div className={styles.outlet}>
-        <Outlet
-          key={location.key}
-          context={{
-            loggedIn,
-            setLoggedIn,
-            setActiveMovieId,
-          }}
-        />
-      </div>
-      <MovieDetails
-        key={activeMovieId}
-        activeMovieId={activeMovieId}
-        setModalIsOpen={setModalIsOpen}
-      />
-    </div>
+    <AppDesktopLayout
+      loggedIn={loggedIn}
+      setLoggedIn={setLoggedIn}
+      setMenuIsOpen={setMenuIsOpen}
+      setModalIsOpen={setModalIsOpen}
+      activeMovieId={activeMovieId}
+      setActiveMovieId={setActiveMovieId}
+    />
   );
 }

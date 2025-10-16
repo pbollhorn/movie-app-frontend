@@ -1,0 +1,48 @@
+.tabletLayout {
+  display: flex;
+  height: 100vh;
+}
+
+.tabletLayout > div:nth-child(1) {
+  flex: 0 0 16.5rem; /* 16.5rem width, don't grow or shrink */
+  overflow: auto;
+  height: 100%;
+  background-color: var(--menu-bg);
+}
+
+.tabletLayout > div:nth-child(2) {
+  overflow: auto;
+  height: 100%;
+}
+
+/* ------------------------------------------------------------------
+        Styling of outlet (nothing to do with mobile, tablet, desktop
+   ------------------------------------------------------------------ */
+.outlet {
+  padding: 0 0.75rem;
+}
+
+.outlet h1 {
+  margin: 0.4rem 0;
+}
+
+.outlet input {
+  color: var(--fg);
+  background-color: var(--bg);
+  border: 0.15rem solid gray;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-family: Verdana;
+}
+
+.outlet button {
+  font-size: 1rem;
+  font-family: Verdana;
+  border: none;
+  padding: 0.65rem;
+  border-radius: 0.5rem;
+  color: white;
+  background-color: blue;
+  cursor: pointer;
+}
