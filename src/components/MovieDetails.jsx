@@ -104,7 +104,7 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
           />
         </p>
 
-        <p>{movieDetails.overview}</p>
+        <p className={styles.overview}>{movieDetails.overview}</p>
         {movieDetails.collection && (
           <p>
             {formatAsString.collectionIntroAsString(

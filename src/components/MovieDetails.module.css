@@ -39,6 +39,10 @@
   display: block;
 }
 
+.overview {
+  max-width: 75ch;
+}
+
 .internalLink {
   color: var(--link-fg);
   text-decoration: none;
