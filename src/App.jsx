@@ -105,39 +105,6 @@ export default function App() {
     );
   }
 
-  // Laptop layout
-  if (layoutType == "laptop") {
-    return (
-      <div className={styles.laptopLayout}>
-        <div>
-          <Link to="/" onClick={() => setMenuIsOpen(false)}>
-            <img src={MovieAppLogo} className={styles.movieAppLogo} />
-          </Link>
-          <Menu
-            loggedIn={loggedIn}
-            setLoggedIn={setLoggedIn}
-            setMenuIsOpen={setMenuIsOpen}
-          />
-        </div>
-        <div className={styles.outlet}>
-          <Outlet
-            key={location.key}
-            context={{
-              loggedIn,
-              setLoggedIn,
-              setActiveMovieId,
-            }}
-          />
-        </div>
-        <MovieDetails
-          key={activeMovieId}
-          activeMovieId={activeMovieId}
-          setModalIsOpen={setModalIsOpen}
-        />
-      </div>
-    );
-  }
-
   // Desktop layout
   return (
     <div className={styles.desktopLayout}>
