@@ -1,0 +1,10 @@
+/* ------------------------------------------------------------------
+        Styling of outlet (nothing to do with mobile, tablet, desktop
+   ------------------------------------------------------------------ */
+.outlet {
+  padding: 0 0.75rem;
+}
+
+.outlet h1 {
+  margin: 0.4rem 0;
+}
