@@ -81,15 +81,6 @@
 }
 
 /* ------------------------------------------------------------------
-        Styling of MovieAppLogo (nothing to do with mobile, tablet, desktop)
-   ------------------------------------------------------------------ */
-.movieAppLogo {
-  height: 1.75rem;
-  margin: 0.75rem;
-  display: block;
-}
-
-/* ------------------------------------------------------------------
         Styling of outlet (nothing to do with mobile, tablet, desktop
    ------------------------------------------------------------------ */
 .outlet {
