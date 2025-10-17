@@ -25,13 +25,19 @@ export default function App() {
   // also when already at that location
   const location = useLocation();
 
-  // Mobile layout
+  /* ----------------------
+        Mobile layout
+   ---------------------- */
   if (layoutType == "mobile") {
     return (
       <div className={styles.mobileLayout}>
-        <div>
+        <div className={styles.topbar}>
           <Logo />
-          <img src={BurgerIcon} onClick={() => setMenuIsOpen(!menuIsOpen)} />
+          <img
+            className={styles.burgerButton}
+            src={BurgerIcon}
+            onClick={() => setMenuIsOpen(!menuIsOpen)}
+          />
           {menuIsOpen && (
             <Menu
               loggedIn={loggedIn}
@@ -65,11 +71,13 @@ export default function App() {
     );
   }
 
-  // Tablet layout
+  /* ----------------------
+        Tablet layout
+   ---------------------- */
   if (layoutType == "tablet") {
     return (
       <div className={styles.tabletLayout}>
-        <div>
+        <div className={styles.sidebar}>
           <Logo />
           <Menu
             loggedIn={loggedIn}
@@ -101,10 +109,12 @@ export default function App() {
     );
   }
 
-  // Desktop layout
+  /* ----------------------
+        Desktop layout
+   ---------------------- */
   return (
     <div className={styles.desktopLayout}>
-      <div>
+      <div className={styles.sidebar}>
         <Logo />
         <Menu
           loggedIn={loggedIn}

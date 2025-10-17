@@ -6,7 +6,7 @@
   overflow: hidden;
 }
 
-.mobileLayout > div:nth-child(1) {
+.mobileLayout .topbar {
   position: fixed;
   top: 0;
   left: 0;
@@ -14,8 +14,7 @@
   background-color: var(--menu-bg);
 }
 
-/* burger button */
-.mobileLayout img:nth-child(2) {
+.mobileLayout .topbar .burgerButton {
   position: absolute;
   height: 1rem;
   top: 1.125rem;
@@ -41,7 +40,7 @@
   height: 100vh;
 }
 
-.tabletLayout > div:nth-child(1) {
+.tabletLayout .sidebar {
   flex: 0 0 16.5rem; /* 16.5rem width, don't grow or shrink */
   overflow: auto;
   height: 100%;
@@ -62,7 +61,7 @@
   height: 100vh;
 }
 
-.desktopLayout > div:nth-child(1) {
+.desktopLayout .sidebar {
   flex: 0 0 16.5rem; /* 16.5rem width, don't grow or shrink */
   overflow: auto;
   height: 100%;
