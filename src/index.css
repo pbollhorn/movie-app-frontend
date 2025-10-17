@@ -17,7 +17,7 @@
 }
 
 body {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Inter", sans-serif;
   margin: 0;
   background-color: var(--bg);
   color: var(--fg);
@@ -32,7 +32,7 @@ body {
 }
 
 .theOutlet input {
-  font-family: "Noto Sans", sans-serif;
+  /* font-family: "Inter", sans-serif; */
   color: var(--fg);
   background-color: var(--bg);
   border: 0.15rem solid gray;
@@ -42,7 +42,7 @@ body {
 }
 
 .theOutlet button {
-  font-family: "Noto Sans", sans-serif;
+  /* font-family: "Inter", sans-serif; */
   font-size: 1rem;
   border: none;
   padding: 0.65rem;
