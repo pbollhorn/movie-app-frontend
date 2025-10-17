@@ -23,13 +23,13 @@
   cursor: pointer;
 }
 
-.mobileLayout .theOutlet {
+.mobileLayout .outlet {
   height: 100%;
   overflow-y: auto;
   margin-top: 3.25rem;
 }
 
-.mobileLayout .theOutlet .bottomSpacing {
+.mobileLayout .outlet .bottomSpacing {
   height: 3.25rem;
 }
 
@@ -48,7 +48,7 @@
   background-color: var(--menu-bg);
 }
 
-.tabletLayout > div:nth-child(2) {
+.tabletLayout .outlet {
   overflow: auto;
   height: 100%;
 }
@@ -69,7 +69,7 @@
   background-color: var(--menu-bg);
 }
 
-.desktopLayout > div:nth-child(2) {
+.desktopLayout .outlet {
   flex: 0 0 30%; /* 30% width */
   overflow: auto;
   height: 100%;

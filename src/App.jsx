@@ -40,7 +40,7 @@ export default function App() {
             />
           )}
         </div>
-        <div className={`${styles.theOutlet} outlet`}>
+        <div className={`${styles.outlet} theOutlet`}>
           <Outlet
             key={location.key}
             context={{
@@ -77,7 +77,7 @@ export default function App() {
             setMenuIsOpen={setMenuIsOpen}
           />
         </div>
-        <div className="outlet">
+        <div className={`${styles.outlet} theOutlet`}>
           <Outlet
             key={location.key}
             context={{
@@ -112,7 +112,7 @@ export default function App() {
           setMenuIsOpen={setMenuIsOpen}
         />
       </div>
-      <div className="outlet">
+      <div className={`${styles.outlet} theOutlet`}>
         <Outlet
           key={location.key}
           context={{

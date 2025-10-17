@@ -23,7 +23,15 @@ body {
   color: var(--fg);
 }
 
-input {
+.theOutlet {
+  padding: 0 0.75rem;
+}
+
+.theOutlet h1 {
+  margin: 0.4rem 0;
+}
+
+.theOutlet input {
   font-family: "Noto Sans", sans-serif;
   color: var(--fg);
   background-color: var(--bg);
@@ -33,7 +41,7 @@ input {
   font-size: 1rem;
 }
 
-button {
+.theOutlet button {
   font-family: "Noto Sans", sans-serif;
   font-size: 1rem;
   border: none;
@@ -42,13 +50,4 @@ button {
   color: white;
   background-color: blue;
   cursor: pointer;
-}
-
-
-.outlet {
-  padding: 0 0.75rem;
-}
-
-.outlet h1 {
-  margin: 0.4rem 0;
 }
