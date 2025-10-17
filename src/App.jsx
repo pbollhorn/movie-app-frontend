@@ -1,10 +1,13 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import api from "./apiFacade.js";
 import useLayoutType from "./hooks/useLayoutType.js";
-import AppMobileLayout from "./AppMobileLayout.jsx";
-import AppTabletLayout from "./AppTabletLayout.jsx";
-import AppDesktopLayout from "./AppDesktopLayout.jsx";
+import Menu from "./components/Menu.jsx";
+import Modal from "./components/Modal.jsx";
+import MovieDetails from "./components/MovieDetails.jsx";
+import Logo from "./components/Logo.jsx";
+import styles from "./App.module.css";
+import BurgerIcon from "./assets/BurgerIcon.svg";
 
 export default function App() {
   const layoutType = useLayoutType();
@@ -22,46 +25,108 @@ export default function App() {
   // also when already at that location
   const location = useLocation();
 
+  // Mobile layout
   if (layoutType == "mobile") {
     return (
-      <AppMobileLayout
-        loggedIn={loggedIn}
-        setLoggedIn={setLoggedIn}
-        menuIsOpen={menuIsOpen}
-        setMenuIsOpen={setMenuIsOpen}
-        modalIsOpen={modalIsOpen}
-        setModalIsOpen={setModalIsOpen}
-        activeMovieId={activeMovieId}
-        setActiveMovieId={setActiveMovieId}
-        location={location}
-      />
+      <div className={styles.mobileLayout}>
+        <div>
+          <Logo />
+          <img src={BurgerIcon} onClick={() => setMenuIsOpen(!menuIsOpen)} />
+          {menuIsOpen && (
+            <Menu
+              loggedIn={loggedIn}
+              setLoggedIn={setLoggedIn}
+              setMenuIsOpen={setMenuIsOpen}
+            />
+          )}
+        </div>
+        <div className={`${styles.theOutlet} outlet`}>
+          <Outlet
+            key={location.key}
+            context={{
+              loggedIn,
+              setLoggedIn,
+              setActiveMovieId,
+            }}
+          />
+          <div className={styles.bottomSpacing}></div>
+        </div>
+        <Modal
+          key={activeMovieId}
+          modalIsOpen={modalIsOpen}
+          setModalIsOpen={setModalIsOpen}
+        >
+          <MovieDetails
+            activeMovieId={activeMovieId}
+            setModalIsOpen={setModalIsOpen}
+          />
+        </Modal>
+      </div>
     );
   }
 
+  // Tablet layout
   if (layoutType == "tablet") {
     return (
-      <AppTabletLayout
-        loggedIn={loggedIn}
-        setLoggedIn={setLoggedIn}
-        setMenuIsOpen={setMenuIsOpen}
-        modalIsOpen={modalIsOpen}
-        setModalIsOpen={setModalIsOpen}
-        activeMovieId={activeMovieId}
-        setActiveMovieId={setActiveMovieId}
-        location={location}
-      />
+      <div className={styles.tabletLayout}>
+        <div>
+          <Logo />
+          <Menu
+            loggedIn={loggedIn}
+            setLoggedIn={setLoggedIn}
+            setMenuIsOpen={setMenuIsOpen}
+          />
+        </div>
+        <div className="outlet">
+          <Outlet
+            key={location.key}
+            context={{
+              loggedIn,
+              setLoggedIn,
+              setActiveMovieId,
+            }}
+          />
+        </div>
+        <Modal
+          key={activeMovieId}
+          modalIsOpen={modalIsOpen}
+          setModalIsOpen={setModalIsOpen}
+        >
+          <MovieDetails
+            activeMovieId={activeMovieId}
+            setModalIsOpen={setModalIsOpen}
+          />
+        </Modal>
+      </div>
     );
   }
 
+  // Desktop layout
   return (
-    <AppDesktopLayout
-      loggedIn={loggedIn}
-      setLoggedIn={setLoggedIn}
-      setMenuIsOpen={setMenuIsOpen}
-      setModalIsOpen={setModalIsOpen}
-      activeMovieId={activeMovieId}
-      setActiveMovieId={setActiveMovieId}
-      location={location}
-    />
+    <div className={styles.desktopLayout}>
+      <div>
+        <Logo />
+        <Menu
+          loggedIn={loggedIn}
+          setLoggedIn={setLoggedIn}
+          setMenuIsOpen={setMenuIsOpen}
+        />
+      </div>
+      <div className="outlet">
+        <Outlet
+          key={location.key}
+          context={{
+            loggedIn,
+            setLoggedIn,
+            setActiveMovieId,
+          }}
+        />
+      </div>
+      <MovieDetails
+        key={activeMovieId}
+        activeMovieId={activeMovieId}
+        setModalIsOpen={setModalIsOpen}
+      />
+    </div>
   );
 }
