@@ -33,12 +33,13 @@ body {
 
 .theOutlet input {
   font-family: inherit; /* Firefox needs this */
+  font-size: 1rem;
+  width: 15rem;
   color: var(--fg);
   background-color: var(--bg);
   border: 0.15rem solid gray;
   border-radius: 0.5rem;
   padding: 0.5rem;
-  font-size: 1rem;
 }
 
 .theOutlet button {
