@@ -3,8 +3,8 @@ import styles from "./Logo.module.css";
 
 export default function Logo() {
   return (
-    <a href="/">
+    // <a href="/">
       <img src={MovieAppLogo} className={styles.movieAppLogo} />
-    </a>
+    // </a>
   );
 }
