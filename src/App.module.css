@@ -16,8 +16,8 @@
 
 .mobileLayout .topbar .burgerButton {
   position: absolute;
-  height: 1rem;
-  top: 1.125rem;
+  height: 1.75rem;
+  top: 0.75rem;
   right: 0.75rem;
   cursor: pointer;
 }
