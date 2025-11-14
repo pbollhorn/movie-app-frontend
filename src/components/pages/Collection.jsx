@@ -4,7 +4,6 @@ import MovieCardList from "../MovieCardList.jsx";
 import TmdbLink from "../TmdbLink.jsx";
 import api from "../../apiFacade.js";
 
-
 export default function Collection() {
   const [collectionData, setCollectionData] = useState(null);
 

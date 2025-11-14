@@ -22,9 +22,13 @@ export default function Search() {
     <>
       <h1>Search Movies</h1>
       <form onSubmit={handleSearchSubmit}>
-        <input type="search" ref={searchTitleRef} placeholder="Search by title" />
+        <input
+          type="search"
+          ref={searchTitleRef}
+          placeholder="Search by title"
+        />
         <button type="submit">
-          <img src={SearchIcon} style={{ height: "1rem"}} />
+          <img src={SearchIcon} style={{ height: "1rem" }} />
         </button>
       </form>
       <MovieCardList list={list} setActiveMovieId={setActiveMovieId} />
