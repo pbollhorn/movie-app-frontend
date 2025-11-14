@@ -70,7 +70,7 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
         className={styles.backdropImage}
         src={
           movieDetails.backdropPath
-            ? "https://image.tmdb.org/t/p/w780/" + movieDetails.backdropPath
+            ? `https://image.tmdb.org/t/p/w780/${movieDetails.backdropPath}`
             : NoBackdrop
         }
       />
@@ -100,7 +100,7 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
         <p>
           <TmdbLink
             text="Link to movie on TMDB"
-            path={"/movie/" + movieDetails.id}
+            path={`/movie/${movieDetails.id}`}
           />
         </p>
 
@@ -112,7 +112,7 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
             )}
             <Link
               className={styles.internalLink}
-              to={"/collection/" + movieDetails.collection.id}
+              to={`/collection/${movieDetails.collection.id}`}
               onClick={() => setModalIsOpen(false)}
             >
               {movieDetails.collection.name}
@@ -126,7 +126,7 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
               <p key={credit.id}>
                 <Link
                   className={styles.internalLink}
-                  to={"/person/" + credit.personId}
+                  to={`/person/${credit.personId}`}
                   onClick={() => setModalIsOpen(false)}
                 >
                   {credit.name}
@@ -142,7 +142,7 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
               <p key={credit.id}>
                 <Link
                   className={styles.internalLink}
-                  to={"/person/" + credit.personId}
+                  to={`/person/${credit.personId}`}
                   onClick={() => setModalIsOpen(false)}
                 >
                   {credit.name}
@@ -161,7 +161,7 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
                 <p key={credit.id}>
                   <Link
                     className={styles.internalLink}
-                    to={"/person/" + credit.personId}
+                    to={`/person/${credit.personId}`}
                     onClick={() => setModalIsOpen(false)}
                   >
                     {credit.name}
@@ -177,7 +177,7 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
 }
 
 async function fetchMovieDetails(id) {
-  const response = await fetch("https://movie.jcoder.dk/api/movies/" + id);
+  const response = await fetch(`https://movie.jcoder.dk/api/movies/${id}`);
   const movieDetails = await response.json();
   console.log(movieDetails);
   return movieDetails;

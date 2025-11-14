@@ -8,7 +8,7 @@ export default function Poster({ posterPath }) {
   if (layoutType == "mobile" || layoutType == "tablet") {
     return (
       <div className={styles.posterMobileView}>
-        <img src={"https://image.tmdb.org/t/p/w780" + posterPath} />
+        <img src={`https://image.tmdb.org/t/p/w780${posterPath}`} />
       </div>
     );
   }
@@ -16,7 +16,7 @@ export default function Poster({ posterPath }) {
   // Desktop layout
   return (
     <div className={styles.posterDesktopView}>
-      <img src={"https://image.tmdb.org/t/p/w780" + posterPath} />
+      <img src={`https://image.tmdb.org/t/p/w780${posterPath}`} />
     </div>
   );
 }
