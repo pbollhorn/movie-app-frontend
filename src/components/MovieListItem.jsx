@@ -43,12 +43,11 @@ export default function MovieListItem({ movieData, setActiveMovieId }) {
       return;
     }
 
+    const url = `https://movie.jcoder.dk/api/movies/${movieData.id}`;
+
     switch (rating) {
       case null:
-        fetch(
-          "https://movie.jcoder.dk/api/" + "movies/" + movieData.id,
-          api.makeOptions("PUT", true, { rating: true })
-        )
+        fetch(url, api.makeOptions("PUT", true, { rating: true }))
           .then((response) => {
             if (response.ok) {
               setRating(true);
@@ -59,10 +58,7 @@ export default function MovieListItem({ movieData, setActiveMovieId }) {
           .catch(() => alert("Error requesting server"));
         break;
       case true:
-        fetch(
-          "https://movie.jcoder.dk/api/" + "movies/" + movieData.id,
-          api.makeOptions("PUT", true, { rating: false })
-        )
+        fetch(url, api.makeOptions("PUT", true, { rating: false }))
           .then((response) => {
             if (response.ok) {
               setRating(false);
@@ -73,10 +69,7 @@ export default function MovieListItem({ movieData, setActiveMovieId }) {
           .catch(() => alert("Error requesting server"));
         break;
       case false:
-        fetch(
-          "https://movie.jcoder.dk/api/" + "movies/" + movieData.id,
-          api.makeOptions("DELETE", true)
-        )
+        fetch(url, api.makeOptions("DELETE", true))
           .then((response) => {
             if (response.ok) {
               setRating(null);
@@ -97,7 +90,7 @@ export default function MovieListItem({ movieData, setActiveMovieId }) {
           className={styles.posterImage}
           src={
             movieData.posterPath
-              ? "https://image.tmdb.org/t/p/w154" + movieData.posterPath
+              ? `https://image.tmdb.org/t/p/w154${movieData.posterPath}`
               : NoPoster
           }
           onClick={handlePosterImageClick}
