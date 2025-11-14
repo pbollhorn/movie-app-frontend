@@ -81,11 +81,11 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
           <span key={genre}>{genre}</span>
         ))}
 
-        <p>Original title: {movieDetails.originalTitle}</p>
         <p>
-          Original language:{" "}
-          {formatAsString.languageAsString(movieDetails.originalLanguage)}
+          {"Original language: " +
+            formatAsString.languageAsString(movieDetails.originalLanguage)}
         </p>
+        <p>Original title: {movieDetails.originalTitle}</p>
         <p>Runtime: {formatAsString.runtimeAsString(movieDetails.runtime)}</p>
         <p>
           Release date: {formatAsString.dateAsString(movieDetails.releaseDate)}
