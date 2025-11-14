@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useOutletContext, useParams } from "react-router-dom";
-import MovieCardList from "../MovieCardList.jsx";
+import MovieList from "../MovieList.jsx";
 import TmdbLink from "../TmdbLink.jsx";
 import api from "../../apiFacade.js";
 
@@ -30,7 +30,7 @@ export default function Person() {
     <>
       <h1>{personData.name}</h1>
       <TmdbLink text="Link to person on TMDB" path={"/person/" + id} />
-      <MovieCardList
+      <MovieList
         list={personData.movies}
         setActiveMovieId={setActiveMovieId}
       />

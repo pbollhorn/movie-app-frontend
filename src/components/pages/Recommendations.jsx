@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
-import MovieCardList from "../MovieCardList.jsx";
+import MovieList from "../MovieList.jsx";
 import api from "../../apiFacade.js";
 
 export default function Recommendations() {
@@ -27,7 +27,7 @@ export default function Recommendations() {
       {api.loggedIn() ? (
         <>
           <p>Movies for you based on your ratings</p>
-          <MovieCardList list={list} setActiveMovieId={setActiveMovieId} />
+          <MovieList list={list} setActiveMovieId={setActiveMovieId} />
         </>
       ) : (
         <p>{api.getLoginEncouragement()}</p>

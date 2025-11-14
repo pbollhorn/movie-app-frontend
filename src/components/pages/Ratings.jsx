@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
-import MovieCardList from "../MovieCardList.jsx";
+import MovieList from "../MovieList.jsx";
 import api from "../../apiFacade.js";
 import styles from "./Ratings.module.css";
 import NoRating from "../../assets/NoRating.svg";
@@ -38,7 +38,7 @@ export default function Ratings() {
       </div>
 
       {api.loggedIn() ? (
-        <MovieCardList list={list} setActiveMovieId={setActiveMovieId} />
+        <MovieList list={list} setActiveMovieId={setActiveMovieId} />
       ) : (
         <p>{api.getLoginEncouragement()}</p>
       )}
