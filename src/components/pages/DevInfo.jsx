@@ -1,4 +1,4 @@
-import useLayoutType from "../hooks/useLayoutType.js";
+import useLayoutType from "../../hooks/useLayoutType.js";
 
 export default function DevInfo() {
   const layoutType = useLayoutType();

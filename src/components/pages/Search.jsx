@@ -1,8 +1,8 @@
 import { useState, useRef } from "react";
 import { useOutletContext } from "react-router-dom";
-import api from "../apiFacade.js";
-import MovieCardList from "./MovieCardList.jsx";
-import SearchIcon from "../assets/SearchIcon.svg";
+import api from "../../apiFacade.js";
+import MovieCardList from "../MovieCardList.jsx";
+import SearchIcon from "../../assets/SearchIcon.svg";
 
 export default function Search() {
   const [list, setList] = useState([]);

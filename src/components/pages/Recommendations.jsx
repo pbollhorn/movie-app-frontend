@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
-import MovieCardList from "./MovieCardList.jsx";
-import api from "../apiFacade.js";
+import MovieCardList from "../MovieCardList.jsx";
+import api from "../../apiFacade.js";
 
 export default function Recommendations() {
   const [list, setList] = useState([]);

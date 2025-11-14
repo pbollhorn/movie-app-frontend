@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
-import MovieCardList from "./MovieCardList.jsx";
-import api from "../apiFacade.js";
+import MovieCardList from "../MovieCardList.jsx";
+import api from "../../apiFacade.js";
 import styles from "./Ratings.module.css";
-import NoRating from "../assets/NoRating.svg";
-import GoodRating from "../assets/GoodRating.svg";
-import OkRating from "../assets/OkRating.svg";
+import NoRating from "../../assets/NoRating.svg";
+import GoodRating from "../../assets/GoodRating.svg";
+import OkRating from "../../assets/OkRating.svg";
 
 export default function Ratings() {
   const [list, setList] = useState([]);

@@ -3,14 +3,14 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import App from "./App.jsx";
-import Search from "./components/Search.jsx";
-import Login from "./components/Login.jsx";
-import Ratings from "./components/Ratings.jsx";
-import Recommendations from "./components/Recommendations.jsx";
-import CreateAccount from "./components/CreateAccount.jsx";
-import Person from "./components/Person.jsx";
-import Collection from "./components/Collection.jsx";
-import DevInfo from "./components/DevInfo.jsx";
+import Search from "./components/pages/Search.jsx";
+import Login from "./components/pages/Login.jsx";
+import Ratings from "./components/pages/Ratings.jsx";
+import Recommendations from "./components/pages/Recommendations.jsx";
+import CreateAccount from "./components/pages/CreateAccount.jsx";
+import Person from "./components/pages/Person.jsx";
+import Collection from "./components/pages/Collection.jsx";
+import DevInfo from "./components/pages/DevInfo.jsx";
 
 const router = createBrowserRouter([
   {
