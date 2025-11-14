@@ -14,7 +14,7 @@ export default function Person() {
   // useEffect
   useEffect(() => {
     api
-      .fetchData("movies/person/" + id, api.makeOptions("GET", true))
+      .fetchData(`movies/person/${id}`, api.makeOptions("GET", true))
       .then((data) => {
         console.log(data);
         setPersonData(data);
@@ -29,11 +29,8 @@ export default function Person() {
   return (
     <>
       <h1>{personData.name}</h1>
-      <TmdbLink text="Link to person on TMDB" path={"/person/" + id} />
-      <MovieList
-        list={personData.movies}
-        setActiveMovieId={setActiveMovieId}
-      />
+      <TmdbLink text="Link to person on TMDB" path={`/person/${id}`} />
+      <MovieList list={personData.movies} setActiveMovieId={setActiveMovieId} />
     </>
   );
 }

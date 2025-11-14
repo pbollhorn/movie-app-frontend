@@ -14,7 +14,7 @@ export default function Collection() {
   // useEffect
   useEffect(() => {
     api
-      .fetchData("movies/collection/" + id, api.makeOptions("GET", true))
+      .fetchData(`movies/collection/${id}`, api.makeOptions("GET", true))
       .then((data) => {
         console.log(data);
         setCollectionData(data);
@@ -29,7 +29,7 @@ export default function Collection() {
   return (
     <>
       <h1>{collectionData.name}</h1>
-      <TmdbLink text="Link to collection on TMDB" path={"/collection/" + id} />
+      <TmdbLink text="Link to collection on TMDB" path={`/collection/${id}`} />
       <MovieList
         list={collectionData.movies}
         setActiveMovieId={setActiveMovieId}
