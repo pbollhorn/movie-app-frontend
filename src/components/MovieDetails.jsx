@@ -82,8 +82,9 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
         ))}
 
         <p>
-          {"Original language: " +
-            formatAsString.languageAsString(movieDetails.originalLanguage)}
+          {`Original language: ${formatAsString.languageAsString(
+            movieDetails.originalLanguage
+          )}`}
         </p>
         <p>Original title: {movieDetails.originalTitle}</p>
         <p>Runtime: {formatAsString.runtimeAsString(movieDetails.runtime)}</p>
@@ -91,11 +92,9 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
           Release date: {formatAsString.dateAsString(movieDetails.releaseDate)}
         </p>
         <p>
-          {"TMDB score: " +
-            formatAsString.scoreAsString(movieDetails.voteAverage) +
-            " (" +
-            movieDetails.voteCount +
-            " votes)"}
+          {`TMDB score: ${formatAsString.scoreAsString(
+            movieDetails.voteAverage
+          )} (${movieDetails.voteCount} votes)`}
         </p>
         <p>
           <TmdbLink
