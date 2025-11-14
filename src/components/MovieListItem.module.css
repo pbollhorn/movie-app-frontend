@@ -1,4 +1,4 @@
-.movieCard {
+.movieListItem {
   display: grid;
   grid-template-rows: 1.7rem 1.7rem 1.7rem 1.7rem;
   grid-template-columns: 4.9rem 2.9rem 1.75rem 2.3rem 1fr;

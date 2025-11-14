@@ -1,13 +1,13 @@
 import { useState } from "react";
 import api from "../apiFacade.js";
 import formatAsString from "../formatAsString.js";
-import styles from "./MovieCard.module.css";
+import styles from "./MovieListItem.module.css";
 import NoRating from "../assets/NoRating.svg";
 import GoodRating from "../assets/GoodRating.svg";
 import OkRating from "../assets/OkRating.svg";
 import NoPoster from "../assets/NoPoster.png";
 
-export default function MovieCard({ movieData, setActiveMovieId }) {
+export default function MovieListItem({ movieData, setActiveMovieId }) {
   const [rating, setRating] = useState(movieData.rating);
 
   let ratingImage;
@@ -23,7 +23,7 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
       break;
   }
 
-  function handleMovieCardClick() {
+  function handleMovieListItemClick() {
     setActiveMovieId(movieData.id + "+" + Date.now());
   }
 
@@ -92,7 +92,7 @@ export default function MovieCard({ movieData, setActiveMovieId }) {
   return (
     <>
       <hr className={styles.horizontalRule}></hr>
-      <div className={styles.movieCard} onClick={handleMovieCardClick}>
+      <div className={styles.movieListItem} onClick={handleMovieListItemClick}>
         <img
           className={styles.posterImage}
           src={

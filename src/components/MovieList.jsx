@@ -1,10 +1,10 @@
-import MovieCard from "./MovieCard.jsx";
+import MovieListItem from "./MovieListItem.jsx";
 
 export default function MovieList({ list, setActiveMovieId }) {
   return (
     <>
       {list.map((element) => (
-        <MovieCard
+        <MovieListItem
           key={element.id}
           movieData={element}
           setActiveMovieId={setActiveMovieId}
