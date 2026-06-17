@@ -20,7 +20,7 @@ export default function TopRated() {
 
   return (
     <>
-      <h1>Top Rated Movies</h1>
+      <h1>Top 100 Movies</h1>
       <MovieList list={list} setActiveMovieId={setActiveMovieId} />
     </>
   );
