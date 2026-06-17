@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import App from "./App.jsx";
 import Search from "./components/pages/Search.jsx";
+import TopRated from "./components/pages/TopRated.jsx";
 import Login from "./components/pages/Login.jsx";
 import Ratings from "./components/pages/Ratings.jsx";
 import Recommendations from "./components/pages/Recommendations.jsx";
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { path: "/", element: <Search /> },
+      { path: "/top-rated", element: <TopRated /> },
       { path: "/ratings", element: <Ratings /> },
       { path: "/recommendations", element: <Recommendations /> },
       { path: "/login", element: <Login /> },
