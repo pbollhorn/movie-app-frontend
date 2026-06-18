@@ -3,7 +3,7 @@ import { useOutletContext } from "react-router-dom";
 import MovieList from "../MovieList.jsx";
 import api from "../../apiFacade.js";
 
-export default function TopRated() {
+export default function Top100() {
   const [list, setList] = useState([]);
 
   const { setActiveMovieId } = useOutletContext();
@@ -11,7 +11,7 @@ export default function TopRated() {
   // useEffect
   useEffect(() => {
     api
-      .fetchData("movies/top-rated", api.makeOptions("GET", true))
+      .fetchData("movies/top100", api.makeOptions("GET", true))
       .then((data) => {
         console.log(data);
         setList(data);
