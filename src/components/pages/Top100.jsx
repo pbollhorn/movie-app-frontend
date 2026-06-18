@@ -21,7 +21,7 @@ export default function Top100() {
   return (
     <>
       <h1>Top 100 Movies</h1>
-      <MovieList list={list} setActiveMovieId={setActiveMovieId} />
+      <MovieList list={list} showNumbers={true} setActiveMovieId={setActiveMovieId} />
     </>
   );
 }
