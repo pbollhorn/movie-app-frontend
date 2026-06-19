@@ -96,6 +96,12 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
             movieDetails.voteAverage
           )} (${movieDetails.voteCount} votes)`}
         </p>
+        <p>
+          <TmdbLink
+            text="Movie / streaming info on TMDB"
+            path={`/movie/${movieDetails.id}/watch`}
+          />
+        </p>
         <p className={styles.overview}>{movieDetails.overview}</p>
         {movieDetails.collection && (
           <p>
@@ -111,12 +117,6 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
             </Link>
           </p>
         )}
-        <p>
-          <TmdbLink
-            text="Link to streaming availability"
-            path={`/movie/${movieDetails.id}/watch`}
-          />
-        </p>
         {directors.length > 0 && (
           <>
             <h2>Directed by</h2>
