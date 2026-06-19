@@ -98,7 +98,7 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
         </p>
         <p>
           <TmdbLink
-            text="Movie / streaming info on TMDB"
+            text="Streaming info on TMDB"
             path={`/movie/${movieDetails.id}/watch`}
           />
         </p>
