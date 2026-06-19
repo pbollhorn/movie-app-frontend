@@ -29,7 +29,7 @@ export default function Person() {
   return (
     <>
       <h1>{personData.name}</h1>
-      <TmdbLink text="Person on TMDB" path={`/person/${id}`} />
+      <TmdbLink text="Profile on TMDB" path={`/person/${id}`} />
       <MovieList list={personData.movies} setActiveMovieId={setActiveMovieId} />
     </>
   );
