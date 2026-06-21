@@ -1,4 +1,5 @@
-import "@fontsource/inter";
+import "@fontsource/inter/400.css"; // Normal version of Inter font
+import "@fontsource/inter/700.css"; // Bold version of Inter font
 import "./main.css";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
