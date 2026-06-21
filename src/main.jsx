@@ -1,8 +1,8 @@
+import "@fontsource/inter";
+import "./index.css";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "@fontsource/inter";
-import "./index.css";
 import App from "./App.jsx";
 import Search from "./components/pages/Search.jsx";
 import Top100 from "./components/pages/Top100.jsx";
