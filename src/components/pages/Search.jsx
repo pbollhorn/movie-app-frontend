@@ -1,21 +1,35 @@
-import { useState, useRef } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
+import { useOutletContext, useSearchParams } from "react-router-dom";
 import api from "../../apiFacade.js";
 import MovieList from "../MovieList.jsx";
 import SearchIcon from "../../assets/SearchIcon.svg";
 
 export default function Search() {
   const [list, setList] = useState([]);
-  const searchTitleRef = useRef(null);
+  const titleRef = useRef(null);
+  const [params, setParams] = useSearchParams();
+  const titleParam = params.get("title") || "";
 
   const { setActiveMovieId } = useOutletContext();
 
-  async function handleSearchSubmit(event) {
+  // Fetch data automatically whenever the URL query parameter "title" changes
+  useEffect(() => {
+    if (titleParam) {
+      titleRef.current.value = titleParam;
+      fetchSearch(titleParam).then((data) => setList(data));
+    }
+  }, [titleParam]);
+
+  // Form submission only updates the URL
+  function handleSearchSubmit(event) {
     event.preventDefault();
-    const text = searchTitleRef.current.value;
-    const data = await fetchSearch(text);
-    console.log(data);
-    setList(data);
+    const text = titleRef.current.value;
+    if (text) {
+      setParams({ title: text });
+    } else {
+      params.delete("title");
+      setParams(params);
+    }
   }
 
   return (
@@ -24,7 +38,8 @@ export default function Search() {
       <form onSubmit={handleSearchSubmit}>
         <input
           type="search"
-          ref={searchTitleRef}
+          ref={titleRef}
+          defaultValue={titleParam}
           placeholder="Search by title"
         />
         <button type="submit">
@@ -40,5 +55,6 @@ async function fetchSearch(title) {
   const url = `https://movie.jcoder.dk/api/movies/search?title=${title}`;
   const response = await fetch(url, api.makeOptions("GET", true));
   const data = await response.json();
+  console.log(data);
   return data;
 }
