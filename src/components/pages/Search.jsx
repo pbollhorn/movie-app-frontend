@@ -8,7 +8,7 @@ export default function Search() {
   const [list, setList] = useState([]);
   const titleRef = useRef(null);
   const [params, setParams] = useSearchParams();
-  const titleParam = params.get("title") || "";
+  const titleParam = params.get("title") ? params.get("title").trim() : "";
 
   const { setActiveMovieId } = useOutletContext();
 
@@ -23,7 +23,7 @@ export default function Search() {
   // Form submission only updates the URL
   function handleSearchSubmit(event) {
     event.preventDefault();
-    const text = titleRef.current.value;
+    const text = titleRef.current.value.trim();
     if (text) {
       setParams({ title: text });
     } else {
