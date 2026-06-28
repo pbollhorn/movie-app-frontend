@@ -16,7 +16,7 @@ export default function Ratings() {
   useEffect(() => {
     if (!api.loggedIn()) return;
 
-    api.fetchData("movies", api.makeOptions("GET", true)).then((data) => {
+    api.fetchData("movies/ratings", api.makeOptions("GET", true)).then((data) => {
       console.log(data);
       setList(data);
     });

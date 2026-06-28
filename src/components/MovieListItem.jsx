@@ -43,7 +43,7 @@ export default function MovieListItem({ number, showNumbers, movieData, setActiv
       return;
     }
 
-    const url = `https://movie.jcoder.dk/api/movies/${movieData.id}`;
+    const url = `https://movie.jcoder.dk/api/movies/${movieData.id}/ratings`;
 
     switch (rating) {
       case null:
