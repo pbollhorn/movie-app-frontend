@@ -41,7 +41,7 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
     return <div className={styles.movieDetails}></div>;
   }
 
-  const directors = movieDetails.credits.filter((c) => c.job === "Director");
+  const directors = movieDetails.credits.filter((c) => c.jobsInDepartment.includes("Director"));
 
   const cast = movieDetails.credits.filter((c) => c.department === "Cast");
 
@@ -61,7 +61,7 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
   ];
 
   const usedDepartments = departments.filter((department) =>
-    movieDetails.credits.some((credit) => credit.department === department)
+    movieDetails.credits.some((credit) => credit.department === department),
   );
 
   return (
@@ -83,7 +83,7 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
 
         <p>
           {`Original language: ${formatAsString.languageAsString(
-            movieDetails.originalLanguage
+            movieDetails.originalLanguage,
           )}`}
         </p>
         <p>Original title: {movieDetails.originalTitle}</p>
@@ -93,7 +93,7 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
         </p>
         <p>
           {`TMDB score: ${formatAsString.scoreAsString(
-            movieDetails.voteAverage
+            movieDetails.voteAverage,
           )} (${movieDetails.voteCount} votes)`}
         </p>
         <p>
@@ -106,7 +106,7 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
         {movieDetails.collection && (
           <p>
             {formatAsString.collectionIntroAsString(
-              movieDetails.collection.name
+              movieDetails.collection.name,
             )}
             <Link
               className={styles.internalLink}
@@ -145,7 +145,8 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
                 >
                   {credit.name}
                 </Link>
-                {credit.character && ": " + credit.character}
+                {credit.characters.length > 0 &&
+                  ": " + credit.characters.join(" / ")}
               </p>
             ))}
           </>
@@ -164,7 +165,7 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
                   >
                     {credit.name}
                   </Link>
-                  {": " + credit.job}
+                  {": " + credit.jobsInDepartment.join(", ")}
                 </p>
               ))}
           </Fragment>
