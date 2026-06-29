@@ -7,7 +7,12 @@ import GoodRating from "../assets/GoodRating.svg";
 import OkRating from "../assets/OkRating.svg";
 import NoPoster from "../assets/NoPoster.png";
 
-export default function MovieListItem({ number, showNumbers, movieData, setActiveMovieId }) {
+export default function MovieListItem({
+  number,
+  showNumbers,
+  movieData,
+  setActiveMovieId,
+}) {
   const [rating, setRating] = useState(movieData.rating);
 
   let ratingImage;
@@ -95,9 +100,11 @@ export default function MovieListItem({ number, showNumbers, movieData, setActiv
           }
           onClick={handlePosterImageClick}
         />
-        <div className={styles.title}>
-          {/* <div className={styles.ellipsis}>{showNumbers && <span>{`#${number}: `}</span>}{movieData.title}</div> */}
-          <div className={styles.ellipsis}>{showNumbers && <span className={styles.number}>#{number}</span>}{movieData.title}</div>
+        <div className={styles.heading}>
+          <div className={styles.ellipsis}>
+            {showNumbers && <span className={styles.number}>#{number}</span>}
+            {movieData.title}
+          </div>
         </div>
         <div className={styles.directors}>
           <div className={styles.ellipsis}>

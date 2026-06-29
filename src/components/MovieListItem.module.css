@@ -15,7 +15,7 @@
   border-radius: 0.5rem;
 }
 
-.title {
+.heading {
   grid-row: 1;
   grid-column: 2 / 6;
   font-weight: bold;
