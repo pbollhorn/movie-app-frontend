@@ -34,11 +34,15 @@ export default function App() {
     //   console.log(data);
     //   setReady(true);
     // });
-    if (document.fonts) {
-      document.fonts.ready.then(() => setReady(true));
-    } else {
-      setReady(true);
-    }
+    // if (document.fonts) {
+    //   document.fonts.ready.then(() => setReady(true));
+    // } else {
+    //   setReady(true);
+    // }
+    Promise.all([
+      document.fonts.load('400 1em "Inter"'),
+      document.fonts.load('700 1em "Inter"'),
+    ]).then(() => setReady(true));
   }, []); // Runs on mount
 
   if (!ready) {
