@@ -1,7 +1,7 @@
 .menu {
   padding: 0.25rem 0.75rem 0.75rem;
   a {
-    color: white;
+    color: var(--menu-fg);
     font-size: 1.1rem;
     text-decoration: none; /* removes underline */
   }
