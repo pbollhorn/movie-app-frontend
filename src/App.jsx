@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import api from "./apiFacade.js";
 import useLayoutType from "./hooks/useLayoutType.js";
@@ -24,6 +24,27 @@ export default function App() {
   // to make Outlet remount whenever a link is clicked,
   // also when already at that location
   const location = useLocation();
+
+  // CODE FOR STARTUP STARTS HERE ------------------------------------
+  const [ready, setReady] = useState(false);
+
+  // useEffect
+  useEffect(() => {
+    // api.fetchData("genres", api.makeOptions("GET", true)).then((data) => {
+    //   console.log(data);
+    //   setReady(true);
+    // });
+    if (document.fonts) {
+      document.fonts.ready.then(() => setReady(true));
+    } else {
+      setReady(true);
+    }
+  }, []); // Runs on mount
+
+  if (!ready) {
+    return <div>MovieApp is loading...</div>;
+  }
+  // CODE FOR STARTUP ENDS HERE ------------------------------------
 
   /* ----------------------
         Mobile layout
