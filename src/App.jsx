@@ -40,8 +40,8 @@ export default function App() {
     //   setReady(true);
     // }
     Promise.all([
-      document.fonts.load('400 1em "Inter"'),
-      document.fonts.load('700 1em "Inter"'),
+      document.fonts.load("400 1em Inter"),
+      document.fonts.load("700 1em Inter"),
     ]).then(() => setReady(true));
   }, []); // Runs on mount
 
