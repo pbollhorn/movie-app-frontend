@@ -42,7 +42,7 @@ export default function App() {
   }, []); // Runs on mount
 
   if (!ready) {
-    return <div>MovieApp is loading...</div>;
+    return <></>;
   }
   // CODE FOR STARTUP ENDS HERE ------------------------------------
 
