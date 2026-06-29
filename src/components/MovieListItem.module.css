@@ -58,6 +58,14 @@
   text-overflow: ellipsis;
 }
 
+.number {
+  background-color: yellow;
+  color: black;
+  padding: 0 0.3rem;
+  margin-right: 0.3rem;
+  border-radius: 0.3rem;
+}
+
 .horizontalRule {
   height: 1px;
   background-color: gray;

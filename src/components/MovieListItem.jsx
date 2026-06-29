@@ -96,7 +96,8 @@ export default function MovieListItem({ number, showNumbers, movieData, setActiv
           onClick={handlePosterImageClick}
         />
         <div className={styles.title}>
-          <div className={styles.ellipsis}>{showNumbers && `#${number}: `}{movieData.title}</div>
+          {/* <div className={styles.ellipsis}>{showNumbers && <span>{`#${number}: `}</span>}{movieData.title}</div> */}
+          <div className={styles.ellipsis}>{showNumbers && <span className={styles.number}>#{number}</span>}{movieData.title}</div>
         </div>
         <div className={styles.directors}>
           <div className={styles.ellipsis}>
