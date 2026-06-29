@@ -1,14 +1,17 @@
 /* Colors for light mode */
 :root {
-  --menu-bg: #0000b3;
-  --menu-fg: white;
-  --number-bg: blue;
-  --number-fg: white;
   --bg: #f9f9f9;
   --fg: #000000;
-  --link-fg: hsl(212, 92%, 40%);
+  --menu-bg: #0000b3;
+  --menu-fg: white;
+  --button-bg: blue;
+  --button-fg: white;
   --genre-bg: green;
   --genre-fg: white;
+  --number-bg: blue;
+  --number-fg: white;
+  --link-fg: hsl(212, 92%, 40%);
+
 }
 
 /* Colors for dark mode (only the colors that differ from light mode) */
@@ -16,9 +19,9 @@
   :root {
     --bg: #1e1e1e;
     --fg: #f5f5f5;
+    --number-bg: yellow;
+    --number-fg: black;
     --link-fg: hsl(212, 92%, 75%);
-    --genre-bg: yellow;
-    --genre-fg: black;
   }
 }
 
@@ -54,7 +57,7 @@ body {
   border: none;
   padding: 0.65rem;
   border-radius: 0.5rem;
-  color: white;
-  background-color: blue;
+  background-color: var(--button-bg);
+  color: var(--button-fg);
   cursor: pointer;
 }
