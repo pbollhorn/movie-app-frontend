@@ -1,33 +1,43 @@
 import { useState, useEffect } from "react";
-import { useOutletContext } from "react-router-dom";
-import MovieList from "../MovieList.jsx";
+import { useOutletContext, useSearchParams } from "react-router-dom";
 import api from "../../apiFacade.js";
+import MovieList from "../MovieList.jsx";
 
 export default function Top100() {
   const [list, setList] = useState([]);
-  const [selectedGenreId, setSelectedGenreId] = useState(null);
+  const [params, setParams] = useSearchParams();
+  const genreIdParam = params.get("genreId") || "";
 
   const { setActiveMovieId } = useOutletContext();
 
-  const handleChange = (event) => {
-    setSelectedGenreId(event.target.value);
-  };
-
-  // useEffect
+  // Fetch data automatically whenever the URL query parameter "genreId" changes
   useEffect(() => {
-    api
-      .fetchData("movies/top100", api.makeOptions("GET", true))
-      .then((data) => {
-        console.log(data);
-        setList(data);
-      });
-  }, []); // Runs on mount
+    const url = genreIdParam
+      ? `movies/top100?genreId=${genreIdParam}`
+      : "movies/top100";
+    api.fetchData(url, api.makeOptions("GET", true)).then((data) => {
+      console.log(data);
+      setList(data);
+    });
+  }, [genreIdParam]);
+
+  // Selecting a genre only updates the URL
+  function handleGenreSelect(event) {
+    const genreId = event.target.value;
+    if (genreId) {
+      setParams({ genreId: genreId });
+    } else {
+      params.delete("genreId");
+      setParams(params);
+    }
+  }
 
   return (
     <>
       <h1>Top 100 Movies</h1>
 
-      <select value={selectedGenreId} onChange={handleChange}>
+      <select value={genreIdParam} onChange={handleGenreSelect}>
+        <option value="">All Genres</option>
         <option value="28">Action</option>
         <option value="12">Adventure</option>
         <option value="16">Animation</option>
