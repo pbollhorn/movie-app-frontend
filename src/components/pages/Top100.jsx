@@ -27,8 +27,7 @@ export default function Top100() {
     if (genreId) {
       setParams({ genreId: genreId });
     } else {
-      params.delete("genreId");
-      setParams(params);
+      setParams({});
     }
   }
 

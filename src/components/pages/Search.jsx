@@ -27,8 +27,7 @@ export default function Search() {
     if (text) {
       setParams({ title: text });
     } else {
-      params.delete("title");
-      setParams(params);
+      setParams({});
     }
   }
 
