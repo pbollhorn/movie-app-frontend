@@ -38,7 +38,7 @@ body {
   margin: 0.4rem 0;
 }
 
-.theOutlet input {
+.theOutlet input, select {
   font-family: inherit; /* Firefox needs this */
   font-size: 1rem;
   width: 15rem;
