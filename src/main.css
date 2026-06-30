@@ -8,8 +8,8 @@
   --button-fg: white;
   --genre-bg: green;
   --genre-fg: white;
-  --number-bg: hsl(210, 100%, 60%);
-  --number-fg: black;
+  --number-bg: red;
+  --number-fg: white;
   --link-fg: hsl(212, 92%, 40%);
 
 }
