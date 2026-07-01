@@ -6,10 +6,10 @@
   --menu-fg: white;
   --button-bg: blue;
   --button-fg: white;
-  --genre-bg: blue;
+  --genre-bg: green;
   --genre-fg: white;
-  --number-bg: red;
-  --number-fg: white;
+  --number-bg: rgb(255,255,153);
+  --number-fg: black;
   --link-fg: hsl(212, 92%, 40%);
 
 }
