@@ -25,30 +25,17 @@ export default function App() {
   // also when already at that location
   const location = useLocation();
 
-  // CODE FOR STARTUP STARTS HERE ------------------------------------
-  const [ready, setReady] = useState(false);
-
-  // useEffect
+  // Make sure fonts are loaded before rendering the app
+  const [areFontsLoaded, setAreFontsLoaded] = useState(false);
   useEffect(() => {
-    // api.fetchData("genres", api.makeOptions("GET", true)).then((data) => {
-    //   console.log(data);
-    //   setReady(true);
-    // });
-    // if (document.fonts) {
-    //   document.fonts.ready.then(() => setReady(true));
-    // } else {
-    //   setReady(true);
-    // }
     Promise.all([
       document.fonts.load("400 1em Inter"),
       document.fonts.load("700 1em Inter"),
-    ]).then(() => setReady(true));
-  }, []); // Runs on mount
-
-  if (!ready) {
+    ]).then(() => setAreFontsLoaded(true));
+  }, []);
+  if (!areFontsLoaded) {
     return <></>;
   }
-  // CODE FOR STARTUP ENDS HERE ------------------------------------
 
   /* ----------------------
         Mobile layout
