@@ -4,33 +4,32 @@ import api from "../../apiFacade.js";
 import MovieList from "../MovieList.jsx";
 
 export default function Top100() {
-  const [genreList, setGenreList] = useState(null);
-  const [list, setList] = useState([]);
+  const [genres, setGenres] = useState(null);
   const [params, setParams] = useSearchParams();
   const genreIdParam = params.get("genreId") || "";
-
+  const [movies, setMovies] = useState([]);
   const { setActiveMovieId } = useOutletContext();
 
-  // Fetch genreList on mount
+  // Fetch genres on mount
   useEffect(() => {
     api.fetchData("genres", api.makeOptions("GET", true)).then((data) => {
       console.log(data);
-      setGenreList(data);
+      setGenres(data);
     });
   }, []);
 
-  // Fetch data automatically whenever the URL query parameter "genreId" changes
+  // Fetch movies whenever the URL query parameter "genreId" changes
   useEffect(() => {
     const url = genreIdParam
       ? `movies/top100?genreId=${genreIdParam}`
       : "movies/top100";
     api.fetchData(url, api.makeOptions("GET", true)).then((data) => {
       console.log(data);
-      setList(data);
+      setMovies(data);
     });
   }, [genreIdParam]);
 
-  // Selecting a genre only updates the URL
+  // When a genre is seleceted in the drop down menu, the URL query parameter "genreId" is updated
   function handleGenreSelect(event) {
     const genreId = event.target.value;
     if (genreId) {
@@ -40,7 +39,7 @@ export default function Top100() {
     }
   }
 
-  if (!genreList) {
+  if (!genres) {
     return (
       <>
         <h1>Top 100 Movies</h1>
@@ -54,7 +53,7 @@ export default function Top100() {
 
       <select value={genreIdParam} onChange={handleGenreSelect}>
         <option value="">All Genres</option>
-        {genreList.map((g) => (
+        {genres.map((g) => (
           <option key={g.id} value={g.id}>
             {g.name}
           </option>
@@ -62,7 +61,7 @@ export default function Top100() {
       </select>
 
       <MovieList
-        list={list}
+        list={movies}
         showNumbers={true}
         setActiveMovieId={setActiveMovieId}
       />
