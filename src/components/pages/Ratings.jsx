@@ -16,25 +16,24 @@ export default function Ratings() {
   useEffect(() => {
     if (!api.loggedIn()) return;
 
-    api.fetchData("movies/ratings", api.makeOptions("GET", true)).then((data) => {
-      console.log(data);
-      setList(data);
-    });
+    api
+      .fetchData("movies/ratings", api.makeOptions("GET", true))
+      .then((data) => {
+        console.log(data);
+        setList(data);
+      });
   }, []); // Runs on mount
 
   return (
     <>
       <h1>Your Ratings</h1>
       <div className={styles.ratingsExplanation}>
-        <p>
+        <span>
           <img src={GoodRating} /> Good
-        </p>
-        <p>
+        </span>
+        <span>
           <img src={OkRating} /> OK / Bad
-        </p>
-        <p>
-          <img src={NoRating} /> Not rated
-        </p>
+        </span>
       </div>
 
       {api.loggedIn() ? (
