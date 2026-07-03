@@ -16,10 +16,10 @@ export default function Menu({ loggedIn, setLoggedIn, setMenuIsOpen }) {
   return (
     <div className={styles.menu}>
       <nav>
-        <Link to="/" onClick={() => setMenuIsOpen(false)}>
+        <Link to="/search" onClick={() => setMenuIsOpen(false)}>
           Search
         </Link>
-        <Link to="/popular" onClick={() => setMenuIsOpen(false)}>
+        <Link to="/" onClick={() => setMenuIsOpen(false)}>
           Popular
         </Link>
         <Link to="/top100" onClick={() => setMenuIsOpen(false)}>
