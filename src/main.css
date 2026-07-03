@@ -11,7 +11,6 @@
   --number-bg: hsl(48, 100%, 65%);
   --number-fg: black;
   --link-fg: hsl(212, 92%, 40%);
-
 }
 
 /* Colors for dark mode (only the colors that differ from light mode) */
@@ -40,35 +39,34 @@ body {
   margin: 0.4rem 0;
 }
 
-.theOutlet input {
+.theOutlet input,
+select,
+button {
   font-family: inherit; /* Firefox needs this */
   font-size: 1rem;
-  width: 15rem;
-  color: var(--fg);
-  background-color: var(--bg);
-  border: 0.15rem solid gray;
   border-radius: 0.5rem;
+}
+
+.theOutlet input {
+  width: 15rem;
+  background-color: var(--bg);
+  color: var(--fg);
+  border: 0.15rem solid gray;
   padding: 0.5rem;
 }
 
 .theOutlet select {
-  font-family: inherit; /* Firefox needs this */
-  font-size: 1rem;
   width: 100%;
-  color: var(--fg);
   background-color: var(--bg);
+  color: var(--fg);
   border: 0.15rem solid gray;
-  border-radius: 0.5rem;
   padding: 0.5rem;
 }
 
 .theOutlet button {
-  font-family: inherit; /* Firefox needs this */
-  font-size: 1rem;
-  border: none;
-  padding: 0.65rem;
-  border-radius: 0.5rem;
+  cursor: pointer;
   background-color: var(--button-bg);
   color: var(--button-fg);
-  cursor: pointer;
+  border: none;
+  padding: 0.65rem;
 }
