@@ -58,15 +58,6 @@
   text-overflow: ellipsis;
 }
 
-.number {
-  background-color: var(--number-bg);
-  color: var(--number-fg);
-  font-weight: normal;
-  padding: 0 0.3rem;
-  margin-right: 0.3rem;
-  border-radius: 0.3rem;
-}
-
 .horizontalRule {
   height: 1px;
   background-color: gray;
