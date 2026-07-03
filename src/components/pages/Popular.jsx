@@ -42,14 +42,14 @@ export default function Popular() {
   if (!genres) {
     return (
       <>
-        <h1>Popular Right Now</h1>
+        <h1>Currently Popular</h1>
       </>
     );
   }
 
   return (
     <>
-      <h1>Popular Right Now</h1>
+      <h1>Currently Popular</h1>
 
       <select value={genreIdParam} onChange={handleGenreSelect}>
         <option value="">All Genres</option>
