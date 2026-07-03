@@ -3,7 +3,7 @@ import { useOutletContext, useSearchParams } from "react-router-dom";
 import api from "../../apiFacade.js";
 import MovieList from "../MovieList.jsx";
 
-export default function Top100() {
+export default function Popular() {
   const [genres, setGenres] = useState(null);
   const [params, setParams] = useSearchParams();
   const genreIdParam = params.get("genreId") || "";
@@ -42,14 +42,14 @@ export default function Top100() {
   if (!genres) {
     return (
       <>
-        <h1>All-Time Top 100</h1>
+        <h1>Popular Right Now</h1>
       </>
     );
   }
 
   return (
     <>
-      <h1>All-Time Top 100</h1>
+      <h1>Popular Right Now</h1>
 
       <select value={genreIdParam} onChange={handleGenreSelect}>
         <option value="">All Genres</option>

@@ -6,6 +6,7 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
 import Search from "./components/pages/Search.jsx";
+import Popular from "./components/pages/Popular.jsx";
 import Top100 from "./components/pages/Top100.jsx";
 import Login from "./components/pages/Login.jsx";
 import Ratings from "./components/pages/Ratings.jsx";
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { path: "/", element: <Search /> },
+      { path: "/popular", element: <Popular /> },
       { path: "/top100", element: <Top100 /> },
       { path: "/ratings", element: <Ratings /> },
       { path: "/recommendations", element: <Recommendations /> },
