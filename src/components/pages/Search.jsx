@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useOutletContext, useSearchParams } from "react-router-dom";
 import api from "../../apiFacade.js";
+import styles from "./Search.module.css";
 import MovieList from "../MovieList.jsx";
 import SearchIcon from "../../assets/SearchIcon.svg";
 
@@ -34,7 +35,7 @@ export default function Search() {
   return (
     <>
       <h1>Search Movies</h1>
-      <form onSubmit={handleSearchSubmit}>
+      <form onSubmit={handleSearchSubmit} className={styles.searchBar}>
         <input
           type="search"
           ref={titleRef}
