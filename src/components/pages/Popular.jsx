@@ -21,8 +21,8 @@ export default function Popular() {
   // Fetch movies whenever the URL query parameter "genreId" changes
   useEffect(() => {
     const url = genreIdParam
-      ? `movies/top100?genreId=${genreIdParam}`
-      : "movies/top100";
+      ? `movies/popular?genreId=${genreIdParam}`
+      : "movies/popular";
     api.fetchData(url, api.makeOptions("GET", true)).then((data) => {
       console.log(data);
       setMovies(data);
