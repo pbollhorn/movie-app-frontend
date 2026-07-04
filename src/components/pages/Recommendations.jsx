@@ -15,7 +15,6 @@ export default function Recommendations() {
     api
       .fetchData("movies/recommendations", api.makeOptions("GET", true))
       .then((data) => {
-        console.log(data);
         setList(data);
       });
   }, []); // Runs on mount

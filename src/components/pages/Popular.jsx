@@ -13,7 +13,6 @@ export default function Popular() {
   // Fetch genres on mount
   useEffect(() => {
     api.fetchData("genres", api.makeOptions("GET", true)).then((data) => {
-      console.log(data);
       setGenres(data);
     });
   }, []);
@@ -24,7 +23,6 @@ export default function Popular() {
       ? `movies/popular?genreId=${genreIdParam}`
       : "movies/popular";
     api.fetchData(url, api.makeOptions("GET", true)).then((data) => {
-      console.log(data);
       setMovies(data);
     });
   }, [genreIdParam]);

@@ -16,7 +16,6 @@ export default function Person() {
     api
       .fetchData(`movies/person/${id}`, api.makeOptions("GET", true))
       .then((data) => {
-        console.log(data);
         setPersonData(data);
       });
   }, []); // Runs on mount

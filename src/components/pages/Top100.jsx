@@ -13,7 +13,6 @@ export default function Top100() {
   // Fetch genres on mount
   useEffect(() => {
     api.fetchData("genres", api.makeOptions("GET", true)).then((data) => {
-      console.log(data);
       setGenres(data);
     });
   }, []);
@@ -24,7 +23,6 @@ export default function Top100() {
       ? `movies/top100?genreId=${genreIdParam}`
       : "movies/top100";
     api.fetchData(url, api.makeOptions("GET", true)).then((data) => {
-      console.log(data);
       setMovies(data);
     });
   }, [genreIdParam]);

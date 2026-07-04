@@ -19,7 +19,6 @@ export default function Ratings() {
     api
       .fetchData("movies/ratings", api.makeOptions("GET", true))
       .then((data) => {
-        console.log(data);
         setList(data);
       });
   }, []); // Runs on mount

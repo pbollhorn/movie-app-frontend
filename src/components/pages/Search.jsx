@@ -55,6 +55,5 @@ async function fetchSearch(title) {
   const url = `https://movie.jcoder.dk/api/movies/search?title=${title}`;
   const response = await fetch(url, api.makeOptions("GET", true));
   const data = await response.json();
-  console.log(data);
   return data;
 }

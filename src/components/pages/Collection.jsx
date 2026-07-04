@@ -16,7 +16,6 @@ export default function Collection() {
     api
       .fetchData(`movies/collection/${id}`, api.makeOptions("GET", true))
       .then((data) => {
-        console.log(data);
         setCollectionData(data);
       });
   }, []); // Runs on mount
