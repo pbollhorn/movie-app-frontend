@@ -53,17 +53,12 @@ button {
 }
 
 .theOutlet select {
-  cursor: pointer;
   width: 100%;
-  background-color: green;
-  color: white;
-  border: none;
-  padding: 0.65rem;
-}
-
-.theOutlet select option {
+  cursor: pointer;
   background-color: var(--bg);
   color: var(--fg);
+  border: 0.15rem solid gray;
+  padding: 0.5rem;
 }
 
 .theOutlet button {
