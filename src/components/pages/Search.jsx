@@ -41,6 +41,7 @@ export default function Search() {
           ref={titleRef}
           defaultValue={titleParam}
           placeholder="Search by title"
+          autoFocus
         />
         <button type="submit">
           <img src={SearchIcon} style={{ height: "1rem" }} />
