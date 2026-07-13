@@ -8,7 +8,7 @@ import GoodRating from "../../assets/GoodRating.svg";
 import OkRating from "../../assets/OkRating.svg";
 
 export default function Ratings() {
-  const [list, setList] = useState([]);
+  const [list, setList] = useState(null);
 
   const { setActiveMovieId } = useOutletContext();
 

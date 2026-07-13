@@ -4,7 +4,7 @@ import MovieList from "../MovieList.jsx";
 import api from "../../apiFacade.js";
 
 export default function Recommendations() {
-  const [list, setList] = useState([]);
+  const [list, setList] = useState(null);
 
   const { setActiveMovieId } = useOutletContext();
 

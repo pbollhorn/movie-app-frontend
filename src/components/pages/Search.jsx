@@ -6,7 +6,7 @@ import MovieList from "../MovieList.jsx";
 import SearchIcon from "../../assets/SearchIcon.svg";
 
 export default function Search() {
-  const [list, setList] = useState([]);
+  const [list, setList] = useState(null);
   const titleRef = useRef(null);
   const [params, setParams] = useSearchParams();
   const titleParam = params.get("title") ? params.get("title").trim() : "";

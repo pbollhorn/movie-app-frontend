@@ -7,7 +7,7 @@ export default function Popular() {
   const [genres, setGenres] = useState(null);
   const [params, setParams] = useSearchParams();
   const genreIdParam = params.get("genreId") || "";
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState(null);
   const { setActiveMovieId } = useOutletContext();
 
   // Fetch genres on mount
