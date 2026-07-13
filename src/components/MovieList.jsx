@@ -1,4 +1,5 @@
 import MovieListItem from "./MovieListItem.jsx";
+import styles from "./MovieList.module.css";
 
 export default function MovieList({ list, showNumbers, setActiveMovieId }) {
   if (!list) {
@@ -6,7 +7,7 @@ export default function MovieList({ list, showNumbers, setActiveMovieId }) {
   }
 
   if (list.length === 0) {
-    return <>No movies found</>;
+    return <div className={styles.emptyList}>No movies found</div>;
   }
 
   return (
