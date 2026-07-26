@@ -115,7 +115,7 @@ export default function MovieListItem({
             {formatAsString.genresAsString(movieData.genres)}
           </div>
         </div>
-        <div className={styles.year}>{movieData.releaseDate[0]}</div>
+        <div className={styles.year}>{movieData.releaseDate && movieData.releaseDate[0]}</div>
         <div className={styles.language}>{movieData.originalLanguage}</div>
         <div className={styles.score}>{movieData.voteAverage.toFixed(1)}</div>
         <img

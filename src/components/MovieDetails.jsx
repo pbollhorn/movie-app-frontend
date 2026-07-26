@@ -89,7 +89,7 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
         <p>Original title: {movieDetails.originalTitle}</p>
         <p>Runtime: {formatAsString.runtimeAsString(movieDetails.runtime)}</p>
         <p>
-          Release date: {formatAsString.dateAsString(movieDetails.releaseDate)}
+          Release date: {movieDetails.releaseDate && formatAsString.dateAsString(movieDetails.releaseDate)}
         </p>
         <p>
           {`TMDB score: ${formatAsString.scoreAsString(
