@@ -19,8 +19,8 @@ export default function Menu({ loggedIn, setLoggedIn, setMenuIsOpen }) {
         <Link to="/" onClick={() => setMenuIsOpen(false)}>
           Search
         </Link>
-        <Link to="/popular" onClick={() => setMenuIsOpen(false)}>
-          Popular
+        <Link to="/trending" onClick={() => setMenuIsOpen(false)}>
+          Trending
         </Link>
         <Link to="/top100" onClick={() => setMenuIsOpen(false)}>
           Top 100
