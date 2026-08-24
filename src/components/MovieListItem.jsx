@@ -102,7 +102,8 @@ export default function MovieListItem({
         />
         <div className={styles.heading}>
           <div className={styles.ellipsis}>
-            {showNumbers ? `#${number}: ${movieData.title}` : movieData.title}
+            {showNumbers && <span className={styles.number}>#{number}</span>}
+            {movieData.title}
           </div>
         </div>
         <div className={styles.directors}>
