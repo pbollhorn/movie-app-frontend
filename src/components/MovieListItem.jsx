@@ -48,7 +48,7 @@ export default function MovieListItem({
       return;
     }
 
-    const url = `https://movie.jcoder.dk/api/movies/${movieData.id}/ratings`;
+    const url = `https://movieapp.jcoder.dk/api/movies/${movieData.id}/ratings`;
 
     switch (rating) {
       case null:

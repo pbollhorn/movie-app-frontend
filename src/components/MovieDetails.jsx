@@ -176,7 +176,7 @@ export default function MovieDetails({ activeMovieId, setModalIsOpen }) {
 }
 
 async function fetchMovieDetails(id) {
-  const response = await fetch(`https://movie.jcoder.dk/api/movies/${id}`);
+  const response = await fetch(`https://movieapp.jcoder.dk/api/movies/${id}`);
   const movieDetails = await response.json();
   return movieDetails;
 }
