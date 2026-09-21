@@ -2,9 +2,7 @@ name: Deploy Frontend to Cloud Server
 
 on:
   push:
-    branches: [main] # Trigger on direct pushes to the main branch
-  pull_request:
-    branches: [main] # Trigger when a pull request targeting main is merged/closed
+    branches: [main]
 
 jobs:
   deploy:
@@ -12,12 +10,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4 # Checks out the repository under $GITHUB_WORKSPACE, so your workflow can access it.
+        uses: actions/checkout@v5 # Checks out the repository under $GITHUB_WORKSPACE, so your workflow can access it.
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4 # Updated to use the latest version of the action
+        uses: actions/setup-node@v5
         with:
-          node-version: "20.x" # Sets up Node.js version 20
+          node-version: "24.x" # Sets up Node.js version 24
 
       - name: Install dependencies
         run: npm install # Installs dependencies defined in package.json.
@@ -26,7 +24,7 @@ jobs:
         run: npm run build # Runs the build script specified in package.json.
 
       - name: Set up SSH agent
-        uses: webfactory/ssh-agent@v0.9.0
+        uses: webfactory/ssh-agent@v0.10.0
         with:
           ssh-private-key: ${{ secrets.PRIVATE_SSH_KEY }} # The SSH private key stored in GitHub secrets.
 
