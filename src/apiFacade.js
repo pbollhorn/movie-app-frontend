@@ -1,4 +1,4 @@
-const BASE_URL = "https://movie.jcoder.dk/api/";
+const BASE_URL = "https://movieapp.jcoder.dk/api/";
 const LOGIN_ENDPOINT = "auth/login";
 
 function handleHttpErrors(res) {
