@@ -9,7 +9,7 @@
   --genre-bg: green;
   --genre-fg: white;
   --number-bg: #01b4e4;
-  --number-fg: var(--bg);
+  --number-fg: white;
   --link-fg: hsl(212, 92%, 40%);
 }
 
