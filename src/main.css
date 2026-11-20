@@ -2,15 +2,15 @@
 :root {
   --bg: #f9f9f9;
   --fg: #000000;
+  --link-fg: hsl(212, 92%, 40%);
   --menu-bg: #0000b3;
   --menu-fg: white;
   --button-bg: blue;
   --button-fg: white;
   --genre-bg: green;
   --genre-fg: white;
-  --number-bg: #01b4e4;
+  --number-bg: var(--link-fg);
   --number-fg: white;
-  --link-fg: hsl(212, 92%, 40%);
 }
 
 /* Colors for dark mode (only the colors that differ from light mode) */
